@@ -1,0 +1,54 @@
+{
+  "name": "@typographist/core",
+  "version": "0.0.1",
+  "description": "Core API for typographist",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "cross-env jest --coverage --coverageReporters=text-lcov | cross-env coveralls",
+    "test:watch": "cross-env jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typographist/core.git"
+  },
+  "keywords": [
+    "css",
+    "design",
+    "golden-ratio",
+    "eyeglass-module",
+    "modular",
+    "modular-scale",
+    "modularscale",
+    "modularscale-postcss",
+    "musical-scales",
+    "postcss",
+    "postcss-plugin",
+    "ratio",
+    "scale",
+    "typo",
+    "typography",
+    "typographist",
+    "vertical-rhythm",
+    "web-typography"
+  ],
+  "contributors": [
+    "Maxim Alyoshin <mgreen097@gmail.com>"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^23.0.1",
+    "travis-deploy-once": "^5.0.1"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/typographist/core/issues"
+  },
+  "homepage": "https://github.com/typographist/core#readme"
+}
