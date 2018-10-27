@@ -4,8 +4,9 @@
   "description": "Core API for typographist",
   "main": "src/index.js",
   "scripts": {
-    "test": "cross-env jest --coverage --coverageReporters=text-lcov | cross-env coveralls",
-    "test:watch": "cross-env jest --watch"
+    "test": "cross-env jest --verbose --coverage --coverageReporters=text-lcov | cross-env coveralls",
+    "test:watch": "cross-env jest --watch",
+    "prepush": "jest"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^1.1.2",
     "jest": "^23.0.1",
     "travis-deploy-once": "^5.0.1"
   },
