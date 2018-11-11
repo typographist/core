@@ -6,7 +6,7 @@ const {
   stripBase,
 } = require('../../helpers');
 const { HAS_EM } = require('../../constants/regexes');
-const { getRatio } = require('./getRatio');
+const { getRatio } = require('./get-ratio');
 const isValidUserConfig = require('../userConfigValidator');
 
 /**

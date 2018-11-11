@@ -3,7 +3,7 @@ const {
   getTargetFromRatio,
   calcRatio,
   getRatio,
-} = require('./');
+} = require('.');
 
 describe('getFontSizeFromRatio', () => {
   it('should get font size from ratio', () => {

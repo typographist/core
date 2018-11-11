@@ -1,4 +1,4 @@
-const { getBreakpointsName, getBreakpoints, setBreakpointName } = require('./');
+const { getBreakpointsName, getBreakpoints, setBreakpointName } = require('.');
 
 const config = {
   base: ['16px', '33px'],

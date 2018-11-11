@@ -1,4 +1,4 @@
-const { makeBreakpointsModel } = require('../../makeBreakpointsModel');
+const { makeBreakpointsModel } = require('../../make-breakpoints-model');
 
 /**
  *

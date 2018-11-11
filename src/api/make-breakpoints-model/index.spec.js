@@ -4,7 +4,7 @@ const {
   makeBreakpoints,
   toPxValueOfBreakpoint,
   makeBreakpointsModel,
-} = require('./');
+} = require('.');
 
 const config = {
   base: '16px',
