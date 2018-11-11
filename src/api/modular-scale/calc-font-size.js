@@ -1,13 +1,13 @@
 /**
- * @param {number} target
+ * @param {number} step
  * @param {number} base
  * @param {number} ratio
  * @return {number} Font size in pixels
  */
 
-module.exports = (target, base, ratio) => {
+module.exports = (step, base, ratio) => {
   if (!Array.isArray(base) || base.length === 1) {
-    return Math.round(ratio ** target * base);
+    return Math.round(ratio ** step * base);
   }
 
   const cloneBase = base.slice();
@@ -23,11 +23,11 @@ module.exports = (target, base, ratio) => {
   }
   cloneBase.sort();
   const roundedBase = Math.round(
-    (target / cloneBase.length - Math.floor(target / cloneBase.length)) *
+    (step / cloneBase.length - Math.floor(step / cloneBase.length)) *
       cloneBase.length,
   );
 
   return Math.round(
-    ratio ** Math.floor(target / cloneBase.length) * cloneBase[roundedBase],
+    ratio ** Math.floor(step / cloneBase.length) * cloneBase[roundedBase],
   );
 };

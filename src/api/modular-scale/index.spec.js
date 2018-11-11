@@ -1,5 +1,5 @@
-const calcFontSize = require('./calcFontSize');
-const stepToRem = require('./stepToRem');
+const calcFontSize = require('./calc-font-size');
+const stepToRem = require('./step-to-rem');
 
 const breakpoints = [
   {
