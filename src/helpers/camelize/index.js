@@ -1,7 +1,7 @@
 const {
   DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
 } = require('../../constants/regexes');
-const isNumeric = require('../isNumeric/');
+const isNumeric = require('../is-numeric/');
 
 /**
  * @example camelize('Hello_World') => 'HelloWorld'
@@ -13,9 +13,8 @@ module.exports = value => {
   if (isNumeric(string)) {
     return string;
   }
-  string = string.replace(
-    DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
-    (match, chr) => (chr ? chr.toUpperCase() : ''),
+  string = string.replace(DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS, (match, chr) =>
+    chr ? chr.toUpperCase() : '',
   );
   // Ensure 1st char is always lowercase
   return string.substr(0, 1).toLowerCase() + string.substr(1);

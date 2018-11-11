@@ -3,7 +3,7 @@ const {
   calcLeading,
   calcRoot,
   isObject,
-  stripUnit,
+  stripBase,
 } = require('../../helpers');
 const { HAS_EM } = require('../../constants/regexes');
 const { getRatio } = require('./getRatio');
@@ -76,24 +76,23 @@ const makeBreakpointsModel = config => {
   if (!isValidUserConfig(config)) return null;
 
   return [...makeFirstBreakpoint(config), ...makeBreakpoints(config)]
-    .reduce((breakpoint, item, i) => {
-      const stripBase = stripUnit(item.base);
-
-      return [
+    .reduce(
+      (breakpoint, item, i) => [
         ...breakpoint,
         {
           ...item,
-          base: !item.base ? breakpoint[i - 1].base : stripBase,
+          base: !item.base ? breakpoint[i - 1].base : stripBase(item.base),
           lineHeight: !item.lineHeight
             ? breakpoint[i - 1].lineHeight
             : item.lineHeight,
           ratio: !item.ratio
             ? breakpoint[i - 1].ratio
-            : getRatio(item.ratio, stripBase),
+            : getRatio(item.ratio, stripBase(item.base)),
           value: toPxValueOfBreakpoint(item.value),
         },
-      ];
-    }, [])
+      ],
+      [],
+    )
     .map(item => {
       const leading = calcLeading(item.base, item.lineHeight);
 

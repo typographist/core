@@ -1,19 +1,18 @@
-const calcLeading = require('./calcLeading');
-const calcRoot = require('./calcRoot');
-const findAll = require('./findAll');
+const calcLeading = require('./calc-leading');
+const calcRoot = require('./calc-root');
+const findAll = require('./find-all');
 const flatten = require('./flatten');
 const camelize = require('./camelize');
 const decamelize = require('./decamelize');
-const getBase = require('./getBase');
-const isArray = require('./isArray');
-const isNumeric = require('./isNumeric');
-const isObject = require('./isObject');
-const percentage = require('./percentage');
-const stripUnit = require('./stripUnit');
-const toEm = require('./toEm');
-const toNormalCase = require('./toNormalCase');
-const toPx = require('./toPx');
-const toRem = require('./toRem');
+const getBase = require('./get-base');
+const isNumeric = require('./is-numeric');
+const isObject = require('./is-object');
+const percentageOfDefauilBrowserFontSize = require('./percentage-of-default-browser-font-size');
+const stripBase = require('./strip-base');
+const toEm = require('./to-em');
+const toNormalCase = require('./to-normal-case');
+const toPx = require('./to-px');
+const toRem = require('./to-rem');
 
 module.exports = {
   calcLeading,
@@ -23,11 +22,10 @@ module.exports = {
   findAll,
   flatten,
   getBase,
-  isArray,
   isNumeric,
   isObject,
-  percentage,
-  stripUnit,
+  percentageOfDefauilBrowserFontSize,
+  stripBase,
   toEm,
   toNormalCase,
   toPx,

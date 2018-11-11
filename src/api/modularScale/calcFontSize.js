@@ -1,5 +1,3 @@
-const { isArray } = require('../../helpers');
-
 /**
  * @param {number} target
  * @param {number} base
@@ -8,7 +6,7 @@ const { isArray } = require('../../helpers');
  */
 
 module.exports = (target, base, ratio) => {
-  if (!isArray(base) || base.length === 1) {
+  if (!Array.isArray(base) || base.length === 1) {
     return Math.round(ratio ** target * base);
   }
 

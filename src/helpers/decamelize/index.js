@@ -1,4 +1,4 @@
-const separateWords = require('../separateWords');
+const separateWords = require('../separate-words');
 
 /**
  * @example decamelize('helloWorld', {separator: '-'}) => 'hello_world'

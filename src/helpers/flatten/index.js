@@ -1,8 +1,7 @@
-const isArray = require('../isArray');
-
 const flatten = arrayOfArrays =>
   arrayOfArrays.reduce(
-    (acc, current) => acc.concat(isArray(current) ? flatten(current) : current),
+    (acc, current) =>
+      acc.concat(Array.isArray(current) ? flatten(current) : current),
     [],
   );
 
