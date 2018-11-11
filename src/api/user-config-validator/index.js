@@ -1,18 +1,18 @@
-const { isValidRatios } = require('./isValidRatioField');
+const { isValidRatios } = require('./is-valid-ratio-field');
 const { findAll, flatten } = require('../../helpers');
 const {
   isBaseString,
   baseHasPxOrEm,
   isValidBases,
-} = require('./isValidBaseField');
-const isValidLineHeightField = require('./isValidLineHeightField');
+} = require('./is-valid-base-field');
+const isValidLineHeightField = require('./is-valid-line-height-field');
 const {
   breakpointIsString,
   breakpointHasPxOrEm,
   isValidBreakpointsField,
   getBreakpoints,
   breakpointHasBreakpointKey,
-} = require('./isValidBreakpointsField');
+} = require('./is-valid-breakpoints-field');
 
 /**
  * The function validates the user config.

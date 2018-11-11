@@ -1,4 +1,4 @@
-const validators = require('./');
+const validators = require('.');
 
 describe('isValidUserConfig', () => {
   describe('baseHasPxOrEm function', () => {

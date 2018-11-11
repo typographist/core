@@ -1,4 +1,4 @@
-const isValidConfig = require('./');
+const isValidConfig = require('.');
 
 const config = {
   base: ['16px', '33px'],
