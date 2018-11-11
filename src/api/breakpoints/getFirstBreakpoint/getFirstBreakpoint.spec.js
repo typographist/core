@@ -1,6 +1,6 @@
 const getFirstBreakpoint = require('./');
 const { makeBreakpointsModel } = require('../../../api/makeBreakpointsModel/');
-const { userConfig } = require('../../../helpersForTests/mocks');
+const { userConfig } = require('../../../mocks');
 
 const breakpoints = makeBreakpointsModel(userConfig);
 
