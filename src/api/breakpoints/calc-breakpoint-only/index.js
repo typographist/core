@@ -1,7 +1,7 @@
 const { camelize } = require('../../../helpers');
-const getBreakpointValue = require('../getBreakpointValue');
-const getBreakpointMax = require('../getBreakpointMax');
-const getNamesOfBreakpoints = require('../getNamesOfBreakpoints');
+const getBreakpointValue = require('../get-breakpoint-value');
+const getBreakpointMax = require('../get-breakpoint-max');
+const getNamesOfBreakpoints = require('../get-names-of-breakpoints');
 const { toEm } = require('../../../helpers');
 
 /**

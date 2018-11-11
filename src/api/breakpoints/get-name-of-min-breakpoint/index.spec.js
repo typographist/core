@@ -1,4 +1,4 @@
-const getNameOfMinBreakpoint = require('./');
+const getNameOfMinBreakpoint = require('.');
 const { userConfig } = require('../../../mocks');
 
 describe('Utils of breakpoints', () => {

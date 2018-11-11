@@ -1,15 +1,15 @@
-const breakpointsToCebabCase = require('./breakpointsToCebabCase');
-const calcBreakpointAbove = require('./calcBreakpointAbove');
-const calcBreakpointBelow = require('./calcBreakpointBelow');
-const calcBreakpointOnly = require('./calcBreakpointOnly');
-const calcBreakpointsBetween = require('./calcBreakpointsBetween');
-const checkIsBreakpointName = require('./checkIsBreakpointName');
-const getBreakpointMax = require('./getBreakpointMax');
-const getBreakpointValue = require('./getBreakpointValue');
-const getFirstBreakpoint = require('./getFirstBreakpoint');
-const getNameOfMinBreakpoint = require('./getNameOfMinBreakpoint');
-const getNameOfNextBreakpoint = require('./getNameOfNextBreakpoint');
-const getNamesOfBreakpoints = require('./getNamesOfBreakpoints');
+const breakpointsToCebabCase = require('./breakpoints-to-cebab-case');
+const calcBreakpointAbove = require('./calc-breakpoint-above');
+const calcBreakpointBelow = require('./calc-breakpoint-below');
+const calcBreakpointOnly = require('./calc-breakpoint-only');
+const calcBreakpointsBetween = require('./calc-breakpoint-between');
+const getBreakpointMax = require('./get-breakpoint-max');
+const getBreakpointValue = require('./get-breakpoint-value');
+const getFirstBreakpoint = require('./get-first-breakpoint');
+const getNameOfMinBreakpoint = require('./get-name-of-min-breakpoint');
+const getNameOfNextBreakpoint = require('./get-name-of-next-breakpoint');
+const getNamesOfBreakpoints = require('./get-names-of-breakpoints');
+const isBreakpointName = require('./is-breakpoint-name');
 
 module.exports = {
   breakpointsToCebabCase,
@@ -17,11 +17,11 @@ module.exports = {
   calcBreakpointBelow,
   calcBreakpointOnly,
   calcBreakpointsBetween,
-  checkIsBreakpointName,
   getBreakpointMax,
   getBreakpointValue,
   getFirstBreakpoint,
   getNameOfMinBreakpoint,
   getNameOfNextBreakpoint,
   getNamesOfBreakpoints,
+  isBreakpointName,
 };

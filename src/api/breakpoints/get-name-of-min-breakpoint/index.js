@@ -1,16 +1,13 @@
-const getNamesOfBreakpoints = require('../getNamesOfBreakpoints');
+const getNamesOfBreakpoints = require('../get-names-of-breakpoints');
 
 /**
  *
  * @param {string} breakName Breakpoint name.
  * @param {object} config User configuration.
- * @return {string|null} The name of the next breakpoint or null in its absence.
+ * @return {string|null}  The breakpoint name, if present in the user configuration or null.
  */
 module.exports = (breakName, config) => {
   const namesOfBreakpoints = getNamesOfBreakpoints(config);
   const index = namesOfBreakpoints.indexOf(breakName);
-
-  return index < namesOfBreakpoints.length - 1
-    ? namesOfBreakpoints[index + 1]
-    : null;
+  return index > -1 ? namesOfBreakpoints[index] : null;
 };

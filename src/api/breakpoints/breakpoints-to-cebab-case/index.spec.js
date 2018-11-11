@@ -1,4 +1,4 @@
-const breakpointsToCebabCase = require('./');
+const breakpointsToCebabCase = require('.');
 
 const names = ['tablet', 'desktop', 'lgDesktop', 'xlDesktop'];
 

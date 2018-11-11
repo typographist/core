@@ -17,10 +17,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/typographist/core.git"
-  },
+  "repository": "git+https://github.com/typographist/core.git",
   "keywords": [
     "css",
     "design",
@@ -45,21 +42,27 @@
     "Maxim Alyoshin <mgreen097@gmail.com>"
   ],
   "devDependencies": {
+    "babel-jest": "^23.6.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.1.4",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.17.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.1.2",
-    "jest": "^23.0.1",
+    "jest": "^23.6.0",
     "travis-deploy-once": "^5.0.1"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/typographist/core/issues"
   },
-  "homepage": "https://github.com/typographist/core#readme"
+  "homepage": "https://github.com/typographist/core#readme",
+  "author": "maxinakenty <mgreen097@gmail.com>",
+  "dependencies": {
+    "postcss": "^7.0.5",
+    "ramda": "^0.25.0"
+  }
 }

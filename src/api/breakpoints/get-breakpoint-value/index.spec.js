@@ -1,4 +1,4 @@
-const getBreakpointValue = require('./');
+const getBreakpointValue = require('.');
 const { userConfig } = require('../../../mocks');
 
 describe('Utils of breakpoints', () => {

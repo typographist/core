@@ -1,5 +1,5 @@
-const getFirstBreakpoint = require('./');
-const { makeBreakpointsModel } = require('../../../api/makeBreakpointsModel/');
+const getFirstBreakpoint = require('.');
+const { makeBreakpointsModel } = require('../../makeBreakpointsModel');
 const { userConfig } = require('../../../mocks');
 
 const breakpoints = makeBreakpointsModel(userConfig);

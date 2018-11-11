@@ -1,4 +1,4 @@
-const calcBreakpointsBetween = require('./');
+const calcBreakpointsBetween = require('.');
 const { userConfig } = require('../../../mocks');
 
 describe('Utils of breakpoints', () => {

@@ -1,7 +1,7 @@
 const { camelize } = require('../../../helpers');
 const { toEm } = require('../../../helpers');
-const getBreakpointMax = require('../getBreakpointMax');
-const getNamesOfBreakpoints = require('../getNamesOfBreakpoints');
+const getBreakpointMax = require('../get-breakpoint-max');
+const getNamesOfBreakpoints = require('../get-names-of-breakpoints');
 
 /**
  * The function takes the names of breakpoints in the camel-case notation. Valid are all breakpoints specified in the user configuration except the last one.

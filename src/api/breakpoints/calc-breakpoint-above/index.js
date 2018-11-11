@@ -1,5 +1,5 @@
 const { camelize } = require('../../../helpers');
-const getBreakpointValue = require('../getBreakpointValue');
+const getBreakpointValue = require('../get-breakpoint-value');
 const { toEm } = require('../../../helpers');
 
 /**

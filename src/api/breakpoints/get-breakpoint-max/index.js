@@ -1,6 +1,6 @@
-const getNameOfNextBreakpoint = require('../getNameOfNextBreakpoint');
-const getBreakpointValue = require('../getBreakpointValue');
-const getNameOfMinBreakpoint = require('../getNameOfMinBreakpoint');
+const getNameOfNextBreakpoint = require('../get-name-of-next-breakpoint');
+const getBreakpointValue = require('../get-breakpoint-value');
+const getNameOfMinBreakpoint = require('../get-name-of-min-breakpoint');
 
 // From bootstrap v4. ---------------------
 // Maximum breakpoint width. Null for the largest (last) breakpoint.
