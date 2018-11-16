@@ -1,4 +1,4 @@
-const findAll = require('.');
+import { findAll } from '.';
 
 const obj = {
   aa: 1,

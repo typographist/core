@@ -1,4 +1,4 @@
-const calcRoot = require('.');
+import { calcRoot } from '.';
 
 describe('calcRoot', () => {
   it('should calc root font size', () => {

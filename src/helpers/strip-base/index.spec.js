@@ -1,4 +1,4 @@
-const stripBase = require('.');
+import { stripBase } from '.';
 
 describe('stripBase', () => {
   it('should if base is string in px', () => {

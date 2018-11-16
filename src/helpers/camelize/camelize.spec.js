@@ -1,4 +1,4 @@
-const camelize = require('./');
+import { camelize } from '.';
 
 describe('helpers', () => {
   describe('camelize', () => {

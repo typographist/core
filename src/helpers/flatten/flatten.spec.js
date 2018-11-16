@@ -1,4 +1,4 @@
-const flatten = require('./');
+import { flatten } from '.';
 
 describe('helpers', () => {
   describe('flatten', () => {

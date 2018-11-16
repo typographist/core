@@ -1,5 +1,5 @@
-const getBase = require('../get-base');
-const toRem = require('.');
+import { toRem } from '.';
+import { getBase } from '../get-base';
 
 const breakpoints = [
   {
@@ -47,6 +47,6 @@ const breakpoints = [
 describe('toRem', () => {
   const base = getBase(breakpoints[0].base);
   it('should convert to rem', () => {
-    expect(toRem(base, breakpoints[0].root)).toBe(1.3333333333333333);
+    expect(toRem(base, breakpoints[0].root)).toBe('1.3333333333333333rem');
   });
 });

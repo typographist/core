@@ -1,7 +1,7 @@
-const toPx = require('.');
+import { toPx } from '.';
 
 describe('toPx', () => {
   it('should if em', () => {
-    expect(toPx('2em')).toBe(32);
+    expect(toPx('2em')).toBe('32px');
   });
 });

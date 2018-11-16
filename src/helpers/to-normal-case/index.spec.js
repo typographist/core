@@ -1,4 +1,4 @@
-const toNormalCase = require('.');
+import { toNormalCase } from '.';
 
 describe('toNormalCase', () => {
   it('should convert to normal case', () => {

@@ -1,7 +1,4 @@
 const { BROWSER_DEFAULT_FONT_SIZE } = require('../../constants');
 
-/**
- * @param {string} inEms
- * @return {number}
- */
-module.exports = inEms => parseFloat(inEms) * BROWSER_DEFAULT_FONT_SIZE;
+// toPx :: String => String
+export const toPx = x => `${parseFloat(x) * BROWSER_DEFAULT_FONT_SIZE}px`;

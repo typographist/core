@@ -1,12 +1,5 @@
-/**
- * @param {number|array<number>} base
- * @param {number} lineHeight
- * @return {number}
- */
-module.exports = (base, lineHeight) => {
-  if (Array.isArray(base)) {
-    return Math.round(base[0] * lineHeight);
-  }
-
-  return Math.round(base * lineHeight);
-};
+// calcLeading :: (Array[Number] | Number) => Number
+export const calcLeading = (base, lineHeight) =>
+  Array.isArray(base)
+    ? Math.round(base[0] * lineHeight)
+    : Math.round(base * lineHeight);

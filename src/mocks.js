@@ -1,4 +1,4 @@
-const breakpointsModel = [
+export const breakpointsModel = [
   {
     root: 12,
     base: [16, 33],
@@ -41,31 +41,26 @@ const breakpointsModel = [
   },
 ];
 
-const userConfig = {
-  base: '16px',
-  lineHeight: 1.25,
-  ratio: 1.067,
+export const userConfig = {
+  base: ['16px', '33px'],
+  lineHeight: 1.5,
+  ratio: '45px at 6',
   tablet: {
-    breakpoint: '576px',
+    breakpoint: '640px',
     base: '17px',
-    ratio: 1.125,
   },
   desktop: {
-    breakpoint: '768px',
+    breakpoint: '1024px',
     base: '18px',
+    lineHeight: 1.7,
+    ratio: 1.333,
   },
   lgDesktop: {
-    breakpoint: '992px',
+    breakpoint: '1200px',
     base: '20px',
-    ratio: 1.2,
   },
   xlDesktop: {
-    breakpoint: '1200px',
-    base: '21px',
+    breakpoint: '1600px',
+    base: '22px',
   },
-};
-
-module.exports = {
-  breakpointsModel,
-  userConfig,
 };

@@ -1,11 +1,5 @@
-/**
- * @param {number} step
- * @param {number} base
- * @param {number} ratio
- * @return {number} Font size in pixels
- */
-
-module.exports = (step, base, ratio) => {
+// calcFontSize :: (Number, Number, Number) => Number
+export const calcFontSize = (step, base, ratio) => {
   if (!Array.isArray(base) || base.length === 1) {
     return Math.round(ratio ** step * base);
   }
@@ -21,6 +15,7 @@ module.exports = (step, base, ratio) => {
       cloneBase[i] *= ratio ** -1;
     }
   }
+
   cloneBase.sort();
   const roundedBase = Math.round(
     (step / cloneBase.length - Math.floor(step / cloneBase.length)) *

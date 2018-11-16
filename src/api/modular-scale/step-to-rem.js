@@ -1,15 +1,9 @@
-const calcFontSize = require('./calc-font-size');
-const { getFirstBreakpoint } = require('../breakpoints');
-const { getBase, toRem } = require('../../helpers');
+import { calcFontSize } from './calc-font-size';
+import { getFirstBreakpoint } from '../breakpoints';
+import { getBase, toRem } from '../../helpers';
 
-/**
- * @param {number} step
- * @param {array<object>} breakpoints
- * @param {string} breakpointName
- * @return {number}
- */
-
-module.exports = (step, breakpoints, breakpointName) => {
+//  stepToRem :: (Number, Array[Number], String) => Number
+export const stepToRem = (step, breakpoints, breakpointName) => {
   let fontSize = null;
 
   if (breakpointName === undefined) {

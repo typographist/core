@@ -1,26 +1,22 @@
-const toPx = require('../to-px');
-const { HAS_PX, HAS_EM } = require('../../constants/regexes');
+import {
+  INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_UNIT,
+  INTEGER_OR_FLOATING_POINT_NUMBER_WITH_EM_UNIT,
+} from '../../constants/regexes';
+import { toPx } from '../to-px';
 
-/**
- * @param {Array<string>|string} base
- * @return {Array<number>|number}
- */
-const stripBase = val => {
-  let result;
+//  stripBase :: (Array[String] | String) => Array[Number] | Number
+export const stripBase = x => {
+  let result = null;
 
-  if (Array.isArray(val)) {
-    result = val.map(item => stripBase(item));
-  } else if (typeof val === 'string') {
-    if (HAS_PX.test(val)) {
-      result = parseFloat(val);
+  if (Array.isArray(x)) {
+    result = x.map(item => stripBase(item));
+  } else if (typeof x === 'string') {
+    if (INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_UNIT.test(x)) {
+      result = parseFloat(x);
     }
-
-    if (HAS_EM.test(val)) {
-      result = toPx(val);
+    if (INTEGER_OR_FLOATING_POINT_NUMBER_WITH_EM_UNIT.test(x)) {
+      result = parseFloat(toPx(x));
     }
   }
-
   return result;
 };
-
-module.exports = stripBase;

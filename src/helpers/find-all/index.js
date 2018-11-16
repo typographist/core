@@ -1,10 +1,9 @@
-const isObject = require('../is-object');
+import { isObject } from '../is-object';
 
-const findAll = (obj, key, memo) => {
+export const findAll = (obj, key, memo) => {
   let result = memo;
   if (!Array.isArray(memo)) result = [];
 
-  /* eslint-disable no-restricted-syntax */
   for (const i in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, i)) {
       if (i === key) {
@@ -17,6 +16,3 @@ const findAll = (obj, key, memo) => {
 
   return result;
 };
-/* eslint-enable */
-
-module.exports = findAll;

@@ -1,7 +1,7 @@
-const percentageOfDefauilBrowserFontSize = require('.');
+import { percentageOfDefaultBrowserFontSize } from '.';
 
-describe('isObject', () => {
+describe('percentageOfDefaultBrowserFontSize', () => {
   it('should convert to percents', () => {
-    expect(percentageOfDefauilBrowserFontSize(16)).toBe(100);
+    expect(percentageOfDefaultBrowserFontSize(16)).toBe(100);
   });
 });

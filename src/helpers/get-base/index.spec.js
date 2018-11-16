@@ -1,4 +1,4 @@
-const getBase = require('.');
+import { getBase } from '.';
 
 describe('getBase', () => {
   it('should if base is array', () => {

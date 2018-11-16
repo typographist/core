@@ -1,15 +1,10 @@
-const {
-  DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
-} = require('../../constants/regexes');
-const isNumeric = require('../is-numeric/');
+import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '../../constants/regexes';
+import { isNumeric } from '../is-numeric';
 
-/**
- * @example camelize('Hello_World') => 'HelloWorld'
- * @param {string} value Decamelize string.
- * @return {string} Camelize string.
- */
-module.exports = value => {
+// camelize :: String => String
+export const camelize = value => {
   let string = value;
+
   if (isNumeric(string)) {
     return string;
   }

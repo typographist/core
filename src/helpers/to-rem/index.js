@@ -1,8 +1,5 @@
-const getBase = require('../get-base');
+import { getBase } from '../get-base';
 
-/**
- * @param {number} baseSize
- * @param {number} rootSize
- * @return {string}
- */
-module.exports = (baseSize, rootSize) => getBase(baseSize) / rootSize;
+// toRem :: (Number, Number) => String
+export const toRem = (baseSize, rootSize) =>
+  `${getBase(baseSize) / rootSize}rem`;

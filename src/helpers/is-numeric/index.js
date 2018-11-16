@@ -1,7 +1,2 @@
-/**
- * Check for a number
- * @param {any} num
- * @return {boolean}
- */
-
-module.exports = num => !Number.isNaN(parseFloat(num)) && isFinite(num);
+// isNumeric :: a => Boolean
+export const isNumeric = num => !Number.isNaN(parseFloat(num)) && isFinite(num);

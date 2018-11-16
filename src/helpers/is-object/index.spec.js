@@ -1,4 +1,4 @@
-const isObject = require('.');
+import { isObject } from '.';
 
 describe('isObject', () => {
   it('should be the object', () => {

@@ -1,3 +1,4 @@
-const { HALF } = require('../../constants');
+import { HALF } from '../../constants';
 
-module.exports = val => Math.round(val * HALF);
+// calcRoot :: Number => Number
+export const calcRoot = val => Math.round(val * HALF);

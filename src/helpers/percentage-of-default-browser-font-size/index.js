@@ -1,8 +1,5 @@
-const { BROWSER_DEFAULT_FONT_SIZE } = require('../../constants');
+import { BROWSER_DEFAULT_FONT_SIZE } from '../../constants';
 
-/**
- *
- * @param {number|string} val
- * @return {number}
- */
-module.exports = val => parseFloat(val) / BROWSER_DEFAULT_FONT_SIZE * 100;
+// percentageOfDefaultBrowserFontSize :: (Number | String) => Number
+export const percentageOfDefaultBrowserFontSize = x =>
+  (parseFloat(x) / BROWSER_DEFAULT_FONT_SIZE) * 100;

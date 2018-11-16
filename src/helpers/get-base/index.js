@@ -1,6 +1,2 @@
-/**
- * @param {Array<number>|number} base
- * @return {number}
- */
-
-module.exports = base => (Array.isArray(base) ? base[0] : base);
+// getBase :: (Array[Number] | Number) => Number
+export const getBase = base => (Array.isArray(base) ? base[0] : base);

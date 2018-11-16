@@ -1,10 +1,5 @@
-const { decamelize } = require('../../../helpers');
+import R from 'ramda';
+import { toCebabCase } from '../../../helpers/separate-words';
 
-/**
- *
- * @param {Array<string>} namesOfBreakpoints An array containing the names of breakpoints in the camel case of notation
- * @return {string} A string containing the names of breakpoints in the cebab-case notation.
- *
- */
-module.exports = namesOfBreakpoints =>
-  namesOfBreakpoints.map(b => decamelize(b, { separator: '-' })).join(', ');
+// breakpointNamesInCebabCaseNotation :: (Array[String]) -> Array[String]
+export const breakpointNamesInCebabCaseNotation = R.map(toCebabCase);
