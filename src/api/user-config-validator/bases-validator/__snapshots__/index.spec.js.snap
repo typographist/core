@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bases validator hasPxOrEmWithException if base contain invalid value 1`] = `"Typographist >>> Check your user config. base:  must contain the values in pixels or ems. For example base: '6em' or base: '38px'."`;
+
+exports[`bases validator isValidField will throw an exception 1`] = `"Typographist >>> Check your user config. base:  must must be a string or an array of strings. For example base: ['16px', '32px'] or base: '16px'."`;
