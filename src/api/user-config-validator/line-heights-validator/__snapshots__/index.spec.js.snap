@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validateUserConfig LineHeightsValidator isNumber if lineHeight is not a number 1`] = `"Typographist >>> Check your user config. lineHeight:  must be a number. For example lineHeight: 1.5"`;
