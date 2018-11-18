@@ -1,7 +1,7 @@
 export { calcLeading } from './calc-leading';
 export { calcRoot } from './calc-root';
-export { findAll } from './find-all';
 export { flatten } from './flatten';
+export { getAllValuesOf } from './get-all-values-of';
 export { camelize } from './camelize';
 export { getBase } from './get-base';
 export { isNumeric } from './is-numeric';
