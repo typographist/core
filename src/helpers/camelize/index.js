@@ -6,8 +6,12 @@ const camelizeString = R.replace(
   (match, chr) => (chr ? chr.toUpperCase() : ''),
 );
 
-const camelizeStringProcess = R.compose(
-  R.reduce((acc, item) => acc + item, ''),
+// concatString :: String -> String
+const concatString = R.reduce((acc, item) => acc + item, '');
+
+// camelize :: String -> String
+export const camelize = R.compose(
+  concatString,
   R.juxt([
     R.compose(
       R.toLower,
@@ -19,6 +23,3 @@ const camelizeStringProcess = R.compose(
     ),
   ]),
 );
-
-// camelize :: String => String
-export const camelize = camelizeStringProcess;
