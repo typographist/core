@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`breakpoints validator hasPxWithException returns \`true\` if the breakpoint value has ems 1`] = `"Typographist >>> Check your user config. 'breakpoint:  must be in pixels. For example breakpoint: '1024px'."`;

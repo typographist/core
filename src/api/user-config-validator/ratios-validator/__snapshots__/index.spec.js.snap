@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`validateUserConfig validateFieldWithException invalid ratio 1`] = `"Typographist >>> Check your user config. ratio:  must contain a number or a string containing the font size, the word 'at' and step. For example base: 1.25 or base: '36px at 6'."`;
