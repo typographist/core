@@ -1,66 +1,84 @@
 export const breakpointsModel = [
   {
-    root: 12,
     base: [16, 33],
     lineHeight: 1.5,
-    ratio: 1.1880883987824906,
-    value: '0px',
     name: 'default',
+    ratio: 1.1342044031840226,
+    root: 12,
+    value: '0px',
   },
   {
-    root: 13,
     base: 17,
-    name: 'tablet',
-    value: '640px',
     lineHeight: 1.5,
-    ratio: 1.1880883987824906,
+    name: 'tablet',
+    ratio: 1.1258335640240535,
+    root: 13,
+    value: '640px',
   },
   {
-    root: 16,
     base: 18,
     lineHeight: 1.7,
-    ratio: 1.333,
     name: 'desktop',
+    ratio: 1.333,
+    root: 16,
     value: '1024px',
   },
   {
-    root: 17,
     base: 20,
-    name: 'lgDesktop',
-    value: '1200px',
     lineHeight: 1.7,
+    name: 'lgDesktop',
     ratio: 1.333,
+    root: 17,
+    value: '1200px',
   },
   {
-    root: 19,
     base: 22,
-    name: 'xlDesktop',
-    value: '1600px',
     lineHeight: 1.7,
+    name: 'xlDesktop',
     ratio: 1.333,
+    root: 19,
+    value: '1600px',
   },
 ];
 
-export const userConfig = {
-  base: ['16px', '33px'],
+/*
+  Breakpoint :: {
+    value :: String,
+    base :: Maybe String | [String],
+    lineHeight :: Maybe Number, 
+    ratio :: Maybe Number | String,
+  }
+*/
+
+/* UserConfig :: 
+  {
+    base :: String | [String],
+    lineHeight :: Number, 
+    ratio :: Number | String,
+    Maybe Breakpoint,
+  } 
+*/
+
+export const UserConfig = {
+  base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',
   tablet: {
-    breakpoint: '640px',
+    value: '40em',
     base: '17px',
   },
   desktop: {
-    breakpoint: '1024px',
+    value: '64em',
     base: '18px',
     lineHeight: 1.7,
     ratio: 1.333,
   },
   lgDesktop: {
-    breakpoint: '1200px',
+    value: '75em',
     base: '20px',
   },
   xlDesktop: {
-    breakpoint: '1600px',
+    value: '100em',
     base: '22px',
   },
 };
