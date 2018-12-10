@@ -5,7 +5,7 @@ describe('regexes', () => {
     it('should return all characters after colon', () => {
       expect(
         '(tablet, desktop):portrait'.replace(ALL_CHARACTERS_AFTER_COLON, ''),
-      ).toBe('(tablet, desktop)');
+      ).toEqual('(tablet, desktop)');
     });
   });
 });

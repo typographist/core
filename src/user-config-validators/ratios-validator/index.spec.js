@@ -11,29 +11,29 @@ describe('user config validators', () => {
 
     describe('isValidRatio function', () => {
       it('if ratio contains the font size in pixels', () => {
-        expect(isValidRatio('22px at 4')).toBe(true);
+        expect(isValidRatio('22px at 4')).toEqual(true);
       });
 
       it('if ratio contains the font size in ems', () => {
-        expect(isValidRatio('22em at 4')).toBe(true);
+        expect(isValidRatio('22em at 4')).toEqual(true);
       });
 
       it('if ratio contains the `at` word', () => {
-        expect(isValidRatio('22em at 4')).toBe(true);
+        expect(isValidRatio('22em at 4')).toEqual(true);
       });
 
       it('ratio contains the step', () => {
-        expect(isValidRatio('1em at -4')).toBe(true);
+        expect(isValidRatio('1em at -4')).toEqual(true);
       });
     });
 
     describe('ratioIsVAlid function', () => {
       it('if ratio is the number', () => {
-        expect(ratioIsVAlid(1.333)).toBe(true);
+        expect(ratioIsVAlid(1.333)).toEqual(true);
       });
 
       it('if ratio is a valid string', () => {
-        expect(ratioIsVAlid('33px at 5')).toBe(true);
+        expect(ratioIsVAlid('33px at 5')).toEqual(true);
       });
 
       it('invalid ratio', () => {
@@ -43,7 +43,7 @@ describe('user config validators', () => {
 
     describe('validateFields function', () => {
       it('is all ratios are valid', () => {
-        expect(validateFields(config)).toBe(true);
+        expect(validateFields(config)).toEqual(true);
       });
     });
   });

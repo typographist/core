@@ -13,7 +13,7 @@ describe('make breaks model', () => {
       const output = {
         base: 17,
         lineHeight: 1.5,
-        ratio: 1.1258335640240535,
+        ratio: 1.1761442744249144,
         value: '640px',
       };
 

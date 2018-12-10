@@ -8,7 +8,7 @@ describe('regexes', () => {
         R.replace(LINE_BREAKS_AND_SPACES, '')(
           '.test \n.some-test   .wrapper \n\n',
         ),
-      ).toBe('.test.some-test.wrapper');
+      ).toEqual('.test.some-test.wrapper');
     });
   });
 });

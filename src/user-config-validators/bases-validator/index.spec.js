@@ -17,11 +17,11 @@ describe('bases validator', () => {
 
     describe('baseHasPxOrEm function', () => {
       it('if the base value has pixels', () => {
-        expect(baseHasPxOrEm('12px')).toBe(true);
+        expect(baseHasPxOrEm('12px')).toEqual(true);
       });
 
       it('if the value contain string with em unit', () => {
-        expect(baseHasPxOrEm('12em')).toBe(true);
+        expect(baseHasPxOrEm('12em')).toEqual(true);
       });
 
       it('if base contain invalid value', () => {
@@ -31,15 +31,15 @@ describe('bases validator', () => {
 
     describe('isValidField function', () => {
       it('if the base field is Array of strings contain px unit', () => {
-        expect(isValidField(['78px', '28px'])).toBe(true);
+        expect(isValidField(['78px', '28px'])).toEqual(true);
       });
 
       it('if the base is Array of strings contain em unit', () => {
-        expect(isValidField(['78em', '28em'])).toBe(true);
+        expect(isValidField(['78em', '28em'])).toEqual(true);
       });
 
       it('if the base is Array of strings contain em unit', () => {
-        expect(isValidField(['78em', '28em'])).toBe(true);
+        expect(isValidField(['78em', '28em'])).toEqual(true);
       });
 
       it('will throw an exception', () => {
@@ -49,7 +49,7 @@ describe('bases validator', () => {
 
     describe('validateFields function', () => {
       it('all bases are valid', () => {
-        expect(validateFields(config)).toBe(true);
+        expect(validateFields(config)).toEqual(true);
       });
     });
   });

@@ -9,7 +9,7 @@ describe('regexes', () => {
           POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING,
           '35px at 6',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('return `true` if contain positive integer mumber with ems at the beggining of the string', () => {
@@ -18,7 +18,7 @@ describe('regexes', () => {
           POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING,
           '35em at 6',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('return `true` if contain positive floating point mumber with ems at the beggining of the string', () => {
@@ -27,7 +27,7 @@ describe('regexes', () => {
           POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING,
           '3.5em at 6',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('return `false` if there are spaces at the beginning of the line', () => {
@@ -36,7 +36,7 @@ describe('regexes', () => {
           POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING,
           '   35px at 6',
         ),
-      ).toBe(false);
+      ).toEqual(false);
     });
   });
 });

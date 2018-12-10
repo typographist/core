@@ -9,7 +9,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '12',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should floating points support', () => {
@@ -18,7 +18,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '1.2',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should negative meaning', () => {
@@ -26,7 +26,7 @@ describe('regexes', () => {
         R.test(
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
         )('-7'),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should invalid number', () => {
@@ -35,7 +35,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '1....2',
         ),
-      ).toBe(false);
+      ).toEqual(false);
     });
 
     it('should negative floating point', () => {
@@ -44,7 +44,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '-7.777',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should not a number', () => {
@@ -53,7 +53,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           'myNameIsMax',
         ),
-      ).toBe(false);
+      ).toEqual(false);
     });
 
     it('should not a number', () => {
@@ -62,7 +62,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           'myNameIsMax',
         ),
-      ).toBe(false);
+      ).toEqual(false);
     });
   });
 });

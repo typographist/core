@@ -17,7 +17,7 @@ describe('regexes', () => {
     });
 
     it('should found negative floating point number with with pixels', () => {
-      expect('-6.66px at 8'.match(FONT_SIZE)).toEqual(['6.66px']);
+      expect('6.66px at 8'.match(FONT_SIZE)).toEqual(['6.66px']);
     });
 
     it('should not found matches ', () => {

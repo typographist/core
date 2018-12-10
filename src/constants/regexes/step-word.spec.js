@@ -4,11 +4,11 @@ import { STEP_WORD } from '.';
 describe('regexes', () => {
   describe('STEP_WORD regex', () => {
     it('should find step unit', () => {
-      expect(R.test(STEP_WORD, 'step')).toBe(true);
+      expect(R.test(STEP_WORD, 'step')).toEqual(true);
     });
 
     it('should not find step unit', () => {
-      expect(R.test(STEP_WORD, 'fake!')).toBe(false);
+      expect(R.test(STEP_WORD, 'fake!')).toEqual(false);
     });
   });
 });

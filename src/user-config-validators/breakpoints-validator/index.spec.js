@@ -21,13 +21,13 @@ describe('user config validators', () => {
 
     describe('breakpointIsString function', () => {
       it('is valid breakpoint ', () => {
-        expect(breakpointIsString('60')).toBe(true);
+        expect(breakpointIsString('60')).toEqual(true);
       });
     });
 
     describe('breakpointHasPxOrEm function', () => {
       it('breakpoint value contains pixels', () => {
-        expect(breakpointHasPxOrEm('1200px')).toBe(true);
+        expect(breakpointHasPxOrEm('1200px')).toEqual(true);
       });
 
       it('returns `true` if the breakpoint value has ems', () => {
@@ -37,7 +37,7 @@ describe('user config validators', () => {
 
     describe('validateFields function', () => {
       it('all breakpoints are valid', () => {
-        expect(validateFields(config)).toBe(true);
+        expect(validateFields(config)).toEqual(true);
       });
     });
   });

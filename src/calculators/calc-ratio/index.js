@@ -21,5 +21,5 @@ export const getStep = R.compose(
 );
 
 // calcRatio :: Number -> Number -> Number -> -> Number
-export const calcRatio = (fontSize, base, step) =>
+export const calcRatio = (fontSize, step, base) =>
   (fontSize / base) ** (1 / step);

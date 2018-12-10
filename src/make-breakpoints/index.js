@@ -1,7 +1,6 @@
 import R from 'ramda';
 import { toPx } from '../convertos/to-px';
-import { makeDefaultBreak } from './make-default-break';
-import { makeNamedBreaks } from './make-named-breaks';
+import { createBreakpoints } from './create-breakpoints';
 import { inheritProps } from './inherit-props';
 import { toPxBase } from './to-px-base';
 import { stripBase } from './strip-base';
@@ -27,6 +26,5 @@ export const makeBreakpoints = R.compose(
   R.map(stripBase),
   R.map(toPxBase),
   R.map(R.evolve({ value: toPx })),
-  R.reduce(R.concat, []),
-  R.juxt([makeDefaultBreak, makeNamedBreaks]),
+  createBreakpoints,
 );

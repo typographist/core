@@ -9,7 +9,7 @@ describe('regexes', () => {
         (match, chr) => (chr ? chr.toUpperCase() : ''),
       );
 
-      expect(camelize('Hello_World')).toBe('HelloWorld');
+      expect(camelize('Hello_World')).toEqual('HelloWorld');
     });
   });
 });

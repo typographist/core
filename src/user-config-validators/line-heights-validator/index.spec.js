@@ -6,7 +6,7 @@ describe('user config validators', () => {
     describe('lineHeightsValidator function', () => {
       describe('isNumber function', () => {
         it('if lineHeight is valid', () => {
-          expect(lineHeightIsNumber(1.4)).toBe(true);
+          expect(lineHeightIsNumber(1.4)).toEqual(true);
         });
 
         it('if lineHeight is not a number', () => {
@@ -22,7 +22,7 @@ describe('user config validators', () => {
 
       describe('validateFields function', () => {
         it('all lineHeights are valid', () => {
-          expect(validateFields(config)).toBe(true);
+          expect(validateFields(config)).toEqual(true);
         });
       });
     });

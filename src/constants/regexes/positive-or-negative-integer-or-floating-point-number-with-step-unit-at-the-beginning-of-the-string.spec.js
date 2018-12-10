@@ -9,7 +9,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_WORD_AT_THE_BEGINNING_OF_THE_STRING,
           '12step',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should find floating point number with step unit', () => {
@@ -18,7 +18,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_WORD_AT_THE_BEGINNING_OF_THE_STRING,
           '12.5step',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should find negative floating point number with step unit', () => {
@@ -27,7 +27,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_WORD_AT_THE_BEGINNING_OF_THE_STRING,
           '-12.5step',
         ),
-      ).toBe(true);
+      ).toEqual(true);
     });
 
     it('should not find negative floating point number with px unit', () => {
@@ -36,7 +36,7 @@ describe('regexes', () => {
           POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_WORD_AT_THE_BEGINNING_OF_THE_STRING,
           '-12.5px',
         ),
-      ).toBe(false);
+      ).toEqual(false);
     });
   });
 });
