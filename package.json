@@ -53,6 +53,7 @@
     "husky": "^1.2.0",
     "jest": "^23.6.0",
     "memoizee": "^0.4.14",
+    "ramda": "^0.26.1",
     "ramda-fantasy": "^0.8.0",
     "travis-deploy-once": "^5.0.1"
   },
@@ -62,7 +63,5 @@
   },
   "homepage": "https://github.com/typographist/core#readme",
   "author": "maxinakenty <mgreen097@gmail.com>",
-  "dependencies": {
-    "ramda": "^0.26.1"
-  }
+  "dependencies": {}
 }
