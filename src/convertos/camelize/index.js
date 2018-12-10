@@ -7,16 +7,13 @@ const camelizeString = R.replace(
 );
 
 // camelize :: String -> String
-export const camelize = R.compose(
-  R.reduce(R.concat, ''),
-  R.juxt([
-    R.compose(
-      R.toLower,
-      R.head,
-    ),
-    R.compose(
-      camelizeString,
-      R.tail,
-    ),
-  ]),
-);
+export const camelize = R.converge(R.concat, [
+  R.compose(
+    R.toLower,
+    R.head,
+  ),
+  R.compose(
+    camelizeString,
+    R.tail,
+  ),
+]);
