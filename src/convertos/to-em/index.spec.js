@@ -1,13 +1,13 @@
-import { toEm } from '.';
+import { toEmIfHasPx } from '.';
 
 describe('convertors', () => {
-  describe('toEm', () => {
+  describe('toEmIfHasPx', () => {
     it('should convert to em if has pixels', () => {
-      expect(toEm('32px')).toEqual('2em');
+      expect(toEmIfHasPx('32px')).toEqual('2em');
     });
 
     it('should return value in ems', () => {
-      expect(toEm('32em')).toEqual('32em');
+      expect(toEmIfHasPx('32em')).toEqual('32em');
     });
   });
 });
