@@ -1,49 +1,26 @@
-const ALL_CHARACTERS_AFTER_COLON = /:.+\b/;
-const ALL_CHARACTERS_BEFORE_COLON = /^\(.+\):?/;
-const ALL_ROUND_BRACKETS = /[()]/g;
-const COMMA_AND_NEW_LINE = ',\n';
-const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
-const AMPERSAND = /&/;
-const HAS_AT = /-?\b\d+(\.\d+)?(px|em) at -?\d+(\.\d+)??\b/;
-const HAS_EM = /-?\b\d+(\.\d+)?em/;
-const HAS_FONT_SIZE = /^font-size$/;
-const HAS_FONT_SIZE_VAL = /\b-?\d+(\.\d+)?(px|em)\b/gi;
-const HAS_PX = /-?\b\d+(\.\d+)?px/;
-const HAS_PX_OR_EM = /-?\b\d+(\.\d+)?(px|em)/;
-const HAS_REM = /-?\b\d+(\.\d+)?rem/;
-const HAS_TARGET = /-?\b\d+(\.\d+)?\b\s*$/g;
-const HAS_TSTEP_FUNCTION_WITH_VALUE = /^t-step\(.+?\)$/;
-const LAST_COMMA = /,\s*$/;
-const LINE_BREAKS_AND_SPACES = /[\n\s]/g;
-const STEP_UNIT = /step/;
-const POSITIVE_OR_NEGATIVE_FLOATING_POINT_NUMBER = /^-?\d+(\.\d+)?$/;
-const POSITIVE_OR_NEGATIVE_FLOATING_POINT_NUMBER_WITH_STEP_UNIT_MEASURE = /^-?\d+(\.\d+)?step$/;
-const REVERCE_BRACKET = /\)/;
-const SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER = /(?=[A-Z])/;
-const T_STEP_WITH_BRACKET = /t-step\(/;
-
-module.exports = {
-  ALL_CHARACTERS_AFTER_COLON,
-  ALL_CHARACTERS_BEFORE_COLON,
-  ALL_ROUND_BRACKETS,
-  COMMA_AND_NEW_LINE,
-  DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
-  AMPERSAND,
-  HAS_AT,
-  HAS_EM,
-  HAS_FONT_SIZE,
-  HAS_FONT_SIZE_VAL,
-  HAS_PX,
-  HAS_PX_OR_EM,
-  HAS_REM,
-  HAS_TARGET,
-  HAS_TSTEP_FUNCTION_WITH_VALUE,
-  LAST_COMMA,
-  LINE_BREAKS_AND_SPACES,
-  STEP_UNIT,
-  POSITIVE_OR_NEGATIVE_FLOATING_POINT_NUMBER,
-  POSITIVE_OR_NEGATIVE_FLOATING_POINT_NUMBER_WITH_STEP_UNIT_MEASURE,
-  REVERCE_BRACKET,
-  SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER,
-  T_STEP_WITH_BRACKET,
-};
+export const ALL_CHARACTERS_AFTER_COLON = /:.+\b/;
+export const ALL_CHARACTERS_BEFORE_COLON = /^\(.+\):?/;
+export const ALL_ROUND_BRACKETS = /[()]/g;
+export const AMPERSAND = /&/;
+export const SPACE_AT_WORD_SPACE = /\sat\s/;
+export const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
+export const FIRST_BREAKPOINT = /^0/;
+export const FONT_SIZE = /\b\d+(\.\d+)?(px|em)\b/g;
+export const FONT_SIZE_WORD = /^font-size$/;
+export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_EM_UNIT = /\d+(\.\d+)?em/;
+export const LAST_COMMA = /,\s*$/;
+export const LINE_BREAKS_AND_SPACES = /[\n\s]/g;
+export const POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING = /^\d+(\.\d+)?(px|em)\b/g;
+export const POSITIVE_FLOATING_POINT_NUMBER_WITH_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING = /^\d+(\.\d+)?em\b/g;
+export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING = /^-?\d+(\.\d+)?$/;
+export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_END_OF_THE_STRING = /-?\b\d+(\.\d+)?\b\s*$/g;
+export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT = /\d+(\.\d+)?(px|em)/;
+export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_UNIT = /\d+(\.\d+)?px/;
+export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_REM_UNIT = /\d+(\.\d+)?rem/;
+export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_WORD_AT_THE_BEGINNING_OF_THE_STRING = /^-?\d+(\.\d+)?step$/;
+export const REVERCE_BRACKET = /\)/;
+export const SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER = /(?=[A-Z])/;
+export const STEP_WORD = /step/;
+export const TSTEP_FUNCTION_WITH_VALUE = /^t-step\(.+?\)$/;
+export const T_STEP_WITH_BRACKET = /t-step\(/;
+export const COMMA_AND_NEW_LINE = ',\n';
