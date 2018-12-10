@@ -1,5 +1,5 @@
 import R from 'ramda';
-import { toPx } from '../../convertos/to-px';
+import { toPxIfHasEm } from '../../convertos/to-px';
 import {
   FONT_SIZE,
   POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_END_OF_THE_STRING,
@@ -8,7 +8,7 @@ import {
 // getFontSize :: String -> Number
 export const getFontSize = R.compose(
   parseFloat,
-  toPx,
+  toPxIfHasEm,
   R.match(FONT_SIZE),
 );
 

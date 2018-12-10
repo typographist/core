@@ -1,13 +1,13 @@
-import { toPx } from '.';
+import { toPxIfHasEm } from '.';
 
 describe('convertors', () => {
-  describe('toPx', () => {
+  describe('toPxIfHasEm', () => {
     it('should convert to px if has em unit', () => {
-      expect(toPx('2em')).toEqual('32px');
+      expect(toPxIfHasEm('2em')).toEqual('32px');
     });
 
     it('should return value in pixels', () => {
-      expect(toPx('2px')).toEqual('2px');
+      expect(toPxIfHasEm('2px')).toEqual('2px');
     });
   });
 });
