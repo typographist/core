@@ -1,4 +1,16 @@
-export const breakpointsModel = [
+/*
+  Breakpoint :: {
+    base :: Number | [Number],
+    lineHeight :: Number,
+    name :: String,
+    ratio :: Number,
+    root :: Number,
+    value :: String,
+  }
+*/
+
+// Breakpoints :: [Breakpoint]
+export const breakpoints = [
   {
     base: [16, 33],
     lineHeight: 1.5,
