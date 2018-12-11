@@ -1,6 +1,6 @@
 import { setPropRoot } from '.';
 
-describe('make breaks model', () => {
+describe('make breakpoints', () => {
   describe('setPropRoot', () => {
     it('generate root prop for all breakpoints', () => {
       const input = {

@@ -1,6 +1,6 @@
 import { calcRatioFlow } from '.';
 
-describe('make breaks model', () => {
+describe('make breakpoints', () => {
   describe('calcRatioFlow', () => {
     it('calc ratio if ratio is string', () => {
       const input = {

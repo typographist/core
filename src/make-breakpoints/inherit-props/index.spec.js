@@ -1,6 +1,6 @@
 import { inheritProps } from '.';
 
-describe('make breaks model', () => {
+describe('make breakpoints', () => {
   describe('Name of the group', () => {
     const breakpoints = [
       {

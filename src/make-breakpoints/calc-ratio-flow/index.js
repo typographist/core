@@ -1,4 +1,4 @@
-import { getBase } from '../../helpers/get-base';
+import { getFirstBase } from '../../helpers/get-first-base';
 import { calcRatio, getFontSize, getStep } from '../../calculators/calc-ratio';
 
 /*
@@ -27,7 +27,7 @@ export const calcRatioFlow = item => ({
       ? calcRatio(
           getFontSize(item.ratio),
           getStep(item.ratio),
-          getBase(item.base),
+          getFirstBase(item.base),
         )
       : item.ratio,
 });

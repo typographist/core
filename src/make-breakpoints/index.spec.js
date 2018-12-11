@@ -1,10 +1,10 @@
-import { UserConfig as config } from '../mocks';
+import { UserConfig } from '../mocks';
 import { makeBreakpoints } from '.';
 
-describe('make breaks model', () => {
-  describe('makeBreakpoints function', () => {
+describe('make breakpoints', () => {
+  describe('makeBreakpoints fn', () => {
     it('make list with first breakpoint values', () => {
-      expect(makeBreakpoints(config)).toEqual([
+      expect(makeBreakpoints(UserConfig)).toEqual([
         {
           base: [16, 32],
           lineHeight: 1.5,

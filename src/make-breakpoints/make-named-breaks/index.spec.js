@@ -1,10 +1,10 @@
 import { makeNamedBreaks } from '.';
-import { UserConfig as config } from '../../mocks';
+import { UserConfig } from '../../mocks';
 
-describe('make breaks model', () => {
+describe('make breakpoints', () => {
   describe('makeNamedBreaks function', () => {
     it('make list with named breakpoints', () => {
-      expect(makeNamedBreaks(config)).toEqual([
+      expect(makeNamedBreaks(UserConfig)).toEqual([
         {
           base: '17px',
           name: 'tablet',
