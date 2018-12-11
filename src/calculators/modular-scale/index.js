@@ -9,7 +9,7 @@ const calcFontSize = (step, base, ratio) =>
   Math.pow(ratio, Math.floor(step / base.length));
 
 /* eslint-disable */
-export const modularScale = (step, base, ratio) => {
+export const modularScale = (base, ratio, step) => {
   const startPosition = calcStartPosition(step, base);
   const fontSize = calcFontSize(step, base, ratio);
   const baseHigh = Math.pow(ratio, 1) * base[0];
