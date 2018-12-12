@@ -2,18 +2,27 @@
 
 import R from 'ramda';
 
-type Breakpoint = {
+type Input = {
   base: string | string[],
   lineHeight: number,
-  name: string,
   ratio: number | string,
+};
+
+type Breakpoint = {
+  ...Input,
+  name: string,
   value: string,
 };
 
-type MakeDefaultBreak = any => Breakpoint[];
+type MakeDefaultBreak = Input => Breakpoint[];
 
 export const makeDefaultBreak: MakeDefaultBreak = R.compose(
-  R.of,
-  R.merge({ name: 'default', value: '0px' }),
-  R.pick(['base', 'lineHeight', 'ratio']),
+  Array.of,
+  ({ base, lineHeight, ratio }) => ({
+    base,
+    lineHeight,
+    ratio,
+    name: 'default',
+    value: '0px',
+  }),
 );
