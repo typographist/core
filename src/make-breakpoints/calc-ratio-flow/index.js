@@ -1,33 +1,29 @@
-import { getFirstBase } from '../../helpers/get-first-base';
-import { calcRatio, getFontSize, getStep } from '../../calculators/calc-ratio';
+// @flow
 
-/*
-  InputBreakpoint :: {
-    base :: Number | [Number],
-    lineHeight :: Number,
-    name :: String,
-    ratio :: Number | String,
-    value :: String
-  }
+import R from 'ramda';
+import { calcRatio } from '../../calculators/calc-ratio';
 
-  OutpubBreakpoint :: {
-    base :: Number | [Number],
-    lineHeight :: Number,
-    name :: String,
-    ratio :: Number,
-    value :: String
-  }
-*/
+type Input = {
+  base: number | number[],
+  lineHeight: number,
+  name: string,
+  ratio: number | string,
+  value: string,
+};
 
-// calcRatioFlow :: InputBreakpoint -> OutpubBreakpoint
-export const calcRatioFlow = item => ({
-  ...item,
-  ratio:
-    typeof item.ratio === 'string'
-      ? calcRatio(
-          getFontSize(item.ratio),
-          getStep(item.ratio),
-          getFirstBase(item.base),
-        )
-      : item.ratio,
-});
+type Output = {
+  base: number | number[],
+  lineHeight: number,
+  name: string,
+  ratio: number,
+  value: string,
+};
+
+type CalcRatioFlow = Input => Output;
+export const calcRatioFlow: CalcRatioFlow = item =>
+  R.merge(item, {
+    ratio:
+      typeof item.ratio === 'string'
+        ? calcRatio(item.ratio, item.base)
+        : item.ratio,
+  });

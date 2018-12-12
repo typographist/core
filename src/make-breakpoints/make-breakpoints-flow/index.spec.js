@@ -1,10 +1,10 @@
-import { UserConfig } from '../../mocks';
+import { userConfig } from '../../mocks';
 import { makeBreakpointsFlow } from '.';
 
 describe('make breakspoints ', () => {
   describe('makeBreakpointsFlow fn', () => {
     it('make list with first breakpoint values', () => {
-      expect(makeBreakpointsFlow(UserConfig)).toEqual([
+      expect(makeBreakpointsFlow(userConfig)).toEqual([
         {
           base: [16, 32],
           lineHeight: 1.5,

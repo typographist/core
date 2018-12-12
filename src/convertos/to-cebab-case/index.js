@@ -1,4 +1,5 @@
+// @flow
 import { separateWords } from '../../helpers/separate-words';
 
-// toCebabCase :: String -> String
-export const toCebabCase = separateWords('-');
+type ToCebabCase = string => string;
+export const toCebabCase: ToCebabCase = separateWords('-');

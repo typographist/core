@@ -1,24 +1,27 @@
+// @flow
+
 import R from 'ramda';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { isNumeric } from '../../helpers/is-numeric';
 import { withException } from '../../HOFs';
-import { title, UserConfig } from '../../error-messages';
+import { title, userConfig } from '../../error-messages';
 
-const { configMessage, lineHeightNumber } = UserConfig;
+const { configMessage, lineHeightNumber } = userConfig;
 
-export const getLineHeights = getAllValuesOf('lineHeight');
+type GetLineHeights = any => number[];
+export const getLineHeights: GetLineHeights = getAllValuesOf('lineHeight');
 
-// isNumber :: a -> Boolean
-export const isNumber = R.allPass([isNumeric, R.is(Number)]);
+type IsNumber = any => boolean;
+export const isNumber: IsNumber = R.allPass([isNumeric, R.is(Number)]);
 
-// lineHeightIsNumber :: a -> Boolean
-export const lineHeightIsNumber = withException(
+type LineHeightIsNumber = any => boolean;
+export const lineHeightIsNumber: LineHeightIsNumber = withException(
   isNumber,
   `${title} ${configMessage} ${lineHeightNumber}`,
 );
 
-// validateFields :: [Number] -> Boolean
-export const validateFields = R.compose(
+type ValidateFields = (number[]) => boolean;
+export const validateFields: ValidateFields = R.compose(
   R.all(lineHeightIsNumber),
   getLineHeights,
 );

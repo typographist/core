@@ -1,27 +1,27 @@
+// @flow
+
 import { calcRoot } from '../../calculators/calc-root';
 import { calcLeading } from '../../calculators/calc-leading';
 
-/* 
-  InputBreakpoint :: {
-    base :: Number | [Number]
-    lineHeight :: Number
-    name :: String,
-    ratio :: Number,
-    value :: String,
-  }
+type Input = {
+  base: number | number[],
+  lineHeight: number,
+  name: string,
+  ratio: number,
+  value: string,
+};
 
-  OutputBreakpoint :: {
-    base :: Number | [Number]
-    lineHeight :: Number
-    name :: String,
-    ratio :: Number,
-    value :: String,
-    root :: Number,
-  }
-*/
+type Output = {
+  base: number | number[],
+  lineHeight: number,
+  name: string,
+  ratio: number,
+  value: string,
+  root: number,
+};
 
-// setPropRoot :: InputBreakpoint -> OutputBreakpoint
-export const setPropRoot = item => ({
+type SetPropRoot = Input => Output;
+export const setPropRoot: SetPropRoot = item => ({
   ...item,
   root: calcRoot(calcLeading(item.base, item.lineHeight)),
 });

@@ -1,29 +1,29 @@
+// @flow
+
 import R from 'ramda';
 
-/*
-  Breakpoint :: Maybe {
-    value :: String,
-    base :: Maybe String | [String],
-    lineHeight :: Maybe Number,
-    ratio :: Maybe Number | String,
-  }
-*/
+type Breakpoint = {
+  value: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number | string,
+};
 
-/* NamedBreakpoint :: Maybe {
-                    value :: String,
-                    base :: Maybe String | [String],
-                    lineHeight :: Maybe Number,
-                    ratio :: Maybe Number | String,
-                    name :: String,
-                  }
-*/
+type NamedBreakpoint = {
+  value: string,
+  name: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number | string,
+};
 
-// setNameProp :: [String, Breakpoint] -> NamedBreakpoint
-const setNameProp = ([breakName, breakBody]) =>
-  R.mergeRight(breakBody, { name: breakName });
+type SetNameProp = ([string, Breakpoint]) => NamedBreakpoint;
 
-// makeNamedBreaks :: UserConfig -> [NamedBreakpoint] | []
-export const makeNamedBreaks = R.compose(
+const setNameProp: SetNameProp = ([breakName, breakBody]) =>
+  R.merge(breakBody, { name: breakName });
+
+type MakeNamedBreaks = any => NamedBreakpoint[];
+export const makeNamedBreaks: MakeNamedBreaks = R.compose(
   R.map(setNameProp),
   R.toPairs,
   R.omit(['base', 'lineHeight', 'ratio']),

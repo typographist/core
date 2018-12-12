@@ -1,2 +1,4 @@
-// toRem :: (Number, Number) -> String
-export const toRem = (root, fontSize) => `${fontSize / root}rem`;
+// @flow
+
+type ToRem = (number, number) => string;
+export const toRem: ToRem = (root, fontSize) => `${fontSize / root}rem`;

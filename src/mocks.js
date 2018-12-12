@@ -1,16 +1,17 @@
-/*
-  Breakpoint :: {
-    base :: Number | [Number],
-    lineHeight :: Number,
-    name :: String,
-    ratio :: Number,
-    root :: Number,
-    value :: String,
-  }
-*/
+// @flow
 
-// Breakpoints :: [Breakpoint]
-export const breakpoints = [
+type Breakpoint = {|
+  base: number | number[],
+  lineHeight: number,
+  name: string,
+  ratio: number,
+  root: number,
+  value: string,
+|};
+
+export type Breakpoints = Breakpoint[];
+
+export const breakpoints: Breakpoints = [
   {
     base: [16, 33],
     lineHeight: 1.5,
@@ -53,25 +54,7 @@ export const breakpoints = [
   },
 ];
 
-/*
-  Breakpoint :: {
-    value :: String,
-    base :: Maybe String | [String],
-    lineHeight :: Maybe Number, 
-    ratio :: Maybe Number | String,
-  }
-*/
-
-/* UserConfig :: 
-  {
-    base :: String | [String],
-    lineHeight :: Number, 
-    ratio :: Number | String,
-    Maybe Breakpoint,
-  } 
-*/
-
-export const UserConfig = {
+export const userConfig = {
   base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',

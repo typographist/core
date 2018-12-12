@@ -1,4 +1,4 @@
-import { UserConfig } from '../../mocks';
+import { userConfig } from '../../mocks';
 import { getLineHeights, lineHeightIsNumber, validateFields } from '.';
 
 describe('user config validators', () => {
@@ -16,13 +16,13 @@ describe('user config validators', () => {
 
       describe('getLineHeights function', () => {
         it('returs all values of lineHeight from user config', () => {
-          expect(getLineHeights(UserConfig)).toEqual([1.5, 1.7]);
+          expect(getLineHeights(userConfig)).toEqual([1.5, 1.7]);
         });
       });
 
       describe('validateFields function', () => {
         it('all lineHeights are valid', () => {
-          expect(validateFields(UserConfig)).toEqual(true);
+          expect(validateFields(userConfig)).toEqual(true);
         });
       });
     });

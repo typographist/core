@@ -1,2 +1,5 @@
-// isNumeric :: a -> Boolean
-export const isNumeric = num => !Number.isNaN(parseFloat(num)) && isFinite(num);
+// @flow
+
+type IsNumeric = (num: any) => boolean;
+export const isNumeric: IsNumeric = x =>
+  !Number.isNaN(parseFloat(x)) && isFinite(x);

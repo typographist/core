@@ -1,5 +1,12 @@
-import R from 'ramda';
-import { isValidUserConfig } from '../is-valid-user-config';
-import { makeBreakpointsFlow } from './make-breakpoints-flow';
+// @flow
 
-export const makeBreakpoints = R.when(isValidUserConfig, makeBreakpointsFlow);
+import R from 'ramda';
+import { isValiduserConfig } from '../is-valid-user-config';
+import { makeBreakpointsFlow } from './make-breakpoints-flow';
+import type { Breakpoint } from './make-breakpoints-flow';
+
+type MakeBreakpoints = any => Breakpoint[];
+export const makeBreakpoints: MakeBreakpoints = R.when(
+  isValiduserConfig,
+  makeBreakpointsFlow,
+);

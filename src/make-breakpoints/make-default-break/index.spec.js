@@ -1,10 +1,10 @@
 import { makeDefaultBreak } from '.';
-import { UserConfig } from '../../mocks';
+import { userConfig } from '../../mocks';
 
 describe('make breakpoints', () => {
   describe('makeDefaultBreak function', () => {
     it('make list with first breakpoint values', () => {
-      expect(makeDefaultBreak(UserConfig)).toEqual([
+      expect(makeDefaultBreak(userConfig)).toEqual([
         {
           base: ['1em', '2em'],
           lineHeight: 1.5,

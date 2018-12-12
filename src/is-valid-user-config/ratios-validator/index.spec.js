@@ -1,11 +1,11 @@
-import { UserConfig } from '../../mocks';
-import { getRatios, isValidRatio, ratioIsVAlid, validateFields } from '.';
+import { userConfig } from '../../mocks';
+import { getRatios, isValidRatio, ratioIsValid, validateFields } from '.';
 
 describe('user config validators', () => {
   describe('ratios validator', () => {
     describe('getRatios function', () => {
       it('returns all values of the ratio', () => {
-        expect(getRatios(UserConfig)).toEqual(['45px at 6', 1.333]);
+        expect(getRatios(userConfig)).toEqual(['45px at 6', 1.333]);
       });
     });
 
@@ -27,23 +27,23 @@ describe('user config validators', () => {
       });
     });
 
-    describe('ratioIsVAlid function', () => {
+    describe('ratioIsValid function', () => {
       it('if ratio is the number', () => {
-        expect(ratioIsVAlid(1.333)).toEqual(true);
+        expect(ratioIsValid(1.333)).toEqual(true);
       });
 
       it('if ratio is a valid string', () => {
-        expect(ratioIsVAlid('33px at 5')).toEqual(true);
+        expect(ratioIsValid('33px at 5')).toEqual(true);
       });
 
       it('invalid ratio', () => {
-        expect(ratioIsVAlid).toThrowErrorMatchingSnapshot();
+        expect(ratioIsValid).toThrowErrorMatchingSnapshot();
       });
     });
 
     describe('validateFields function', () => {
       it('is all ratios are valid', () => {
-        expect(validateFields(UserConfig)).toEqual(true);
+        expect(validateFields(userConfig)).toEqual(true);
       });
     });
   });

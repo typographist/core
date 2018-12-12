@@ -1,11 +1,11 @@
-import { UserConfig } from '../../mocks';
-import { getFirstBases, baseHasPxOrEm, isValidField, validateFields } from '.';
+import { userConfig } from '../../mocks';
+import { getBases, baseHasPxOrEm, isValidField, validateFields } from '.';
 
 describe('bases validator', () => {
   describe('bases validator', () => {
-    describe('getFirstBases function', () => {
+    describe('getBases function', () => {
       it('returs all values of base from user config', () => {
-        expect(getFirstBases(UserConfig)).toEqual([
+        expect(getBases(userConfig)).toEqual([
           ['1em', '2em'],
           '17px',
           '18px',
@@ -49,7 +49,7 @@ describe('bases validator', () => {
 
     describe('validateFields function', () => {
       it('all bases are valid', () => {
-        expect(validateFields(UserConfig)).toEqual(true);
+        expect(validateFields(userConfig)).toEqual(true);
       });
     });
   });

@@ -1,4 +1,5 @@
+// @flow
 import { HALF } from '../../constants';
 
-// calcRoot :: Number -> Number
-export const calcRoot = val => Math.round(val * HALF);
+type CalcRoot = number => number;
+export const calcRoot: CalcRoot = x => Math.round(x * HALF);

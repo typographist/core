@@ -1,4 +1,5 @@
+// @flow
 import { separateWords } from '../../helpers/separate-words';
 
-// toSnakeCase :: String -> String
-export const toSnakeCase = separateWords('_');
+type ToSnakeCase = string => string;
+export const toSnakeCase: ToSnakeCase = separateWords('_');

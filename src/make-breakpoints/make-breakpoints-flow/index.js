@@ -7,19 +7,17 @@ import { stripBase } from '../strip-base';
 import { calcRatioFlow } from '../calc-ratio-flow';
 import { setPropRoot } from '../set-prop-root';
 
-/* 
-  Breakpoint :: {
-    name ::  String,
-    value :: String,
-    base :: Number | [Number],
-    lineHeight :: Number,
-    ratio :: Number,
-    root :: Number,
-  }
-*/
+export type Breakpoint = {
+  name: string,
+  value: string,
+  base: number | number[],
+  lineHeight: number,
+  ratio: number,
+  root: number,
+};
 
-// makeBreakpointsFlow :: UserConfig -> [Breakpoint]
-export const makeBreakpointsFlow = R.compose(
+type MakeBreakpointsFlow = any => Breakpoint[];
+export const makeBreakpointsFlow: MakeBreakpointsFlow = R.compose(
   R.map(setPropRoot),
   R.map(calcRatioFlow),
   inheritProps,

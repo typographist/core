@@ -1,6 +1,6 @@
 {
   "title": "Typographist >>>",
-  "UserConfig": {
+  "userConfig": {
     "configMessage": "Check your user config.",
     "lineHeightNumber": "lineHeight:  must be a number. For example lineHeight: 1.5",
     "basePxEm": "base:  must contain the values in pixels or ems. For example base: '6em' or base: '38px'.",

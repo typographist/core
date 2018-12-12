@@ -1,28 +1,30 @@
+// @flow
+
 import R from 'ramda';
 
-const indexedReduce = R.addIndex(R.reduce);
+type Input = {
+  value: string,
+  name: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number | string,
+};
 
-/*
-  InputBreakpoint :: {
-    value :: String,
-    base :: Maybe String | [String],
-    lineHeight :: Maybe Number,
-    ratio :: Maybe Number | String,
-    name :: String,
-  }
+type Output = {
+  value: string,
+  name: string,
+  base: string | string[],
+  lineHeight: number,
+  ratio: number | string,
+};
 
-  OutputBreakpoint :: {
-    value :: String,
-    base :: String | [String],
-    lineHeight :: Number,
-    ratio :: Number | String,
-    name :: String,
-  }
-*/
+const inherit = (acc, item, index) => [
+  ...acc,
+  {
+    ...acc[index - 1],
+    ...item,
+  },
+];
 
-// inheritProps :: (InputBreakpoint -> OutputBreakpoint) -> [InputBreakpoint] -> [OutputBreakpoint]
-export const inheritProps = indexedReduce(
-  (acc, breakpoint, index) =>
-    R.append(R.mergeLeft(breakpoint, acc[index - 1]), acc),
-  [],
-);
+export const inheritProps: (Input[]) => Output[] = input =>
+  input.reduce(inherit, []);

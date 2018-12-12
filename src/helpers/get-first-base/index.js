@@ -1,4 +1,6 @@
+//  @flow strict
+
 import R from 'ramda';
 
-// getFirstBase :: [Number] | Number -> Number
-export const getFirstBase = R.when(R.is(Array), R.head);
+type GetFirstBase = any => number;
+export const getFirstBase: GetFirstBase = R.when(R.is(Array), R.head);

@@ -1,8 +1,19 @@
+// @flow
+
 import R from 'ramda';
 import { makeDefaultBreak } from '../make-default-break';
 import { makeNamedBreaks } from '../make-named-breaks';
 
-export const createBreakpoints = R.converge(R.concat, [
+type Breakpoint = {
+  name: string,
+  value: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number | string,
+};
+
+type CreateBreakpoints = any => Breakpoint[];
+export const createBreakpoints: CreateBreakpoints = R.converge(R.concat, [
   makeDefaultBreak,
   makeNamedBreaks,
 ]);

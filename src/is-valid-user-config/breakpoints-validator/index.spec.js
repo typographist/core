@@ -1,4 +1,4 @@
-import { UserConfig } from '../../mocks';
+import { userConfig } from '../../mocks';
 import {
   getBreakpoints,
   breakpointIsString,
@@ -10,7 +10,7 @@ describe('user config validators', () => {
   describe('breakpoints validator', () => {
     describe('getBreakpoints function', () => {
       it('returs all values of breakpoint from user config', () => {
-        expect(getBreakpoints(UserConfig)).toEqual([
+        expect(getBreakpoints(userConfig)).toEqual([
           '40em',
           '64em',
           '75em',
@@ -37,7 +37,7 @@ describe('user config validators', () => {
 
     describe('validateFields function', () => {
       it('all breakpoints are valid', () => {
-        expect(validateFields(UserConfig)).toEqual(true);
+        expect(validateFields(userConfig)).toEqual(true);
       });
     });
   });

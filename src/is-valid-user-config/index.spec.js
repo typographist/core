@@ -1,10 +1,10 @@
-import { isValidUserConfig } from '.';
-import { UserConfig } from '../mocks';
+import { isValiduserConfig } from '.';
+import { userConfig } from '../mocks';
 
 describe('user config validators', () => {
-  describe('isValidUserConfig function', () => {
+  describe('isValiduserConfig function', () => {
     it('if valid user config ', () => {
-      expect(isValidUserConfig(UserConfig)).toEqual(true);
+      expect(isValiduserConfig(userConfig)).toEqual(true);
     });
   });
 });

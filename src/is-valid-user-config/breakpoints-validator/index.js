@@ -1,33 +1,38 @@
+// @flow
+
 import R from 'ramda';
 import { INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT } from '../../constants/regexes';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { withException } from '../../HOFs';
-import { title, UserConfig } from '../../error-messages';
+import { title, userConfig } from '../../error-messages';
 
-const { configMessage, breakpointString, breakpointPx } = UserConfig;
+const { configMessage, breakpointString, breakpointPx } = userConfig;
 
-export const getBreakpoints = getAllValuesOf('value');
+type GetBreakpoints = any => string[];
+export const getBreakpoints: GetBreakpoints = getAllValuesOf('value');
 
-// isString :: a -> Boolean
-const isString = R.is(String);
+type IsString = any => boolean;
+const isString: IsString = R.is(String);
 
-// breakpointIsString :: a -> Boolean
-export const breakpointIsString = withException(
+type BreakpointIsString = any => boolean;
+export const breakpointIsString: BreakpointIsString = withException(
   isString,
   `${title} ${configMessage} ${breakpointString}`,
 );
 
-// hasPx :: String -> Boolean
-const hasPxOrEm = R.test(INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT);
+type HasPxOrEm = string => boolean;
+const hasPxOrEm: HasPxOrEm = R.test(
+  INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
+);
 
-// breakpointHasPxOrEm :: String -> Boolean
-export const breakpointHasPxOrEm = withException(
+type BreakpointHasPxOrEm = any => boolean;
+export const breakpointHasPxOrEm: BreakpointHasPxOrEm = withException(
   hasPxOrEm,
   `${title} ${configMessage} ${breakpointPx}`,
 );
 
-// validateFields :: [String] -> Boolean
-export const validateFields = R.compose(
+type ValidateFields = (string[]) => boolean;
+export const validateFields: ValidateFields = R.compose(
   R.all(R.allPass([breakpointIsString, breakpointHasPxOrEm])),
   getBreakpoints,
 );
