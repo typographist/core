@@ -1,7 +1,5 @@
 // @flow
 
-import R from 'ramda';
-
 type Input = {
   value: string,
   name: string,
