@@ -1,9 +1,7 @@
 // @flow
 
-type Base = number | number[];
-
 export type Breakpoint = {
-  base: Base,
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number,
@@ -21,7 +19,7 @@ export const breakpoints: Breakpoint[] = [
     value: '0px',
   },
   {
-    base: 17,
+    base: [17],
     lineHeight: 1.5,
     name: 'tablet',
     ratio: 1.1258335640240535,
@@ -29,7 +27,7 @@ export const breakpoints: Breakpoint[] = [
     value: '640px',
   },
   {
-    base: 18,
+    base: [18],
     lineHeight: 1.7,
     name: 'desktop',
     ratio: 1.333,
@@ -37,7 +35,7 @@ export const breakpoints: Breakpoint[] = [
     value: '1024px',
   },
   {
-    base: 20,
+    base: [20],
     lineHeight: 1.7,
     name: 'lgDesktop',
     ratio: 1.333,
@@ -45,7 +43,7 @@ export const breakpoints: Breakpoint[] = [
     value: '1200px',
   },
   {
-    base: 22,
+    base: [22],
     lineHeight: 1.7,
     name: 'xlDesktop',
     ratio: 1.333,

@@ -14,9 +14,9 @@ const calcFontSize: CalcFontSize = (step, base, ratio) =>
 
 /* eslint-disable */
 
-type ModularScale = (number[] | number, number, number) => number;
+type ModularScale = (number[], number, number) => number;
 export const modularScale: ModularScale = (base, ratio, step) => {
-  if (!Array.isArray(base) || base.length === 1) {
+  if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
 

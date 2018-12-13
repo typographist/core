@@ -3,7 +3,7 @@
 type Input = {
   value: string,
   name: string,
-  base?: string | string[],
+  base?: string[],
   lineHeight?: number,
   ratio?: number | string,
 };
@@ -11,7 +11,7 @@ type Input = {
 type Output = {
   value: string,
   name: string,
-  base: string | string[],
+  base: string[],
   lineHeight: number,
   ratio: number | string,
 };

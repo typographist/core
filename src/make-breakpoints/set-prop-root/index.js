@@ -4,7 +4,7 @@ import { calcRoot } from '../../calculators/calc-root';
 import { calcLeading } from '../../calculators/calc-leading';
 
 type Input = {
-  base: number | number[],
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number,
@@ -12,7 +12,7 @@ type Input = {
 };
 
 type Output = {
-  base: number | number[],
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number,

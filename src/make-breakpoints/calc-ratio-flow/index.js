@@ -3,7 +3,7 @@
 import { calcRatio } from '../../calculators/calc-ratio';
 
 type Input = {
-  base: number | number[],
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number | string,
@@ -11,7 +11,7 @@ type Input = {
 };
 
 type Output = {
-  base: number | number[],
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number,

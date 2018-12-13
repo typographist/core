@@ -1,15 +1,15 @@
 // @flow
 
 type Input = {
-  base: string | string[],
+  base: string[],
 };
 
 type Output = {
-  base: number | number[],
+  base: number[],
 };
 
 type StripBase = Input => Output;
 export const stripBase: StripBase = ({ base, ...item }) => ({
   ...item,
-  base: Array.isArray(base) ? base.map(parseFloat) : parseFloat(base),
+  base: base.map(parseFloat),
 });

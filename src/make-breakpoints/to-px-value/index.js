@@ -3,11 +3,11 @@
 import { toPxIfHasEm } from '../../convertos/to-px-if-has-em';
 
 type Input = {
-  value: string | string[],
+  value: string,
 };
 
 type Output = {
-  value: string | string[],
+  value: string,
 };
 
 type ToPxValue = Input => Output;
@@ -16,6 +16,6 @@ export const toPxValue: ToPxValue = item => {
 
   return {
     ...item,
-    value: Array.isArray(value) ? value.map(toPxIfHasEm) : toPxIfHasEm(value),
+    value: toPxIfHasEm(value),
   };
 };
