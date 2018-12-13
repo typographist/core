@@ -1,5 +1,5 @@
 import { makeNamedBreaks } from '.';
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 
 describe('make breakpoints', () => {
   describe('makeNamedBreaks function', () => {

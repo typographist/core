@@ -1,4 +1,4 @@
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 import { getRatios, isValidRatio, ratioIsValid, validateFields } from '.';
 
 describe('user config validators', () => {

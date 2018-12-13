@@ -9,7 +9,7 @@ import { title, userConfig } from '../../error-messages';
 
 const { configMessage, ratioStringNumber } = userConfig;
 
-type GetRatios = any => Array<string | number>;
+type GetRatios = mixed => Array<string | number>;
 export const getRatios: GetRatios = getAllValuesOf('ratio');
 
 type RatioHasFontSize = string => boolean;

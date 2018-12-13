@@ -16,7 +16,8 @@ type Output = {
   ratio: number | string,
 };
 
-const inherit = (acc, item, index) => [
+type Inherit = (any, any, number) => any[];
+const inherit: Inherit = (acc, item, index) => [
   ...acc,
   {
     ...acc[index - 1],
@@ -24,5 +25,5 @@ const inherit = (acc, item, index) => [
   },
 ];
 
-export const inheritProps: (Input[]) => Output[] = input =>
-  input.reduce(inherit, []);
+type InheritProps = (Input[]) => Output[];
+export const inheritProps: InheritProps = input => input.reduce(inherit, []);

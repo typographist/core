@@ -1,5 +1,5 @@
 import { makeDefaultBreak } from '.';
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 
 describe('make breakpoints', () => {
   describe('makeDefaultBreak function', () => {

@@ -1,9 +1,6 @@
 // @flow
 
-type WithException = (
-  fn: (any) => any,
-  errorMessage: string,
-) => (x: any) => boolean;
+type WithException = ((mixed) => mixed, string) => mixed => boolean;
 
 export const withException: WithException = (fn, errorMessage) => x => {
   if (!(typeof fn === 'function' && fn(x))) {

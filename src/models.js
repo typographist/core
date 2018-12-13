@@ -1,17 +1,17 @@
 // @flow
 
-type Breakpoint = {|
-  base: number | number[],
+type Base = number | number[];
+
+export type Breakpoint = {
+  base: Base,
   lineHeight: number,
   name: string,
   ratio: number,
   root: number,
   value: string,
-|};
+};
 
-export type Breakpoints = Breakpoint[];
-
-export const breakpoints: Breakpoints = [
+export const breakpoints: Breakpoint[] = [
   {
     base: [16, 33],
     lineHeight: 1.5,
@@ -54,7 +54,24 @@ export const breakpoints: Breakpoints = [
   },
 ];
 
-export const userConfig = {
+export type UserConfigBreakpoint = {
+  value: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number,
+};
+
+export type UserConfig = {
+  base: string | string[],
+  lineHeight: number,
+  ratio: string | number,
+  tablet: UserConfigBreakpoint,
+  desktop: UserConfigBreakpoint,
+  lgDesktop: UserConfigBreakpoint,
+  xlDesktop: UserConfigBreakpoint,
+};
+
+export const userConfig: UserConfig = {
   base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',

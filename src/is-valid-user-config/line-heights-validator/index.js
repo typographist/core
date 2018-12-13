@@ -8,13 +8,13 @@ import { title, userConfig } from '../../error-messages';
 
 const { configMessage, lineHeightNumber } = userConfig;
 
-type GetLineHeights = any => number[];
+type GetLineHeights = mixed => number[];
 export const getLineHeights: GetLineHeights = getAllValuesOf('lineHeight');
 
-type IsNumber = any => boolean;
+type IsNumber = mixed => boolean;
 export const isNumber: IsNumber = R.allPass([isNumeric, R.is(Number)]);
 
-type LineHeightIsNumber = any => boolean;
+type LineHeightIsNumber = mixed => boolean;
 export const lineHeightIsNumber: LineHeightIsNumber = withException(
   isNumber,
   `${title} ${configMessage} ${lineHeightNumber}`,

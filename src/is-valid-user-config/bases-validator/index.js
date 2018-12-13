@@ -8,7 +8,7 @@ import { title, userConfig } from '../../error-messages';
 
 const { configMessage, basePxEm, baseArrayString } = userConfig;
 
-type GetBases = any => Array<Array<string> | string>;
+type GetBases = mixed => Array<Array<string> | string>;
 export const getBases: GetBases = getAllValuesOf('base');
 
 export const hasPxOrEm = R.test(
@@ -28,7 +28,7 @@ export const isStringOrArrayOfStrings: IsStringOrArrayOfStrings = R.cond([
   [R.T, R.F],
 ]);
 
-type IsValidField = any => boolean;
+type IsValidField = mixed => boolean;
 export const isValidField: IsValidField = withException(
   isStringOrArrayOfStrings,
   `${title} ${configMessage} ${baseArrayString}`,

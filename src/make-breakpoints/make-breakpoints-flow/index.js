@@ -1,28 +1,31 @@
+// @flow
+
 import R from 'ramda';
-import { toPxIfHasEm } from '../../convertos/to-px';
 import { createBreakpoints } from '../create-breakpoints';
-import { inheritProps } from '../inherit-props';
 import { toPxBase } from '../to-px-base';
+import { toPxValue } from '../to-px-value';
+import { inheritProps } from '../inherit-props';
+
 import { stripBase } from '../strip-base';
 import { calcRatioFlow } from '../calc-ratio-flow';
 import { setPropRoot } from '../set-prop-root';
+import type { Breakpoint, UserConfig } from '../../models';
 
-export type Breakpoint = {
-  name: string,
-  value: string,
-  base: number | number[],
-  lineHeight: number,
-  ratio: number,
-  root: number,
-};
-
-type MakeBreakpointsFlow = any => Breakpoint[];
+type MakeBreakpointsFlow = UserConfig => Breakpoint[];
 export const makeBreakpointsFlow: MakeBreakpointsFlow = R.compose(
-  R.map(setPropRoot),
-  R.map(calcRatioFlow),
+  R.map(
+    R.compose(
+      setPropRoot,
+      calcRatioFlow,
+    ),
+  ),
   inheritProps,
-  R.map(stripBase),
-  R.map(toPxBase),
-  R.map(R.evolve({ value: toPxIfHasEm })),
+  R.map(
+    R.compose(
+      stripBase,
+      toPxBase,
+    ),
+  ),
+  R.map(toPxValue),
   createBreakpoints,
 );

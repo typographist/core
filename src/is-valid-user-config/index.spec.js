@@ -1,5 +1,5 @@
 import { isValiduserConfig } from '.';
-import { userConfig } from '../mocks';
+import { userConfig } from '../models';
 
 describe('user config validators', () => {
   describe('isValiduserConfig function', () => {

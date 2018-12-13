@@ -1,7 +1,7 @@
 // @flow
 
 import R from 'ramda';
-import { toPxIfHasEm } from '../../convertos/to-px';
+import { toPxIfHasEm } from '../../convertos/to-px-if-has-em';
 import { FONT_SIZE } from '../../constants/regexes';
 
 type GetFontSize = string => number;

@@ -1,6 +1,5 @@
 // @flow
 
-import R from 'ramda';
 import { calcRatio } from '../../calculators/calc-ratio';
 
 type Input = {
@@ -20,10 +19,8 @@ type Output = {
 };
 
 type CalcRatioFlow = Input => Output;
-export const calcRatioFlow: CalcRatioFlow = item =>
-  R.merge(item, {
-    ratio:
-      typeof item.ratio === 'string'
-        ? calcRatio(item.ratio, item.base)
-        : item.ratio,
-  });
+export const calcRatioFlow: CalcRatioFlow = ({ base, ratio, ...item }) => ({
+  ...item,
+  base,
+  ratio: typeof ratio === 'string' ? calcRatio(ratio, base) : ratio,
+});

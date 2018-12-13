@@ -1,4 +1,4 @@
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 import { getBases, baseHasPxOrEm, isValidField, validateFields } from '.';
 
 describe('bases validator', () => {

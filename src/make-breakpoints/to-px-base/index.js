@@ -1,16 +1,21 @@
-import R from 'ramda';
-import { toPxIfHasEm } from '../../convertos/to-px';
+// @flow
 
-// type Input = {
-//   base: string | string[],
-// };
+import { toPxIfHasEm } from '../../convertos/to-px-if-has-em';
 
-// type Output = {
-//   base: string | string[],
-// };
+type Input = {
+  base: string | string[],
+};
 
-// type ToPxBase = Input => Output;
+type Output = {
+  base: string | string[],
+};
 
-export const toPxBase = R.evolve({
-  base: R.ifElse(R.is(Array), R.map(toPxIfHasEm), toPxIfHasEm),
-});
+type ToPxBase = Input => Output;
+export const toPxBase: ToPxBase = item => {
+  const { base } = item;
+
+  return {
+    ...item,
+    base: Array.isArray(base) ? base.map(toPxIfHasEm) : toPxIfHasEm(base),
+  };
+};

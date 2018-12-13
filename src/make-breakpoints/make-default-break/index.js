@@ -1,20 +1,17 @@
 // @flow
 
 import R from 'ramda';
+import type { UserConfig } from '../../models';
 
-type Input = {
+type Breakpoint = {
   base: string | string[],
   lineHeight: number,
   ratio: number | string,
-};
-
-type Breakpoint = {
-  ...Input,
   name: string,
   value: string,
 };
 
-type MakeDefaultBreak = Input => Breakpoint[];
+type MakeDefaultBreak = UserConfig => Breakpoint[];
 
 export const makeDefaultBreak: MakeDefaultBreak = R.compose(
   Array.of,

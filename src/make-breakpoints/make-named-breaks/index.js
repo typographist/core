@@ -19,12 +19,14 @@ type NamedBreakpoint = {
 
 type SetNameProp = ([string, Breakpoint]) => NamedBreakpoint;
 
-const setNameProp: SetNameProp = ([breakName, breakBody]) =>
-  R.merge(breakBody, { name: breakName });
+const setNameProp: SetNameProp = ([breakName, breakBody]) => ({
+  ...breakBody,
+  name: breakName,
+});
 
-type MakeNamedBreaks = any => NamedBreakpoint[];
+type MakeNamedBreaks = any => NamedBreakpoint[] | [];
 export const makeNamedBreaks: MakeNamedBreaks = R.compose(
   R.map(setNameProp),
-  R.toPairs,
-  R.omit(['base', 'lineHeight', 'ratio']),
+  Object.entries,
+  ({ base, lineHeight, ratio, ...breakpoints }) => breakpoints,
 );

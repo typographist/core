@@ -10,13 +10,16 @@ const camelizeString: CamelizeString = R.replace(
 );
 
 type Camelize = string => string;
-export const camelize: Camelize = R.converge(R.concat, [
-  R.compose(
+export const camelize: Camelize = str => {
+  const firstLetter = R.compose(
     R.toLower,
     R.head,
-  ),
-  R.compose(
+  );
+
+  const wordTail = R.compose(
     camelizeString,
     R.tail,
-  ),
-]);
+  );
+
+  return `${firstLetter(str)}${wordTail(str)}`;
+};

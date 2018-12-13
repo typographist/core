@@ -1,4 +1,4 @@
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 import { getLineHeights, lineHeightIsNumber, validateFields } from '.';
 
 describe('user config validators', () => {

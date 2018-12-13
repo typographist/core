@@ -1,4 +1,4 @@
-import { userConfig } from '../../mocks';
+import { userConfig } from '../../models';
 import { makeBreakpointsFlow } from '.';
 
 describe('make breakspoints ', () => {

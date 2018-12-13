@@ -8,13 +8,13 @@ import { title, userConfig } from '../../error-messages';
 
 const { configMessage, breakpointString, breakpointPx } = userConfig;
 
-type GetBreakpoints = any => string[];
+type GetBreakpoints = mixed => string[];
 export const getBreakpoints: GetBreakpoints = getAllValuesOf('value');
 
-type IsString = any => boolean;
+type IsString = mixed => boolean;
 const isString: IsString = R.is(String);
 
-type BreakpointIsString = any => boolean;
+type BreakpointIsString = mixed => boolean;
 export const breakpointIsString: BreakpointIsString = withException(
   isString,
   `${title} ${configMessage} ${breakpointString}`,
@@ -25,7 +25,7 @@ const hasPxOrEm: HasPxOrEm = R.test(
   INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
 );
 
-type BreakpointHasPxOrEm = any => boolean;
+type BreakpointHasPxOrEm = mixed => boolean;
 export const breakpointHasPxOrEm: BreakpointHasPxOrEm = withException(
   hasPxOrEm,
   `${title} ${configMessage} ${breakpointPx}`,

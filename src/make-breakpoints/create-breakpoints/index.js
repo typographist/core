@@ -12,7 +12,7 @@ type Breakpoint = {
   ratio?: number | string,
 };
 
-type CreateBreakpoints = any => Breakpoint[];
+type CreateBreakpoints = mixed => Breakpoint[];
 export const createBreakpoints: CreateBreakpoints = R.converge(R.concat, [
   makeDefaultBreak,
   makeNamedBreaks,
