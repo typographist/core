@@ -27,10 +27,8 @@ export type UserConfig = {
   xlDesktop: UserConfigBreakpoint,
 };
 
-type Base = number | number[];
-
 export type Breakpoint = {
-  base: Base,
+  base: number[],
   lineHeight: number,
   name: string,
   ratio: number,
@@ -39,7 +37,7 @@ export type Breakpoint = {
 };
 
 type IsValiduserConfig = any => boolean;
-export const isValiduserConfig: IsValiduserConfig = R.allPass([
+export const validateConfig: IsValiduserConfig = R.allPass([
   isValidBases,
   isValidBreakpoints,
   isValidLineHeights,
@@ -55,7 +53,6 @@ const makeDefaultBreak = ({ base, lineHeight, ratio }: UserConfig) =>
     value: '0px',
   });
 
-type SetNameProp = ([string, UserConfigBreakpoint]) => *;
 /** Set property `name` to object */
 const setNameProp = ([breakName, breakBody]) => ({
   ...breakBody,
@@ -84,10 +81,10 @@ const mapBase = fn => ({ base, ...item }) => ({
   base: fn(base),
 });
 
-const toPxBase = base =>
-  Array.isArray(base) ? base.map(toPxIfHasEm) : toPxIfHasEm(base);
-const stripBase = base =>
-  Array.isArray(base) ? base.map(parseFloat) : parseFloat(base);
+const stripBase = (base: string[]): number[] => base.map(parseFloat);
+const toPxBase = base => base.map(toPxIfHasEm);
+const toArray = (value: string | string[]) =>
+  Array.isArray(value) ? value : Array.of(value);
 
 const inherit = (acc, item, index) => [
   ...acc,
@@ -97,15 +94,37 @@ const inherit = (acc, item, index) => [
   },
 ];
 
-const inheritProps = input => input.reduce(inherit, []);
+type NotFilledBreakpoint = {
+  name: string,
+  value: string,
+  base?: number[],
+  lineHeight?: number,
+  ratio?: number | string,
+};
+type FilledBreakpoint = {
+  name: string,
+  value: string,
+  base: number[],
+  lineHeight: number,
+  ratio: number | string,
+};
+type InheritProps = (NotFilledBreakpoint[]) => FilledBreakpoint[];
+const inheritProps: InheritProps = input => input.reduce(inherit, []);
 
-export const calcRatioFlow = ({ base, ratio, ...item }: Breakpoint) => ({
+export const calcRatioFlow = ({ base, ratio, ...item }: FilledBreakpoint) => ({
   ...item,
   base,
   ratio: typeof ratio === 'string' ? calcRatio(ratio, base) : ratio,
 });
 
-const setPropRoot = item => ({
+type FilledBreakpointStableRatio = {
+  name: string,
+  value: string,
+  base: number[],
+  lineHeight: number,
+  ratio: number,
+};
+const setPropRoot = (item: FilledBreakpointStableRatio) => ({
   ...item,
   root: calcRoot(calcLeading(item.base, item.lineHeight)),
 });
@@ -124,6 +143,7 @@ export const makeBreakpointsFlow: MakeBreakpointsFlow = R.compose(
       R.compose(
         stripBase,
         toPxBase,
+        toArray,
       ),
     ),
   ),
@@ -131,8 +151,8 @@ export const makeBreakpointsFlow: MakeBreakpointsFlow = R.compose(
   createBreakpoints,
 );
 
-const makeBreakpoints = (config: UserConfig): Breakpoint[] =>
-  isValiduserConfig(config) ? makeBreakpointsFlow(config) : [];
+export const makeBreakpoints = (config: UserConfig) =>
+  validateConfig(config) ? makeBreakpointsFlow(config) : [];
 
 export const userConfig = {
   base: ['1em', '2em'],
