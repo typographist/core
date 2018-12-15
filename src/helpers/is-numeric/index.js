@@ -1,5 +1,4 @@
 // @flow
 
-type IsNumeric = mixed => boolean;
-export const isNumeric: IsNumeric = x =>
+export const isNumeric: any => boolean = x =>
   !Number.isNaN(parseFloat(x)) && isFinite(x);

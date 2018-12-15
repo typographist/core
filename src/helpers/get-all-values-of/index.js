@@ -2,7 +2,7 @@
 
 import { isObject } from '../is-object';
 
-type GetAllValuesOf = (any, any) => any => any[];
+type GetAllValuesOf = (any, any) => any => mixed[];
 export const getAllValuesOf: GetAllValuesOf = (target, memo) => x => {
   const buffer = !Array.isArray(memo) ? [] : memo;
 
