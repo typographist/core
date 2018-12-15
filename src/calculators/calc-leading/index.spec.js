@@ -6,6 +6,6 @@ describe('calcLeading', () => {
   });
 
   it('should calc leading if base is number', () => {
-    expect(calcLeading(16, 1.5)).toEqual(24);
+    expect(calcLeading([16], 1.5)).toEqual(24);
   });
 });

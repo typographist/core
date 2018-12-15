@@ -1,9 +1,10 @@
+import R from 'ramda';
 import { AMPERSAND } from '.';
 
 describe('regexes', () => {
   describe('AMPERSAND regex', () => {
     it('should remove ampersand from selector', () => {
-      expect(AMPERSAND.test('&__inner')).toEqual(true);
+      expect(R.test(AMPERSAND, '&__inner')).toEqual(true);
     });
   });
 });

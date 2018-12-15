@@ -1,4 +1,4 @@
-import { userConfig } from '../models';
+import { userConfig } from '../mocks';
 import { makeBreakpoints } from '.';
 
 describe('make breakpoints', () => {
@@ -14,7 +14,7 @@ describe('make breakpoints', () => {
           value: '0px',
         },
         {
-          base: 17,
+          base: [17],
           lineHeight: 1.5,
           name: 'tablet',
           ratio: 1.1761442744249144,
@@ -22,7 +22,7 @@ describe('make breakpoints', () => {
           value: '640px',
         },
         {
-          base: 18,
+          base: [18],
           lineHeight: 1.7,
           name: 'desktop',
           ratio: 1.333,
@@ -30,7 +30,7 @@ describe('make breakpoints', () => {
           value: '1024px',
         },
         {
-          base: 20,
+          base: [20],
           lineHeight: 1.7,
           name: 'lgDesktop',
           ratio: 1.333,
@@ -38,7 +38,7 @@ describe('make breakpoints', () => {
           value: '1200px',
         },
         {
-          base: 22,
+          base: [22],
           lineHeight: 1.7,
           name: 'xlDesktop',
           ratio: 1.333,
