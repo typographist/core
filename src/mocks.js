@@ -1,65 +1,8 @@
-export const breakpointsModel = [
-  {
-    base: [16, 33],
-    lineHeight: 1.5,
-    name: 'default',
-    ratio: 1.1342044031840226,
-    root: 12,
-    value: '0px',
-  },
-  {
-    base: 17,
-    lineHeight: 1.5,
-    name: 'tablet',
-    ratio: 1.1258335640240535,
-    root: 13,
-    value: '640px',
-  },
-  {
-    base: 18,
-    lineHeight: 1.7,
-    name: 'desktop',
-    ratio: 1.333,
-    root: 16,
-    value: '1024px',
-  },
-  {
-    base: 20,
-    lineHeight: 1.7,
-    name: 'lgDesktop',
-    ratio: 1.333,
-    root: 17,
-    value: '1200px',
-  },
-  {
-    base: 22,
-    lineHeight: 1.7,
-    name: 'xlDesktop',
-    ratio: 1.333,
-    root: 19,
-    value: '1600px',
-  },
-];
+// @flow
 
-/*
-  Breakpoint :: {
-    value :: String,
-    base :: Maybe String | [String],
-    lineHeight :: Maybe Number, 
-    ratio :: Maybe Number | String,
-  }
-*/
+import type { UserConfig, Breakpoint } from './models';
 
-/* UserConfig :: 
-  {
-    base :: String | [String],
-    lineHeight :: Number, 
-    ratio :: Number | String,
-    Maybe Breakpoint,
-  } 
-*/
-
-export const UserConfig = {
+export const userConfig: UserConfig = {
   base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',
@@ -82,3 +25,46 @@ export const UserConfig = {
     base: '22px',
   },
 };
+
+export const breakpoints: Breakpoint[] = [
+  {
+    base: [16, 32],
+    lineHeight: 1.5,
+    name: 'default',
+    ratio: 1.1880883987824906,
+    root: 12,
+    value: '0px',
+  },
+  {
+    base: [17],
+    lineHeight: 1.5,
+    name: 'tablet',
+    ratio: 1.1761442744249144,
+    root: 13,
+    value: '640px',
+  },
+  {
+    base: [18],
+    lineHeight: 1.7,
+    name: 'desktop',
+    ratio: 1.333,
+    root: 16,
+    value: '1024px',
+  },
+  {
+    base: [20],
+    lineHeight: 1.7,
+    name: 'lgDesktop',
+    ratio: 1.333,
+    root: 17,
+    value: '1200px',
+  },
+  {
+    base: [22],
+    lineHeight: 1.7,
+    name: 'xlDesktop',
+    ratio: 1.333,
+    root: 19,
+    value: '1600px',
+  },
+];

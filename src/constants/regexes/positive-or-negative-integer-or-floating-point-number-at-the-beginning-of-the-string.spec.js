@@ -1,12 +1,12 @@
 import R from 'ramda';
-import { POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING } from '.';
+import * as regexp from '.';
 
 describe('regexes', () => {
   describe('POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING regex', () => {
     it('should integer support', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '12',
         ),
       ).toEqual(true);
@@ -15,7 +15,7 @@ describe('regexes', () => {
     it('should floating points support', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '1.2',
         ),
       ).toEqual(true);
@@ -24,15 +24,16 @@ describe('regexes', () => {
     it('should negative meaning', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
-        )('-7'),
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          '-7',
+        ),
       ).toEqual(true);
     });
 
     it('should invalid number', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '1....2',
         ),
       ).toEqual(false);
@@ -41,7 +42,7 @@ describe('regexes', () => {
     it('should negative floating point', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           '-7.777',
         ),
       ).toEqual(true);
@@ -50,7 +51,7 @@ describe('regexes', () => {
     it('should not a number', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           'myNameIsMax',
         ),
       ).toEqual(false);
@@ -59,7 +60,7 @@ describe('regexes', () => {
     it('should not a number', () => {
       expect(
         R.test(
-          POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
+          regexp.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING,
           'myNameIsMax',
         ),
       ).toEqual(false);
