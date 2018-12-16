@@ -4,6 +4,7 @@ import R from 'ramda';
 import * as regexp from '../../constants/regexes';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { invariant } from '../../helpers/invariant';
+import { determineType } from '../../helpers/determine-type';
 import { title, userConfig } from '../../error-messages';
 import { type UserConfig } from '../../models';
 
@@ -15,17 +16,22 @@ export const hasPxOrEm = R.test(
   regexp.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
 );
 
-export const baseLiteralHasPxOrEm: string => boolean = base => {
+export const baseLiteralIsValid: string => boolean = base => {
   invariant(hasPxOrEm(base), `${title} ${configMessage} ${basePxEm}`);
 
   return hasPxOrEm(base);
 };
 
-export const baseIsStrOrArrStr: any => boolean = R.cond([
-  [R.is(Array), x => baseLiteralHasPxOrEm(x)],
-  [R.is(String), str => baseLiteralHasPxOrEm(str)],
-  [R.T, R.F],
-]);
+export const baseIsStrOrArrStr: any => boolean = base => {
+  switch (determineType(base)) {
+    case 'Array':
+      return base.every(baseLiteralIsValid);
+    case 'String':
+      return baseLiteralIsValid(base);
+    default:
+      return false;
+  }
+};
 
 export const isValidField: mixed => boolean = base => {
   invariant(
@@ -36,7 +42,7 @@ export const isValidField: mixed => boolean = base => {
   return baseIsStrOrArrStr(base);
 };
 
-export const validateFields: UserConfig => boolean = R.compose(
-  R.all(isValidField),
-  getBases,
-);
+export const validateFields: UserConfig => boolean = config =>
+  getBases(config)
+    .map(isValidField)
+    .every(Boolean);

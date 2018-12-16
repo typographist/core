@@ -1,10 +1,5 @@
 import { userConfig } from '../../mocks';
-import {
-  getBases,
-  baseLiteralHasPxOrEm,
-  isValidField,
-  validateFields,
-} from '.';
+import { getBases, baseLiteralIsValid, isValidField, validateFields } from '.';
 
 describe('bases validator', () => {
   describe('bases validator', () => {
@@ -20,17 +15,17 @@ describe('bases validator', () => {
       });
     });
 
-    describe('baseLiteralHasPxOrEm function', () => {
+    describe('baseLiteralIsValid function', () => {
       it('if the base value has pixels', () => {
-        expect(baseLiteralHasPxOrEm('12px')).toEqual(true);
+        expect(baseLiteralIsValid('12px')).toEqual(true);
       });
 
       it('if the value contain string with em unit', () => {
-        expect(baseLiteralHasPxOrEm('12em')).toEqual(true);
+        expect(baseLiteralIsValid('12em')).toEqual(true);
       });
 
       it('if base contain invalid value', () => {
-        expect(baseLiteralHasPxOrEm).toThrowErrorMatchingSnapshot();
+        expect(baseLiteralIsValid).toThrowErrorMatchingSnapshot();
       });
     });
 
