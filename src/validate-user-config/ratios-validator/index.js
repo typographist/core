@@ -5,6 +5,7 @@ import * as regexes from '../../constants/regexes';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { isNumeric } from '../../helpers/is-numeric';
 import { invariant } from '../../helpers/invariant';
+import { determineType } from '../../helpers/determine-type';
 import { title, userConfig } from '../../error-messages';
 import { type UserConfig } from '../../models';
 
@@ -27,22 +28,27 @@ export const isValidRatioLiteral: string => boolean = ratio =>
     Boolean,
   );
 
-export const validateField: any => boolean = R.cond([
-  [R.allPass([R.is(Number), isNumeric]), R.T],
-  [R.is(String), isValidRatioLiteral],
-  [R.T, R.F],
-]);
+const isStringOrNumber: any => boolean = ratio => {
+  switch (determineType(ratio)) {
+    case 'String':
+      return isValidRatioLiteral(ratio);
+    case 'Number':
+      return isNumeric(ratio);
+    default:
+      return false;
+  }
+};
 
-export const ratioIsValid: (mixed[]) => boolean = ratio => {
+export const isValidField: mixed => boolean = ratio => {
   invariant(
-    validateField(ratio),
+    isStringOrNumber(ratio),
     `${title} ${configMessage} ${ratioStringNumber}`,
   );
 
-  return validateField(ratio);
+  return isStringOrNumber(ratio);
 };
 
-export const validateFields: UserConfig => boolean = R.compose(
-  R.all(ratioIsValid),
-  getRatios,
-);
+export const validateFields: UserConfig => boolean = config =>
+  getRatios(config)
+    .map(isValidField)
+    .every(Boolean);

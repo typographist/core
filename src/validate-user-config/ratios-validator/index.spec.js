@@ -2,7 +2,7 @@ import { userConfig } from '../../mocks';
 import {
   getRatios,
   isValidRatioLiteral,
-  ratioIsValid,
+  isValidField,
   validateFields,
 } from '.';
 
@@ -32,17 +32,17 @@ describe('user config validators', () => {
       });
     });
 
-    describe('ratioIsValid function', () => {
+    describe('isValidField function', () => {
       it('if ratio is the number', () => {
-        expect(ratioIsValid(1.333)).toEqual(true);
+        expect(isValidField(1.333)).toEqual(true);
       });
 
       it('if ratio is a valid string', () => {
-        expect(ratioIsValid('33px at 5')).toEqual(true);
+        expect(isValidField('33px at 5')).toEqual(true);
       });
 
       it('invalid ratio', () => {
-        expect(ratioIsValid).toThrowErrorMatchingSnapshot();
+        expect(isValidField).toThrowErrorMatchingSnapshot();
       });
     });
 
