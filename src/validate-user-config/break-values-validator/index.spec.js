@@ -1,7 +1,7 @@
 import { userConfig } from '../../mocks';
 import {
   getBreakValues,
-  valueIsStr,
+  breakValIsStr,
   breakValHasPxOrEm,
   validateFields,
 } from '.';
@@ -19,9 +19,9 @@ describe('user config validators', () => {
       });
     });
 
-    describe('valueIsStr function', () => {
+    describe('breakValIsStr function', () => {
       it('is valid breakpoint ', () => {
-        expect(valueIsStr('60')).toEqual(true);
+        expect(breakValIsStr('60')).toEqual(true);
       });
     });
 

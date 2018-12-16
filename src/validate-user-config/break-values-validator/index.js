@@ -8,16 +8,14 @@ import { title, userConfig } from '../../error-messages';
 import { type UserConfig } from '../../models';
 
 const { configMessage, breakpointString, breakpointPx } = userConfig;
+const isString = R.is(String);
 
 export const getBreakValues: UserConfig => mixed[] = getAllValuesOf('value');
 
-export const valueIsStr: mixed => boolean = val => {
-  invariant(
-    typeof val === 'string',
-    `${title} ${configMessage} ${breakpointString}`,
-  );
+export const breakValIsStr: mixed => boolean = val => {
+  invariant(isString(val), `${title} ${configMessage} ${breakpointString}`);
 
-  return typeof val === 'string';
+  return isString(val);
 };
 
 const hasPxOrEm = R.test(INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT);
@@ -28,9 +26,10 @@ export const breakValHasPxOrEm: any => boolean = val => {
   return hasPxOrEm(val);
 };
 
-// TODO: починить функцию breakValHasPxOrEm;
+export const isValidField: mixed => boolean = val =>
+  [breakValIsStr(val), breakValHasPxOrEm(val)].every(Boolean);
 
-export const validateFields: UserConfig => boolean = R.compose(
-  R.all(R.allPass([valueIsStr, breakValHasPxOrEm])),
-  getBreakValues,
-);
+export const validateFields: UserConfig => boolean = config =>
+  getBreakValues(config)
+    .map(isValidField)
+    .every(Boolean);
