@@ -9,6 +9,7 @@ import { type UserConfig } from '../../models';
 
 const { configMessage, breakpointString, breakpointPx } = userConfig;
 const isString = R.is(String);
+const hasPxOrEm = R.test(INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT);
 
 export const getBreakValues: UserConfig => mixed[] = getAllValuesOf('value');
 
@@ -17,8 +18,6 @@ export const breakValIsStr: mixed => boolean = val => {
 
   return isString(val);
 };
-
-const hasPxOrEm = R.test(INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT);
 
 export const breakValHasPxOrEm: any => boolean = val => {
   invariant(hasPxOrEm(val), `${title} ${configMessage} ${breakpointPx}`);
