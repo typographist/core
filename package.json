@@ -4,9 +4,10 @@
   "description": "Core API for typographist",
   "main": "src/index.js",
   "scripts": {
+    "init": "npm run semantic-release && npm run commit",
     "commit": "npx git-cz",
     "prettier": "prettier './**/**/**.{babelrc,prettierrc,json,js,eslintrc,spec}' --write",
-    "semantic-release": "semantic-release",
+    "semantic-release": "npx semantic-release",
     "test": "npm run test:lint && flow && npm run test:code",
     "test:watch": "jest --coverage --watch --updateSnapshot",
     "test:code": "jest --coverage",
