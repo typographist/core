@@ -2,7 +2,7 @@
 import memoize from 'fast-memoize';
 import { makeBreakpointsProcess } from './make-breakpoints-process';
 import { validateUserConfig } from '../validate-user-config';
-import type { UserConfig } from '../models';
+import { type UserConfig } from '../models';
 
 const memoized = memoize(makeBreakpointsProcess);
 
