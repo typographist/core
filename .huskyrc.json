@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "pre-push": "npm test",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write", "git add"],
+    "*.{babelrc,prettierrc,json,js,eslintrc,spec}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
