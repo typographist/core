@@ -4,9 +4,27 @@
   "description": "Core API for typographist",
   "main": "src/index.js",
   "scripts": {
-    "test": "cross-env jest --verbose --coverage --coverageReporters=text-lcov | cross-env coveralls",
-    "test:watch": "cross-env jest --watch --updateSnapshot",
-    "prepush": "jest && flow"
+    "test": "npm run test:eslint && flow && npm run test:code",
+    "test:watch": "jest --coverage --watch --updateSnapshot",
+    "test:code": "jest --coverage",
+    "test:eslint": "eslint .",
+    "prettier": "prettier './**/**/**.{babelrc,prettierrc,json,js,eslintrc,spec}' --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    },
+    "lint-staged": {
+      "*.js": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+      ],
+      "*.{babelrc,prettierrc,json,js,eslintrc,spec}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
   },
   "files": [],
   "publishConfig": {
@@ -44,6 +62,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "commitizen": "^3.0.5",
     "coveralls": "^3.0.2",
     "cross-env": "^5.1.4",
     "eslint": "^5.9.0",
@@ -58,8 +77,9 @@
     "husky": "^1.2.0",
     "igogo": "^1.0.2",
     "jest": "^23.6.0",
-    "ramda": "^0.26.1",
-    "travis-deploy-once": "^5.0.1"
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "ramda": "^0.26.1"
   },
   "license": "MIT",
   "bugs": {
