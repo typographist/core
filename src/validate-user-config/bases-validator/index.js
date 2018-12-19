@@ -1,7 +1,7 @@
 // @flow
 
 import R from 'ramda';
-import * as regexp from '../../constants/regexes';
+import * as constants from '../../constants';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { invariant } from '../../helpers/invariant';
 import { title, userConfig } from '../../error-messages';
@@ -12,7 +12,7 @@ const { configMessage, basePxEm, baseArrayString } = userConfig;
 export const getBases: UserConfig => mixed[] = getAllValuesOf('base');
 
 export const hasPxOrEm = R.test(
-  regexp.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
+  constants.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
 );
 
 export const baseLiteralIsValid: string => boolean = base => {

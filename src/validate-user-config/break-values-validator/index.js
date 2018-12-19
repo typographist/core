@@ -1,7 +1,7 @@
 // @flow
 
 import R from 'ramda';
-import { INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT } from '../../constants/regexes';
+import * as constants from '../../constants';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { invariant } from '../../helpers/invariant';
 import { title, userConfig } from '../../error-messages';
@@ -9,7 +9,9 @@ import { type UserConfig } from '../../models';
 
 const { configMessage, breakpointString, breakpointPx } = userConfig;
 const isString = R.is(String);
-const hasPxOrEm = R.test(INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT);
+const hasPxOrEm = R.test(
+  constants.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
+);
 
 export const getBreakValues: UserConfig => mixed[] = getAllValuesOf('value');
 
