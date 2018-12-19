@@ -13,7 +13,7 @@ type CalcFontSize = (number, number[], number) => number;
 const calcFontSize: CalcFontSize = (step, base, ratio) =>
   Math.pow(ratio, Math.floor(step / base.length));
 
-/* eslint-disable */
+/* eslint-disable no-param-reassign, no-plusplus */
 
 type ModularScale = (number[], number, number) => number;
 export const modularScale: ModularScale = (base, ratio, step) => {
@@ -31,11 +31,11 @@ export const modularScale: ModularScale = (base, ratio, step) => {
   for (let i = 1; i < base.length; i++) {
     // shift up if value too low
     while (base[i] / 1 < base[0] / 1) {
-      base[i] = Math.pow(ratio, 1) * base[i];
+      base[i] *= Math.pow(ratio, 1);
     }
     // Shift down if too high
     while (base[i] / 1 >= baseHigh / 1) {
-      base[i] = Math.pow(ratio, -1) * base[i];
+      base[i] *= Math.pow(ratio, -1);
     }
   }
 
