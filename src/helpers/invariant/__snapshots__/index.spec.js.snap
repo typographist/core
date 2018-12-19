@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`helpers invariant fn if the condition is not fulfilled, throw an error 1`] = `undefined`;
