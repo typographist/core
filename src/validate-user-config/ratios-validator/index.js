@@ -5,7 +5,6 @@ import * as regexes from '../../constants/regexes';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { isNumeric } from '../../helpers/is-numeric';
 import { invariant } from '../../helpers/invariant';
-import { typeOf } from '../../helpers/type-of';
 import { title, userConfig } from '../../error-messages';
 import { type UserConfig } from '../../models';
 
@@ -29,10 +28,10 @@ export const isValidRatioLiteral: string => boolean = ratio =>
   );
 
 const isStringOrNumber: any => boolean = ratio => {
-  switch (typeOf(ratio)) {
-    case 'string':
+  switch (R.type(ratio)) {
+    case 'String':
       return isValidRatioLiteral(ratio);
-    case 'number':
+    case 'Number':
       return isNumeric(ratio);
     default:
       return false;

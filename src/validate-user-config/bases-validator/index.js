@@ -4,7 +4,6 @@ import R from 'ramda';
 import * as regexp from '../../constants/regexes';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { invariant } from '../../helpers/invariant';
-import { typeOf } from '../../helpers/type-of';
 import { title, userConfig } from '../../error-messages';
 import { type UserConfig } from '../../models';
 
@@ -23,10 +22,10 @@ export const baseLiteralIsValid: string => boolean = base => {
 };
 
 export const baseIsStrOrArrStr: any => boolean = base => {
-  switch (typeOf(base)) {
-    case 'array':
+  switch (R.type(base)) {
+    case 'Array':
       return base.every(baseLiteralIsValid);
-    case 'string':
+    case 'String':
       return baseLiteralIsValid(base);
     default:
       return false;
