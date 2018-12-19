@@ -30,9 +30,9 @@ export const isValidRatioLiteral: string => boolean = ratio =>
 
 const isStringOrNumber: any => boolean = ratio => {
   switch (typeOf(ratio)) {
-    case 'String':
+    case 'string':
       return isValidRatioLiteral(ratio);
-    case 'Number':
+    case 'number':
       return isNumeric(ratio);
     default:
       return false;

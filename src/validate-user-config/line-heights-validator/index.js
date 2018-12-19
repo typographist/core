@@ -15,7 +15,7 @@ export const getLineHeights: UserConfig => mixed[] = getAllValuesOf(
 
 export const lineHeightIsNumber: mixed => boolean = lineH => {
   switch (typeOf(lineH)) {
-    case 'Number':
+    case 'number':
       return isNumeric(lineH);
     default:
       return false;

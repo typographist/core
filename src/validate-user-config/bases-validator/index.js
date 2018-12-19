@@ -24,9 +24,9 @@ export const baseLiteralIsValid: string => boolean = base => {
 
 export const baseIsStrOrArrStr: any => boolean = base => {
   switch (typeOf(base)) {
-    case 'Array':
+    case 'array':
       return base.every(baseLiteralIsValid);
-    case 'String':
+    case 'string':
       return baseLiteralIsValid(base);
     default:
       return false;
