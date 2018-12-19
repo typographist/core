@@ -1,6 +1,6 @@
 // @flow
 
-import { HALF } from '../../constants';
+import { HALF } from '../constants';
 
 import { calcLeading } from '../calculators/calc-leading';
 import type { FilledBreakpointStableRatio } from '../models';
