@@ -1,14 +1,16 @@
 import R from 'ramda';
-import * as regexp from '.';
+import * as constants from '.';
 
 describe('regexes regex', () => {
   describe('STEP_FUNCTION_WITH_VALUE', () => {
     it('should find step function', () => {
-      expect(R.test(regexp.STEP_FUNCTION_WITH_VALUE, 'step(12)')).toEqual(true);
+      expect(R.test(constants.STEP_FUNCTION_WITH_VALUE, 'step(12)')).toEqual(
+        true,
+      );
     });
 
     it('should not find step function', () => {
-      expect(R.test(regexp.STEP_FUNCTION_WITH_VALUE, 'tstep(12))')).toEqual(
+      expect(R.test(constants.STEP_FUNCTION_WITH_VALUE, 'tstep(12))')).toEqual(
         false,
       );
     });

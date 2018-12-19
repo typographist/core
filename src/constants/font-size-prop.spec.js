@@ -1,14 +1,14 @@
 import R from 'ramda';
-import * as regexp from '.';
+import * as constants from '.';
 
 describe('regexes', () => {
   describe('FONT_SIZE_PROP regex', () => {
     it('should has `font-size`', () => {
-      expect(R.test(regexp.FONT_SIZE_PROP, 'font-size')).toEqual(true);
+      expect(R.test(constants.FONT_SIZE_PROP, 'font-size')).toEqual(true);
     });
 
     it("should doesn't contain `font-size`", () => {
-      expect(R.test(regexp.FONT_SIZE_PROP, 'blabla')).toEqual(false);
+      expect(R.test(constants.FONT_SIZE_PROP, 'blabla')).toEqual(false);
     });
   });
 });
