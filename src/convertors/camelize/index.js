@@ -3,10 +3,9 @@
 import R from 'ramda';
 import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '../../constants';
 
-type CamelizeString = string => string;
-const camelizeString: CamelizeString = R.replace(
+const camelizeString = R.replace(
   DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
-  (match, chr) => (chr ? chr.toUpperCase() : ''),
+  (match, chr) => chr.toUpperCase(),
 );
 
 const firstLetter = R.compose(
@@ -19,5 +18,5 @@ const wordTail = R.compose(
   R.tail,
 );
 
-type Camelize = string => string;
-export const camelize: Camelize = str => `${firstLetter(str)}${wordTail(str)}`;
+export const camelize: string => string = str =>
+  `${firstLetter(str)}${wordTail(str)}`;
