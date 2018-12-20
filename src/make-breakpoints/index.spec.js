@@ -3,7 +3,7 @@ import { makeBreakpoints } from '.';
 
 describe('make breakpoints', () => {
   describe('makeBreakpoints fn', () => {
-    it('make list with first breakpoint values', () => {
+    it('make list with breakpoint values', () => {
       expect(makeBreakpoints(userConfig)).toEqual([
         {
           base: [16, 32],
