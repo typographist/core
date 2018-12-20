@@ -5,5 +5,9 @@ describe('convertors', () => {
     it('should camelize string', () => {
       expect(camelize('hello-world')).toEqual('helloWorld');
     });
+
+    it('return empty strng', () => {
+      expect(camelize('')).toEqual('');
+    });
   });
 });
