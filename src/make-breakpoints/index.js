@@ -6,5 +6,11 @@ import { type UserConfig } from '../models';
 
 const memoized = memoize(makeBreakpointsProcess);
 
-export const makeBreakpoints = (config: UserConfig) =>
-  validateUserConfig(config) ? memoized(config) : [];
+/* eslint-disable consistent-return */
+
+export const makeBreakpoints = (config: UserConfig) => {
+  if (validateUserConfig(config)) {
+    return memoized(config);
+  }
+};
+/* eslint-enable */
