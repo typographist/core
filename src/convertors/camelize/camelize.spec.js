@@ -2,12 +2,20 @@ import { camelize } from '.';
 
 describe('convertors', () => {
   describe('camelize', () => {
-    it('should camelize string', () => {
+    it('convert cebabcase string to camalcase', () => {
       expect(camelize('hello-world')).toEqual('helloWorld');
     });
 
-    it('converts string to camelcase', () => {
+    it('lowercase the first letter', () => {
       expect(camelize('HelloWorld')).toEqual('helloWorld');
+    });
+
+    it('converts string to camelcase', () => {
+      expect(camelize('hello world')).toEqual('helloWorld');
+    });
+
+    it('converts snakecase string to camelcase', () => {
+      expect(camelize('hello_world')).toEqual('helloWorld');
     });
   });
 });
