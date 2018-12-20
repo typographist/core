@@ -6,8 +6,8 @@ describe('convertors', () => {
       expect(camelize('hello-world')).toEqual('helloWorld');
     });
 
-    it('return empty strng', () => {
-      expect(camelize('')).toEqual('');
+    it('converts string to camelcase', () => {
+      expect(camelize('HelloWorld')).toEqual('helloWorld');
     });
   });
 });
