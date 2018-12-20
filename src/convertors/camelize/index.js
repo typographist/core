@@ -9,17 +9,15 @@ const camelizeString: CamelizeString = R.replace(
   (match, chr) => (chr ? chr.toUpperCase() : ''),
 );
 
+const firstLetter = R.compose(
+  R.toLower,
+  R.head,
+);
+
+const wordTail = R.compose(
+  camelizeString,
+  R.tail,
+);
+
 type Camelize = string => string;
-export const camelize: Camelize = str => {
-  const firstLetter = R.compose(
-    R.toLower,
-    R.head,
-  );
-
-  const wordTail = R.compose(
-    camelizeString,
-    R.tail,
-  );
-
-  return `${firstLetter(str)}${wordTail(str)}`;
-};
+export const camelize: Camelize = str => `${firstLetter(str)}${wordTail(str)}`;
