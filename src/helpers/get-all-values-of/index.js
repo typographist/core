@@ -3,16 +3,14 @@
 import { isObject } from '../is-object';
 
 type GetAllValuesOf = (any, any) => any => mixed[];
-export const getAllValuesOf: GetAllValuesOf = (target, memo) => x => {
+export const getAllValuesOf: GetAllValuesOf = (target, memo) => obj => {
   const buffer = !Array.isArray(memo) ? [] : memo;
 
-  for (const i in x) {
-    if (Object.prototype.hasOwnProperty.call(x, i)) {
-      if (i === target) {
-        buffer.push(x[i]);
-      } else if (Array.isArray(x[i]) || isObject(x[i])) {
-        getAllValuesOf(target, buffer)(x[i]);
-      }
+  for (const key in obj) {
+    if (key === target) {
+      buffer.push(obj[key]);
+    } else if (Array.isArray(obj[key]) || isObject(obj[key])) {
+      getAllValuesOf(target, buffer)(obj[key]);
     }
   }
 
