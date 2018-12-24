@@ -4,6 +4,8 @@
   "description": "Core API for typographist",
   "main": "src/index.js",
   "scripts": {
+    "build": "npm run test && npm run clean && rollup -c",
+    "clean": "rimraf lib es",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "prettier": "prettier './**/**/**.{babelrc,prettierrc,json,js,eslintrc,spec}' --write",
     "semantic-release": "npx semantic-release",
@@ -41,7 +43,8 @@
     "web-typography"
   ],
   "contributors": [
-    "Maxim Alyoshin <mgreen097@gmail.com>"
+    "Maxim Alyoshin <mgreen097@gmail.com>",
+    "Sergey Sova <mail@sergeysova.com>"
   ],
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -75,6 +78,14 @@
     "nyc": "^13.1.0",
     "prettier": "^1.15.3",
     "ramda": "^0.26.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.68.1",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "rollup-plugin-uglify": "^6.0.0",
     "semantic-release": "^15.13.1"
   },
   "license": "MIT",
