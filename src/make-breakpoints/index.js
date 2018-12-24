@@ -1,4 +1,5 @@
 // @flow
+
 import memoize from 'fast-memoize';
 import { makeBreakpointsProcess } from './make-breakpoints-process';
 import { validateUserConfig } from '../validate-user-config';
