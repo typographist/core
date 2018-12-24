@@ -23,30 +23,29 @@ export const OCTAVE = 2;
 export const PERFECT_FIFTH = 1.5;
 export const PERFECT_FOURTH = 1.333333333;
 export const PHI = 1.618034;
-export const PI = 3.14159265359;
 
 // regexes
+export const SPACE_AT_WORD_SPACE = /\sat\s/;
+export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_NUMBER_AT_BEGINNING_OF_STRING = /^-?\d+(\.\d+)?$/;
+export const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
+export const FONT_SIZE = /\b\d+(\.\d+)?(px|em)\b/g;
+export const PX_OR_EM_FONT_SIZE_AT_BEGINNING_OF_STRING = /^\d+(\.\d+)?(px|em)\b/g;
+export const PX_OR_EM_FONT_SIZE = /\d+(\.\d+)?(px|em)/;
+export const PX_FONT_SIZE = /\d+(\.\d+)?px/;
+export const SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER = /(?=[A-Z])/;
+export const EM_FONT_SIZE = /\d+(\.\d+)?em/;
 export const ALL_CHARACTERS_AFTER_COLON = /:.+\b/; // postcss
 export const ALL_CHARACTERS_BEFORE_COLON = /^\(.+\):?/; // postcss
 export const ALL_ROUND_BRACKETS = /[()]/g; // postcss
 export const AMPERSAND = /&/; // postcss
 export const LAST_COMMA = /,\s*$/; // postcss
 export const LINE_BREAKS_AND_SPACES = /[\n\s]/g; // postcss
-export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_REM_UNIT = /\d+(\.\d+)?rem/; // postcss
+export const REM_FONT_SIZE = /\d+(\.\d+)?rem/; // postcss
 export const REVERCE_BRACKET = /\)/; // postcss
 export const STEP_UNIT = /step/; // postcss
 export const STEP_FUNCTION_WITH_VALUE = /^step\(.+?\)$/; // postcss
-export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_WITH_STEP_UNIT_AT_THE_BEGINNING_OF_THE_STRING = /^-?\d+(\.\d+)?step$/; // postcss
-export const SPACE_AT_WORD_SPACE = /\sat\s/;
-export const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
-export const STEP_WITH_BRACKET = /step\(/;
-export const FONT_SIZE = /\b\d+(\.\d+)?(px|em)\b/g;
-export const FONT_SIZE_PROP = /^font-size$/;
-export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_EM_UNIT = /\d+(\.\d+)?em/;
-export const POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING = /^\d+(\.\d+)?(px|em)\b/g;
-export const POSITIVE_FLOATING_POINT_NUMBER_WITH_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING = /^\d+(\.\d+)?em\b/g;
-export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_BEGINNING_OF_THE_STRING = /^-?\d+(\.\d+)?$/;
-export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_END_OF_THE_STRING = /-?\b\d+(\.\d+)?\b\s*$/g;
-export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT = /\d+(\.\d+)?(px|em)/;
-export const INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_UNIT = /\d+(\.\d+)?px/;
-export const SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER = /(?=[A-Z])/;
+export const STEP_FONT_SIZE_AT_BEGINNING_OF_STRING = /^-?\d+(\.\d+)?step$/; // postcss
+export const FONT_SIZE_PROP = /^font-size$/; // postcss
+export const STEP_WITH_BRACKET = /step\(/; // postcss
+export const EM_FONT_SIZE_AT_BEGINNING_OF_STRING = /^\d+(\.\d+)?em\b/g; // postcss
+export const POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_NUMBER_AT_END_OF_STRING = /-?\b\d+(\.\d+)?\b\s*$/g; // postcss
