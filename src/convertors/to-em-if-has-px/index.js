@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 import * as constants from '../../constants';
 
 type ToEm = string => string;
@@ -9,6 +9,6 @@ const toEm: ToEm = x =>
 
 type ToEmIfHasPx = string => string;
 export const toEmIfHasPx: ToEmIfHasPx = R.when(
-  R.test(constants.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_UNIT),
+  R.test(constants.PX_FONT_SIZE),
   toEm,
 );

@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
 import * as constants from '../constants';
@@ -9,7 +9,7 @@ type MakeStepFromLiteral = string => number;
 export const makeStepFromLiteral: MakeStepFromLiteral = R.compose(
   parseFloat,
   R.match(
-    constants.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_END_OF_THE_STRING,
+    constants.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_NUMBER_AT_END_OF_STRING,
   ),
 );
 

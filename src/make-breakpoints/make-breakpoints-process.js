@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 import { toPxValue } from './to-px-value';
 import { basePropProcess } from './base-prop-utils';
 import { createBreakpoints } from './create-breakpoints';

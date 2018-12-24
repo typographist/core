@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 import * as constants from '../../constants';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { invariant } from '../../helpers/invariant';
@@ -11,9 +11,7 @@ const { configMessage, basePxEm, baseArrayString } = userConfig;
 
 export const getBases: UserConfig => mixed[] = getAllValuesOf('base');
 
-export const hasPxOrEm = R.test(
-  constants.INTEGER_OR_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT,
-);
+export const hasPxOrEm = R.test(constants.PX_OR_EM_FONT_SIZE);
 
 export const baseLiteralIsValid: string => boolean = base => {
   invariant(hasPxOrEm(base), `${title} ${configMessage} ${basePxEm}`);

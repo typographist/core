@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 import { LINE_BREAKS_AND_SPACES } from '.';
 
 describe('regexes', () => {

@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 import * as constants from '../../constants';
 import { getAllValuesOf } from '../../helpers/get-all-values-of';
 import { isNumeric } from '../../helpers/is-numeric';
@@ -13,13 +13,13 @@ const { configMessage, ratioStringNumber } = userConfig;
 export const getRatios: UserConfig => mixed[] = getAllValuesOf('ratio');
 
 const ratioHasFontSize = R.test(
-  constants.POSITIVE_FLOATING_POINT_NUMBER_WITH_PX_OR_EM_UNIT_AT_THE_BEGINNING_OF_THE_STRING,
+  constants.PX_OR_EM_FONT_SIZE_AT_BEGINNING_OF_STRING,
 );
 
 const ratioHasAtWord = R.test(constants.SPACE_AT_WORD_SPACE);
 
 const ratioHasStep = R.test(
-  constants.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_POINT_NUMBER_AT_THE_END_OF_THE_STRING,
+  constants.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_NUMBER_AT_END_OF_STRING,
 );
 
 export const isValidRatioLiteral: string => boolean = ratio =>

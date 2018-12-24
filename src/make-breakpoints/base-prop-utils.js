@@ -1,6 +1,6 @@
 // @flow
 
-import R from 'ramda';
+import * as R from 'ramda';
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
 
 type BaseToArray = (string | string[]) => string[];

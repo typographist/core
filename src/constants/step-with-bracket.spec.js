@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 import { STEP_WITH_BRACKET } from '.';
 
 describe('regexes', () => {
