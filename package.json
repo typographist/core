@@ -29,23 +29,16 @@
     "url": "https://github.com/typographist/core.git"
   },
   "keywords": [
-    "css",
+    "css-in-js",
     "design",
     "golden-ratio",
-    "eyeglass-module",
     "modular",
     "modular-scale",
-    "modularscale",
-    "modularscale-postcss",
     "musical-scales",
-    "postcss",
-    "postcss-plugin",
     "ratio",
     "scale",
-    "typo",
     "typography",
     "typographist",
-    "vertical-rhythm",
     "web-typography"
   ],
   "contributors": [
