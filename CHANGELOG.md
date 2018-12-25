@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/typographist/core/compare/v1.1.0...v1.2.0) (2018-12-25)
+
+
+### Features
+
+* **package.json:** add commit script ([4173200](https://github.com/typographist/core/commit/4173200))
+* add semantic-release icon ([3ff2cba](https://github.com/typographist/core/commit/3ff2cba))
+
 # [1.1.0](https://github.com/typographist/core/compare/v1.0.0...v1.1.0) (2018-12-25)
 
 
