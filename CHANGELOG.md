@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/typographist/core/compare/v1.2.0...v2.0.0) (2018-12-25)
+
+
+### Bug Fixes
+
+* **percentage function:** returns the result as a percentage ([d591187](https://github.com/typographist/core/commit/d591187))
+
+
+### BREAKING CHANGES
+
+* **percentage function:** Percentage function returns a string instead of a number.
+
 # [1.2.0](https://github.com/typographist/core/compare/v1.1.0...v1.2.0) (2018-12-25)
 
 
