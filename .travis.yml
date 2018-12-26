@@ -8,6 +8,7 @@ node_js:
 branches:
   only:
     - master
+    - /^greenkeeper/.*$/
 
 after_success:
   - yarn coverage
