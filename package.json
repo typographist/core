@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Core API for typographist",
   "main": "lib/typographist-core.cjs.js",
-  "module": "lib/es/typographist-core.es.js",
+  "module": "es/typographist-core.es.js",
   "scripts": {
     "build": "npm run test && npm run clean && rollup -c",
     "clean": "rimraf lib es",
