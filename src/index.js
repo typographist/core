@@ -1,5 +1,5 @@
-export * from './calculators';
-export * from './constants';
-export * from './convertors';
-export * from './helpers';
-export * from './make-breakpoints';
+export * as calculators from './calculators';
+export * as constants from './constants';
+export * as convertors from './convertors';
+export * as helpers from './helpers';
+export { makeBreakpoints } from './make-breakpoints';
