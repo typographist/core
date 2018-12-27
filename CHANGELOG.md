@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/typographist/core/compare/v2.0.0...v3.0.0) (2018-12-27)
+
+
+### Features
+
+* **index.js:** changed the number of exported files ([3c37402](https://github.com/typographist/core/commit/3c37402))
+
+
+### BREAKING CHANGES
+
+* **index.js:** added the ability to export helpers, calculators, convertors and constants
+
 # [2.0.0](https://github.com/typographist/core/compare/v1.2.0...v2.0.0) (2018-12-25)
 
 
