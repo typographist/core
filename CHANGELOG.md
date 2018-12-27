@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/typographist/core/compare/v3.0.0...v3.0.1) (2018-12-27)
+
+
+### Bug Fixes
+
+* **package.json:** fix path for es.js files ([6d95927](https://github.com/typographist/core/commit/6d95927))
+
 # [3.0.0](https://github.com/typographist/core/compare/v2.0.0...v3.0.0) (2018-12-27)
 
 
