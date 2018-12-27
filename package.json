@@ -1,6 +1,6 @@
 {
   "name": "@typographist/core",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0",
   "description": "Core API for typographist",
   "main": "lib/typographist-core.cjs.js",
   "module": "lib/es/typographist-core.es.js",
@@ -18,8 +18,7 @@
   },
   "files": [
     "lib",
-    "es",
-    "src"
+    "es"
   ],
   "publishConfig": {
     "access": "public"
