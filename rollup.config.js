@@ -36,16 +36,6 @@ export default [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    plugins: [
-      resolve(),
-      babel(),
-      terser(),
-      json(),
-      commonjs({
-        namedExports: {
-          'node_modules/fast-memoize/src/index.js': ['named'],
-        },
-      }),
-    ],
+    plugins: [resolve(), babel(), terser(), json(), commonjs()],
   },
 ];
