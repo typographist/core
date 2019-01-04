@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/typographist/core/compare/v3.0.2...v3.0.3) (2019-01-04)
+
+
+### Bug Fixes
+
+* **semantic-release:** remove redundant plugin ([#9](https://github.com/typographist/core/issues/9)) ([6065f2f](https://github.com/typographist/core/commit/6065f2f))
+
 ## [3.0.2](https://github.com/typographist/core/compare/v3.0.1...v3.0.2) (2018-12-29)
 
 
