@@ -1,4 +1,5 @@
 // @flow
 
-type ToRem = (number, number) => string;
-export const toRem: ToRem = (root, fontSize) => `${fontSize / root}rem`;
+type ToRem = (number, number | number[]) => string;
+export const toRem: ToRem = (root, fontSize) =>
+  `${parseFloat(fontSize) / root}rem`;
