@@ -1,3 +1,11 @@
+## [3.0.4](https://github.com/typographist/core/compare/v3.0.3...v3.0.4) (2019-01-06)
+
+
+### Bug Fixes
+
+* **ci:** change tokens ([0e22f77](https://github.com/typographist/core/commit/0e22f77))
+* **to-rem:** add parseFloat for fot-size ([0d4493b](https://github.com/typographist/core/commit/0d4493b))
+
 ## [3.0.3](https://github.com/typographist/core/compare/v3.0.2...v3.0.3) (2019-01-04)
 
 
