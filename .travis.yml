@@ -4,22 +4,17 @@ node_js:
   - node
   - '10'
   - '8'
-
 os:
   - linux
   - osx
-
 branches:
   only:
     - master
-    - /^greenkeeper/.*$/
-
+    - '/^greenkeeper/.*$/'
 script:
   - npm test
-
 after_success:
   - yarn coverage
-
 jobs:
   include:
     - stage: release
@@ -29,5 +24,5 @@ jobs:
         - npm run build
         - npx semantic-release
       env:
-        - secure: wJkAB5oJClOYrw3PV01Y4GJqXAz8AxEuCS3yHrlIXn8QYEWAQdZPdReFhp+ECMcPYDb9nxPTRAaoM6X7d7FeC1mct7Pp6yVobMuBPo7KcqgHM4/cB4sL3Du2UlxAK6YxrLHF/osnBr7ci5ule+alfGXYQxbt7hWP6ep55t8cWVcqpTBuhCEif+eSRJCpg68j0vrRJYwGq0SPXlbULwVPhAgu8Rerq+/iTEbT8EulvIOS1AlYvKE6Nme5sSaVN17s2wgf3y+nWYXj734bepRu/rXq2C3mZ+mgNtaPHBG+EeJhm3soc1rjQN1pf9hs/RDhgWBKF/OUUZaboB5XW+mNmArKu9A7Dd88fImpmgwsmkURSeHK7R7n/jd/VeZe+gwheMDDPJbmP/kflb1kTUmWq5wVRdo9DMCNoZxuLYlARZo0dR+YT4OrjzUVnk7Swh7rmTqlhj47Q756CJJhJcyynj+01tdWexkqyn6J/DGjr+gR7M5B0rOe4JPolQnV/3P8rUTsJoeSQ8FQ0gRNRWQqV5ubVngMfXMXgu8gHQiBTN0WuQDmWIP1TaD6J2VVONt/sKq/BfnHOFGEsSdmhnoX4k14AQNoIGKsT4UxcXaDLIO+7d6MTrVIHicpdzja/w+aLDi9zZd/S3ZmLqjsKCUxyknc8E+IEiuOs0Mr9tw205s=
-        - secure: OG9952PTWmz5wQo3A40gyVZwm9gG4LKmyZS6Xjj81Q8qNEhQ3M+ikQM8d8OWZZtQLAmXyZJKE0pZC40j55Be5eOi//Fqum0+ZuUhe7gdzTmTczg3VwYbaGXPm1O40fKuivjppgw/2NclunLuwaBcrq0zRGZLnnr4Olje5K7wL9ur+MLMqcfUQMOcIDYBuXbc1l+ihrpIMpUJ1WtGJ6Soa+REZu9Jf0dhklBZw6jD+J0FNDrrIahLYBESCrHA/P7GXIEula1PmLCpFMt33oDJiMbeuerZ0BtgmIbjTKOENUbvuneUAuk9Bdg+LBO80/Qzfkjzqw9qs0MEkzEzoFEqli5mmOFPycCW3KZ+8nYWu/A2CPyPg0VHHP92rSz2UAzIqFPzM1DedvtA3wbwDjnrZHAyqu8vT4Z0ypWgtbydT2F8wlh9fvWj+/7M2CFZl/CPpph+dSOzypPTwI6iu3RfunTy5zC5NROr3VZp6mY3gKsXHDLLWXzyOONbuoIoipmB2rb616FaHkIj5lUDOr+TexzVdamGkbTF+8L9O96Hb5GJJmTDtNUtkZruPnTX0VXR2/8Hld7MIGq41567EuD3ve/MmeZBqmsZ5niptU1LJQXEkNswbzQhVE+3f5M6WawUnpOxpy5C/Jz61jNQ/wQ8nr1+46hixuMeTEUcOs9bfq4=
+        - secure: 0PTkefim1bMIg6wE2uSa662DCZg7N4bpNK/3HDJRk2H4CNpPWvMK6l8y7fP9hj7d3k4bUMJkKasdJND1P4/TyZM/UuV6KXQaO14rs2iuZsfL4q+x1IpmgZtR0rIpHiV52URGZJPVTOfIOs9wJFxyNxXeLq5dadiSoQ7zOgxnuk3nm3aTZUTC7DxXoz3bsRjPXlNnUjWYI/dbBl8BR41yte5qo5DChnn63XVm+hybSvUbJ/cHiUtbJPpMWHILKYLYLJwhP9s5SZ9YkLgBIVTlJtXMs9wOrbfB3+MLddsz35kHs4lz9IIfhdb11o5LrXAoKPlXdQPP4X6NVmKEehE8tQ8YrCpWHRtLrw6Z8UVnd7b/ZKrCeErmcAFLh0NgSMGNDXJtpV8QHz+4/vMISZKeYocpOof6ohUG9QrAYMJlkOkovgL2YXjmFPYmY0vl41mk+2RxcDVP8dmD/TqFFYut5Q9ulzqRi43PIG7JE4cdpk+CU7hffTbeZs7NeapgHwoSLJPGbPVBHbjznDpaZk4a5xY++abaX58Q9Z7leKIihleXxS6O3W0TqfZdEBC8oBBMrmG9UF1dSCUm1LpMCFBa7YDL96HAOH4bge5lBweKJmmd5CqzARl2u9nxy2nbePRXiNP0rRphx5P1zhmxMFDt551Tmz5whGBCUgVfOkjvW70=
+        - secure: oBenL6oPcqBpatS4jySQO4hMfb9uqK7FC20b8VY4PA0SksUgxRNGgyW4QwZFVcm89+PAWnGuVRnUVYMpn0pgTqk0KNAObtkeqJEyQ6R9eTaLql30U99jTiT7x45IPWjika+UBoAeetq/QczWNeq2/+PQx8uZgvZwMWaYkW7wxfatecarE2N40pVI4Q771iYHSYnc6qRnqfxLxacuM9XgPFZmU8YN1rSkOpgSyPPYl/QFS0m4EubWy5pDGGWT9dOyhm5602IDh//zRBuK/vSJRN03pZTrX9qqERzrIWZ8bsgtFKzs/AUHUS/BBzshTzKgNNd1xF9dn5lCdZ+cOESZel9ZaVIsUgTo2CPuaNGdJmtnMz3lJpWW+OsMnhzskaNTZ+EUhf7Y21HmQpkf+zui4UtFXTXtQ88NbTWeHQ9ihEZNfbhxSoW3C4YCiwvKAtt9S0dRR1Vc6JTYmGbhbgee9XNXWwC4ugojhAQdLLcsz8/v1Ifncsv+0NCL9Yx4pSUEss8xO9OGy3xKgOT6ujNJU5n/9z2SoBL8Mx09TL5x+KQefAq9A3GaUv1NtxECiW41dpOdR5Dm0Bi/FYSNxsfAyoLChOxvRSwz7Sm3fGo1js+ewh32Dux1R9y7MEAaeQplI/N7yGPOM9nMc4U2qib6BnS1M0T2FEzcuPUG16Vc1C8=
