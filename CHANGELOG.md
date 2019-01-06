@@ -1,3 +1,13 @@
+## [3.0.5](https://github.com/typographist/core/compare/v3.0.4...v3.0.5) (2019-01-06)
+
+
+### Bug Fixes
+
+* **ci:** add gh token ([baafa70](https://github.com/typographist/core/commit/baafa70))
+* **ci:** update gh token ([150b10a](https://github.com/typographist/core/commit/150b10a))
+* **semantic-release:** add github plugin ([6eef8fa](https://github.com/typographist/core/commit/6eef8fa))
+* **to-rem:** add pasefloat for font-size ([92b866b](https://github.com/typographist/core/commit/92b866b))
+
 ## [3.0.4](https://github.com/typographist/core/compare/v3.0.3...v3.0.4) (2019-01-06)
 
 
