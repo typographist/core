@@ -9,7 +9,7 @@
     "clean": "rimraf lib es",
     "commit": "git-cz",
     "coverage": "cat ./coverage/lcov.info | coveralls",
-    "prettier": "prettier './**/**/**.{babelrc,prettierrc,json,js,eslintrc,spec}' --write",
+    "prettier": "prettier './**/**/**.{babelrc,json,js,eslintrc,spec}' --write",
     "semantic-release": "semantic-release",
     "test": "npm run test:lint && flow && npm run test:code",
     "test:watch": "jest --coverage --watch --updateSnapshot",
