@@ -3,7 +3,6 @@
 //  https://www.modularscale.com/
 //  from https://github.com/modularscale/modularscale.com/blob/master/source/javascripts/_ms.js.erb#L27-L52
 
-import * as R from 'ramda';
 import type { Breakpoint } from '../../models';
 
 type CalcStartPosition = (number, number[]) => number;
