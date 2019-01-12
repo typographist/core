@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/typographist/core/compare/v4.0.0...v4.0.1) (2019-01-12)
+
+
+### Bug Fixes
+
+* **lint-staged:** fixed lint-staged ([4c87b6f](https://github.com/typographist/core/commit/4c87b6f))
+* **prettier:** fix prettier :bug: ([bd1aed1](https://github.com/typographist/core/commit/bd1aed1))
+
 # [4.0.0](https://github.com/typographist/core/compare/v3.0.5...v4.0.0) (2019-01-10)
 
 
