@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/typographist/core/compare/v3.0.5...v4.0.0) (2019-01-10)
+
+
+### Code Refactoring
+
+* **modular-scale:** made the function curry ([1c5496b](https://github.com/typographist/core/commit/1c5496b))
+* **to-rem:** changed the type of parameters ([0a761d0](https://github.com/typographist/core/commit/0a761d0))
+
+
+### BREAKING CHANGES
+
+* **to-rem:** instead of root function accepts an object of breakpoint type
+* **modular-scale:** instead of root the function accepts an object of breakpoint type
+
 ## [3.0.5](https://github.com/typographist/core/compare/v3.0.4...v3.0.5) (2019-01-06)
 
 
