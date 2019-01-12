@@ -97,6 +97,6 @@
   "homepage": "https://github.com/typographist/core#readme",
   "author": "maxinakenty <mgreen097@gmail.com>",
   "dependencies": {
-    "@typographist/core": "4.0.0"
+    "@typographist/core": "4.0.1"
   }
 }
