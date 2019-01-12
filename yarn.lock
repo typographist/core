@@ -901,6 +901,13 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@typographist/core/-/core-4.0.0.tgz#6b49393ed732db3be80eb67a12829ab063303262"
 
+"@typographist/core@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@typographist/core/-/core-4.0.1.tgz#786f39c0d28c38271148c8ecc6d665f1e4209f38"
+  integrity sha512-7sPGw7nS2SuCvuQt0QIud6F//n6q4Dpw13WVDJf8VgyzBllIG9nkJ+5smRqomvZ1XPpkM7BKB6yzoSHy08iFrg==
+  dependencies:
+    "@typographist/core" "4.0.0"
+
 JSONStream@^1.0.4, JSONStream@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
