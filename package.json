@@ -9,7 +9,7 @@
     "clean": "rimraf lib es",
     "commit": "git-cz",
     "coverage": "cat ./coverage/lcov.info | coveralls",
-    "prettier": "prettier './**/**/**.{babelrc,json,js,eslintrc,spec}' --write",
+    "prettier": "prettier './**/**/**.{json,js,eslintrc}' --write",
     "semantic-release": "semantic-release",
     "test": "npm run test:lint && flow && npm run test:code",
     "test:watch": "jest --coverage --watch --updateSnapshot",
@@ -96,5 +96,7 @@
   },
   "homepage": "https://github.com/typographist/core#readme",
   "author": "maxinakenty <mgreen097@gmail.com>",
-  "dependencies": {}
+  "dependencies": {
+    "@typographist/core": "4.0.0"
+  }
 }
