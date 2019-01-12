@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
 import * as constants from '../constants';
 
-type MakeStepFromLiteral = string => number;
+type MakeStepFromLiteral = (string) => number;
 export const makeStepFromLiteral: MakeStepFromLiteral = R.compose(
   parseFloat,
   R.match(
@@ -13,7 +13,7 @@ export const makeStepFromLiteral: MakeStepFromLiteral = R.compose(
   ),
 );
 
-type MakeFontSizeFromLiteral = string => number;
+type MakeFontSizeFromLiteral = (string) => number;
 export const makeFontSizeFromLiteral: MakeFontSizeFromLiteral = R.compose(
   parseFloat,
   R.map(toPxIfHasEm),
@@ -33,7 +33,7 @@ type Input = {
   value: string,
 };
 
-export const calcRatioProcess: Input => * = ({ base, ratio, ...item }) => ({
+export const calcRatioProcess: (Input) => * = ({ base, ratio, ...item }) => ({
   ...item,
   base,
   ratio: typeof ratio === 'string' ? calcRatio(ratio, base) : ratio,

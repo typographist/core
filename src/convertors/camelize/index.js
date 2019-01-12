@@ -18,5 +18,5 @@ const wordTail = R.compose(
   R.tail,
 );
 
-export const camelize: string => string = str =>
+export const camelize: (string) => string = (str) =>
   `${firstLetter(str)}${wordTail(str)}`;

@@ -9,11 +9,11 @@ import { type UserConfig } from '../../models';
 
 const { configMessage, lineHeightNumber } = userConfig;
 
-export const getLineHeights: UserConfig => mixed[] = getAllValuesOf(
+export const getLineHeights: (UserConfig) => mixed[] = getAllValuesOf(
   'lineHeight',
 );
 
-export const lineHeightIsNumber: mixed => boolean = lineH => {
+export const lineHeightIsNumber: (mixed) => boolean = (lineH) => {
   switch (R.type(lineH)) {
     case 'Number':
       return isNumeric(lineH);
@@ -22,7 +22,7 @@ export const lineHeightIsNumber: mixed => boolean = lineH => {
   }
 };
 
-export const isValidField: mixed => boolean = lineH => {
+export const isValidField: (mixed) => boolean = (lineH) => {
   invariant(
     lineHeightIsNumber(lineH),
     `${title} ${configMessage} ${lineHeightNumber}`,
@@ -31,7 +31,7 @@ export const isValidField: mixed => boolean = lineH => {
   return lineHeightIsNumber(lineH);
 };
 
-export const validateFields: UserConfig => boolean = config =>
+export const validateFields: (UserConfig) => boolean = (config) =>
   getLineHeights(config)
     .map(isValidField)
     .every(Boolean);

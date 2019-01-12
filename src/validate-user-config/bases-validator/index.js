@@ -9,17 +9,17 @@ import { type UserConfig } from '../../models';
 
 const { configMessage, basePxEm, baseArrayString } = userConfig;
 
-export const getBases: UserConfig => mixed[] = getAllValuesOf('base');
+export const getBases: (UserConfig) => mixed[] = getAllValuesOf('base');
 
 export const hasPxOrEm = R.test(constants.PX_OR_EM_FONT_SIZE);
 
-export const baseLiteralIsValid: string => boolean = base => {
+export const baseLiteralIsValid: (string) => boolean = (base) => {
   invariant(hasPxOrEm(base), `${title} ${configMessage} ${basePxEm}`);
 
   return hasPxOrEm(base);
 };
 
-export const baseIsStrOrArrStr: any => boolean = base => {
+export const baseIsStrOrArrStr: (any) => boolean = (base) => {
   switch (R.type(base)) {
     case 'Array':
       return base.every(baseLiteralIsValid);
@@ -30,7 +30,7 @@ export const baseIsStrOrArrStr: any => boolean = base => {
   }
 };
 
-export const isValidField: mixed => boolean = base => {
+export const isValidField: (mixed) => boolean = (base) => {
   invariant(
     baseIsStrOrArrStr(base),
     `${title} ${configMessage} ${baseArrayString}`,
@@ -39,7 +39,7 @@ export const isValidField: mixed => boolean = base => {
   return baseIsStrOrArrStr(base);
 };
 
-export const validateFields: UserConfig => boolean = config =>
+export const validateFields: (UserConfig) => boolean = (config) =>
   getBases(config)
     .map(isValidField)
     .every(Boolean);

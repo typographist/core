@@ -6,7 +6,7 @@ import { validateFields as isValidLineHeights } from './line-heights-validator';
 import { validateFields as isValidRatios } from './ratios-validator';
 import { type UserConfig } from '../models';
 
-export const validateUserConfig: UserConfig => boolean = config =>
+export const validateUserConfig: (UserConfig) => boolean = (config) =>
   [
     isValidBases(config),
     isValidBreakpoints(config),

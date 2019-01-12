@@ -10,7 +10,7 @@ type Input = {|
   value: string,
 |};
 
-export const toPxValue: Input => * = ({ value, ...item }) => ({
+export const toPxValue: (Input) => * = ({ value, ...item }) => ({
   ...item,
   value: toPxIfHasEm(value),
 });

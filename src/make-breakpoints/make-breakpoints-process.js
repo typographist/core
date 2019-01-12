@@ -9,7 +9,7 @@ import { calcRatioProcess } from './ratio-prop-utils';
 import { setPropRoot } from './root-prop-utils';
 import type { UserConfig, Breakpoint } from '../models';
 
-export const makeBreakpointsProcess: UserConfig => Breakpoint[] = config =>
+export const makeBreakpointsProcess: (UserConfig) => Breakpoint[] = (config) =>
   Array.prototype.concat
     .call([], createBreakpoints(config))
     .map(toPxValue)

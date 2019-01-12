@@ -18,7 +18,7 @@ const setNameProp: ([string, Object]) => NamedBreakpoint = ([
   name: breakName,
 });
 
-export const makeNamedBreaks: UserConfig => * = ({
+export const makeNamedBreaks: (UserConfig) => * = ({
   base,
   lineHeight,
   ratio,

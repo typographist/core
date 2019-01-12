@@ -2,7 +2,7 @@
 
 import { type UserConfig } from '../models';
 
-export const makeDefaultBreak: UserConfig => * = ({
+export const makeDefaultBreak: (UserConfig) => * = ({
   base,
   lineHeight,
   ratio,
