@@ -5,7 +5,7 @@
   "main": "lib/typographist-core.cjs.js",
   "module": "es/typographist-core.es.js",
   "scripts": {
-    "build": "npm run test && npm run clean && rollup -c",
+    "build": "npm run clean && rollup -c",
     "clean": "rimraf lib es",
     "commit": "git-cz",
     "coverage": "cat ./coverage/lcov.info | coveralls",
