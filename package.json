@@ -16,17 +16,20 @@
     "test:code": "jest --coverage",
     "test:lint": "eslint ."
   },
-  "files": [
-    "lib",
-    "es"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
+  "homepage": "https://github.com/typographist/core#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/typographist/core.git"
   },
+  "bugs": {
+    "url": "https://github.com/typographist/core/issues"
+  },
+  "author": "maxinakenty <mgreen097@gmail.com>",
+  "contributors": [
+    "Maxim Alyoshin <mgreen097@gmail.com> (https://github.com/mg901)",
+    "Sergey Sova <mail@sergeysova.com> (https://sergeysova.com)"
+  ],
   "keywords": [
     "css-in-js",
     "design",
@@ -40,10 +43,16 @@
     "typographist",
     "web-typography"
   ],
-  "contributors": [
-    "Maxim Alyoshin <mgreen097@gmail.com>",
-    "Sergey Sova <mail@sergeysova.com>"
+  "files": [
+    "lib",
+    "es"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@typographist/core": "4.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
@@ -89,14 +98,5 @@
     "rollup-plugin-terser": "4.0.1",
     "rollup-plugin-uglify": "^6.0.0",
     "semantic-release": "15.13.3"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/typographist/core/issues"
-  },
-  "homepage": "https://github.com/typographist/core#readme",
-  "author": "maxinakenty <mgreen097@gmail.com>",
-  "dependencies": {
-    "@typographist/core": "4.0.0"
   }
 }
