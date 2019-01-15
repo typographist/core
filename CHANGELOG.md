@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/typographist/core/compare/v4.0.1...v4.1.0) (2019-01-15)
+
+
+### Features
+
+* **flow:** add flow types available to end users ([115520f](https://github.com/typographist/core/commit/115520f))
+
 ## [4.0.1](https://github.com/typographist/core/compare/v4.0.0...v4.0.1) (2019-01-12)
 
 
