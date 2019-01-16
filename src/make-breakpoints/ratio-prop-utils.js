@@ -3,29 +3,24 @@
 import * as R from 'ramda';
 
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
-import * as constants from '../constants';
+import { regexes } from '../constants';
 
-type MakeStepFromLiteral = (string) => number;
-export const makeStepFromLiteral: MakeStepFromLiteral = R.compose(
+export const makeStepFromLiteral: (string) => number = R.compose(
   parseFloat,
-  R.match(
-    constants.POSITIVE_OR_NEGATIVE_INTEGER_OR_FLOATING_NUMBER_AT_END_OF_STRING,
-  ),
+  R.match(regexes.POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING),
 );
 
-type MakeFontSizeFromLiteral = (string) => number;
-export const makeFontSizeFromLiteral: MakeFontSizeFromLiteral = R.compose(
+export const makeFontSizeFromLiteral: (string) => number = R.compose(
   parseFloat,
   R.map(toPxIfHasEm),
-  R.match(constants.FONT_SIZE),
+  R.match(regexes.FONT_SIZE),
 );
 
-type CalcRatio = (string, number[]) => number;
-export const calcRatio: CalcRatio = (ratio, base) =>
+export const calcRatio = (ratio: string, base: number[]) =>
   (makeFontSizeFromLiteral(ratio) / base[0]) **
   (1 / makeStepFromLiteral(ratio));
 
-type Input = {
+export type Input = {
   base: number[],
   lineHeight: number,
   name: string,
@@ -33,7 +28,7 @@ type Input = {
   value: string,
 };
 
-export const calcRatioProcess: (Input) => * = ({ base, ratio, ...item }) => ({
+export const calcRatioProcess = ({ base, ratio, ...item }: Input) => ({
   ...item,
   base,
   ratio: typeof ratio === 'string' ? calcRatio(ratio, base) : ratio,

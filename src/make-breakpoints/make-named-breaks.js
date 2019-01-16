@@ -1,8 +1,8 @@
 // @flow
 
-import type { UserConfig } from '../models';
+import type { UserConfig } from '../models/user-config';
 
-type NamedBreakpoint = {
+export type NamedBreakpoint = {
   value: string,
   name: string,
   base?: string | string[],
@@ -18,9 +18,9 @@ const setNameProp: ([string, Object]) => NamedBreakpoint = ([
   name: breakName,
 });
 
-export const makeNamedBreaks: (UserConfig) => * = ({
+export const makeNamedBreaks = ({
   base,
   lineHeight,
   ratio,
   ...breakpoints
-}) => Object.entries(breakpoints).map(setNameProp);
+}: UserConfig): * => Object.entries(breakpoints).map(setNameProp);

@@ -1,18 +1,19 @@
 // @flow
 
 import * as R from 'ramda';
-import { toPxValue } from './to-px-value';
-import { basePropProcess } from './base-prop-utils';
+import { toPxBreakValue } from './to-px-break-value';
+import { basePropProcess } from './base-prop-process';
 import { createBreakpoints } from './create-breakpoints';
 import { inheritProps } from './inherit-props';
 import { calcRatioProcess } from './ratio-prop-utils';
 import { setPropRoot } from './root-prop-utils';
-import type { UserConfig, Breakpoint } from '../models';
+import { type Breakpoint } from '../models/breakpoints';
+import { type UserConfig } from '../models/user-config';
 
-export const makeBreakpointsProcess: (UserConfig) => Breakpoint[] = (config) =>
+export const makeBreakpointsProcess = (config: UserConfig): Breakpoint[] =>
   Array.prototype.concat
     .call([], createBreakpoints(config))
-    .map(toPxValue)
+    .map(toPxBreakValue)
     .map(basePropProcess)
     .reduce(inheritProps, [])
     .map(

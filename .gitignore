@@ -3,6 +3,7 @@ dist/
 es/
 lib/
 coverage/
+__tests__
 .env
 
 npm-debug.log*
