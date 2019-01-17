@@ -5,7 +5,7 @@
   "main": "lib/typographist-core.cjs.js",
   "module": "es/typographist-core.es.js",
   "scripts": {
-    "build": "npm run clean && rollup -c",
+    "build": "rollup -c",
     "postbuild:cjs": "npx flow gen-flow-files src/index.js > ./lib/typographist-core.cjs.js.flow",
     "postbuild:es": "npx flow gen-flow-files src/index.js > es/typographist-core.es.js.flow",
     "postbuild": "npm run postbuild:cjs && npm run postbuild:es",
