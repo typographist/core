@@ -22,6 +22,7 @@ jobs:
       node_js: node
       script:
         - npm run build
+        - npm run postbuild
         - npx semantic-release
       env:
         - secure: 0PTkefim1bMIg6wE2uSa662DCZg7N4bpNK/3HDJRk2H4CNpPWvMK6l8y7fP9hj7d3k4bUMJkKasdJND1P4/TyZM/UuV6KXQaO14rs2iuZsfL4q+x1IpmgZtR0rIpHiV52URGZJPVTOfIOs9wJFxyNxXeLq5dadiSoQ7zOgxnuk3nm3aTZUTC7DxXoz3bsRjPXlNnUjWYI/dbBl8BR41yte5qo5DChnn63XVm+hybSvUbJ/cHiUtbJPpMWHILKYLYLJwhP9s5SZ9YkLgBIVTlJtXMs9wOrbfB3+MLddsz35kHs4lz9IIfhdb11o5LrXAoKPlXdQPP4X6NVmKEehE8tQ8YrCpWHRtLrw6Z8UVnd7b/ZKrCeErmcAFLh0NgSMGNDXJtpV8QHz+4/vMISZKeYocpOof6ohUG9QrAYMJlkOkovgL2YXjmFPYmY0vl41mk+2RxcDVP8dmD/TqFFYut5Q9ulzqRi43PIG7JE4cdpk+CU7hffTbeZs7NeapgHwoSLJPGbPVBHbjznDpaZk4a5xY++abaX58Q9Z7leKIihleXxS6O3W0TqfZdEBC8oBBMrmG9UF1dSCUm1LpMCFBa7YDL96HAOH4bge5lBweKJmmd5CqzARl2u9nxy2nbePRXiNP0rRphx5P1zhmxMFDt551Tmz5whGBCUgVfOkjvW70=
