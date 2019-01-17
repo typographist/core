@@ -11,10 +11,7 @@ export type UserConfig = {
   base: string | string[],
   lineHeight: number,
   ratio: string | number,
-  tablet: UserConfigBreakpoint,
-  desktop: UserConfigBreakpoint,
-  lgDesktop: UserConfigBreakpoint,
-  xlDesktop: UserConfigBreakpoint,
+  [string]: UserConfigBreakpoint,
 };
 
 export const userConfig: UserConfig = {
