@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/typographist/core/compare/v5.0.0...v5.0.1) (2019-01-17)
+
+
+### Bug Fixes
+
+* **travis:** add script postbuild ([fc7db31](https://github.com/typographist/core/commit/fc7db31))
+
 # [5.0.0](https://github.com/typographist/core/compare/v4.1.0...v5.0.0) (2019-01-17)
 
 
