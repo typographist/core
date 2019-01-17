@@ -1,3 +1,24 @@
+# [5.0.0](https://github.com/typographist/core/compare/v4.1.0...v5.0.0) (2019-01-17)
+
+
+### Bug Fixes
+
+* move tests from single directory ([e73fd40](https://github.com/typographist/core/commit/e73fd40))
+* remove key name from UserConfig type ([4694971](https://github.com/typographist/core/commit/4694971))
+
+
+### Features
+
+* **public-api:** remove convertors object ([c933b8d](https://github.com/typographist/core/commit/c933b8d))
+* add greenkeeper ignore ([02c2478](https://github.com/typographist/core/commit/02c2478))
+* postbuild script for automatic type generation ([29126be](https://github.com/typographist/core/commit/29126be))
+
+
+### BREAKING CHANGES
+
+* **public-api:** Object converters is no longer available outside.
+Now each function converter is requested separately
+
 # [4.1.0](https://github.com/typographist/core/compare/v4.0.1...v4.1.0) (2019-01-15)
 
 
