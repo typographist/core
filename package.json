@@ -6,9 +6,6 @@
   "module": "es/typographist-core.es.js",
   "scripts": {
     "build": "rollup -c",
-    "postbuild:cjs": "npx flow gen-flow-files src/index.js > ./lib/typographist-core.cjs.js.flow",
-    "postbuild:es": "npx flow gen-flow-files src/index.js > es/typographist-core.es.js.flow",
-    "postbuild": "npm run postbuild:cjs && npm run postbuild:es",
     "clean": "rimraf lib es",
     "commit": "git-cz",
     "coverage": "cat ./coverage/lcov.info | coveralls",
@@ -29,10 +26,6 @@
     "url": "https://github.com/typographist/core/issues"
   },
   "author": "maxinakenty <mgreen097@gmail.com>",
-  "contributors": [
-    "Maxim Alyoshin <mgreen097@gmail.com> (https://github.com/mg901)",
-    "Sergey Sova <mail@sergeysova.com> (https://sergeysova.com)"
-  ],
   "keywords": [
     "css-in-js",
     "design",
@@ -47,6 +40,7 @@
     "web-typography"
   ],
   "files": [
+    "src",
     "lib",
     "es"
   ],
@@ -95,6 +89,7 @@
     "rollup": "1.1.0",
     "rollup-plugin-babel": "4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-flow-entry": "0.2.0",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-terser": "4.0.1",
