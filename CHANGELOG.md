@@ -1,3 +1,15 @@
+# [5.1.0](https://github.com/typographist/core/compare/v5.0.1...v5.1.0) (2019-01-18)
+
+
+### Bug Fixes
+
+* **hepers:** fix path for isNumeric function ([b221f70](https://github.com/typographist/core/commit/b221f70))
+
+
+### Features
+
+* **rollup:** add rollup-plugin-flow-entry ([aff17f7](https://github.com/typographist/core/commit/aff17f7))
+
 ## [5.0.1](https://github.com/typographist/core/compare/v5.0.0...v5.0.1) (2019-01-17)
 
 
