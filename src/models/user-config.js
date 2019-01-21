@@ -11,7 +11,7 @@ export type UserConfig = {
   base: string | string[],
   lineHeight: number,
   ratio: string | number,
-  [string]: UserConfigBreakpoint,
+  [string]: ?UserConfigBreakpoint,
 };
 
 export const userConfig: UserConfig = {
