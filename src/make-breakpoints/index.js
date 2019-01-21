@@ -1,15 +1,17 @@
 // @flow
 
-import * as R from 'ramda';
 import memoizeone from 'memoize-one';
 import { makeBreakpointsProcess } from './make-breakpoints-process';
 import { validateUserConfig } from '../validate-user-config';
 import { type UserConfig } from '../models/user-config';
 
-const memoizedMakeBreakpointsProcess = memoizeone(makeBreakpointsProcess);
+const memoizedMakeBreakpoints = memoizeone(makeBreakpointsProcess);
 
-export const makeBreakpoints: (UserConfig) => * = R.ifElse(
-  validateUserConfig,
-  memoizedMakeBreakpointsProcess,
-  () => [],
-);
+/* eslint-disable consistent-return */
+export const makeBreakpoints: (UserConfig) => * = (config) => {
+  if (validateUserConfig(config)) {
+    return memoizedMakeBreakpoints(config);
+  }
+};
+
+/* eslint-enable */
