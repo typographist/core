@@ -8,5 +8,5 @@ export const makeDefaultBreak = ({ base, lineHeight, ratio }: UserConfig): * =>
     lineHeight,
     ratio,
     name: 'default',
-    value: '0px',
+    breakpoint: '0px',
   });

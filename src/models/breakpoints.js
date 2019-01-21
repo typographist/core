@@ -1,11 +1,19 @@
 // @flow
 
 export type NotFilledBreakpoint = {
-  value: string,
+  breakpoint: string,
+  name: string,
   base?: number[],
   lineHeight?: number,
   ratio?: number | string,
+};
+
+export type NamedBreakpoint = {
+  breakpoint: string,
   name: string,
+  base?: string | string[],
+  lineHeight?: number,
+  ratio?: number | string,
 };
 
 export type FilledBreakpoint = {|

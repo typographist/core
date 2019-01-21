@@ -1,7 +1,7 @@
 // @flow
 
 export type UserConfigBreakpoint = {
-  value: string,
+  breakpoint: string,
   base?: string | string[],
   lineHeight?: number,
   ratio?: number,
@@ -19,21 +19,21 @@ export const userConfig: UserConfig = {
   lineHeight: 1.5,
   ratio: '45px at 6',
   tablet: {
-    value: '40em',
+    breakpoint: '40em',
     base: '17px',
   },
   desktop: {
-    value: '64em',
+    breakpoint: '64em',
     base: '18px',
     lineHeight: 1.7,
     ratio: 1.333,
   },
   lgDesktop: {
-    value: '75em',
+    breakpoint: '75em',
     base: '20px',
   },
   xlDesktop: {
-    value: '100em',
+    breakpoint: '100em',
     base: '22px',
   },
 };
