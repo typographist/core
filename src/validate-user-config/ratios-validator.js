@@ -1,51 +1,54 @@
 // @flow
 
 import * as R from 'ramda';
-import { regexes } from '../constants';
+import { Right, Left } from 'igogo';
+import {
+  VAL_IN_PX_OR_EM_AT_BEGINNING_OF_STRING,
+  SPACE_AT_WORD_SPACE,
+  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
+} from '../constants/regexes';
+import { RATIO_ERROR_MESSAGE } from '../error-messages';
 import { getAllValuesOf } from '../helpers/get-all-values-of';
 import { isNumeric } from '../helpers/is-numeric';
-import { invariant } from '../helpers/invariant';
-import { TITLE, WARNING, RATIO_IS_STRING_OR_NUMBER } from '../error-messages';
 import { type UserConfig } from '../models/user-config';
+import { errorReporter } from '../helpers/error-reporter';
 
 export const getRatios: (UserConfig) => * = getAllValuesOf('ratio');
 
-const ratioHasFontSize = R.test(
-  regexes.PX_OR_EM_FONT_SIZE_AT_BEGINNING_OF_STRING,
+const isNumerical = R.both(R.is(Number), isNumeric);
+
+const ratioHasFontSize: (string) => boolean = R.test(
+  VAL_IN_PX_OR_EM_AT_BEGINNING_OF_STRING,
 );
 
-const ratioHasAtWord = R.test(regexes.SPACE_AT_WORD_SPACE);
+const ratioHasAtWord: (string) => boolean = R.test(SPACE_AT_WORD_SPACE);
 
-const ratioHasStep = R.test(
-  regexes.POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
+const ratioHasStep: (string) => boolean = R.test(
+  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
 );
 
-export const isValidRatioLiteral = (ratio: string) =>
-  [ratioHasFontSize(ratio), ratioHasAtWord(ratio), ratioHasStep(ratio)].every(
-    Boolean,
-  );
+// if ratio is string. Example '36px at 6'
+export const isValidRatioString: (string) => boolean = R.allPass([
+  ratioHasFontSize,
+  ratioHasAtWord,
+  ratioHasStep,
+]);
 
-const isStringOrNumber = (ratio: any) => {
-  switch (R.type(ratio)) {
-    case 'String':
-      return isValidRatioLiteral(ratio);
-    case 'Number':
-      return isNumeric(ratio);
-    default:
-      return false;
-  }
-};
+export const eitherIsValidRatioString = (field: string) =>
+  isValidRatioString(field) ? Right(true) : Left(RATIO_ERROR_MESSAGE);
 
-export const isValidField = (ratio: mixed) => {
-  invariant(
-    isStringOrNumber(ratio),
-    `${TITLE} ${WARNING} ${RATIO_IS_STRING_OR_NUMBER}`,
-  );
+export const eitherIsValidRatioNumber = (field: mixed) =>
+  isNumerical(field) ? Right(true) : Left(RATIO_ERROR_MESSAGE);
 
-  return isStringOrNumber(ratio);
-};
+export const eitherIsValidField: (any) => * = R.cond([
+  [R.is(String), eitherIsValidRatioString],
+  [R.is(Number), eitherIsValidRatioNumber],
+]);
 
-export const validateFields = (config: UserConfig) =>
-  getRatios(config)
-    .map(isValidField)
-    .every(Boolean);
+export const isValidField = (field: mixed) =>
+  eitherIsValidField(field).fold(errorReporter, (x) => x);
+
+export const validateFields: (UserConfig) => * = R.compose(
+  R.all(isValidField),
+  getRatios,
+);
