@@ -1,15 +1,6 @@
 // @flow
 
-import type {
-  NotFilledBreakpoint,
-  FilledBreakpoint,
-} from '../models/breakpoints';
-
-export const inheritProps = (
-  acc: FilledBreakpoint[],
-  item: NotFilledBreakpoint,
-  index: number,
-) => [
+export const inheritProps = (acc: any, item: any, index: any): any => [
   ...acc,
   {
     ...acc[index - 1],

@@ -2,15 +2,15 @@
 
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
 
-type Input = {|
-  base: string | string[],
-  lineHeight: number,
-  name: string,
-  ratio: string | number,
-  value: string,
-|};
+// type Input = {|
+//   base: string | string[],
+//   lineHeight: number,
+//   name: string,
+//   ratio: string | number,
+//   value: string,
+// |};
 
-export const toPxBreakValue = ({ value, ...item }: Input): * => ({
+export const toPxBreakValue = ({ value, ...item }: *): * => ({
   ...item,
   value: toPxIfHasEm(value),
 });
