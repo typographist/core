@@ -9,7 +9,7 @@ describe('makeDefaultBreak', () => {
         lineHeight: 1.5,
         name: 'default',
         ratio: '45px at 6',
-        value: '0px',
+        breakpoint: '0px',
       },
     ]);
   });
