@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/typographist/core/compare/v5.1.0...v5.1.1) (2019-01-21)
+
+
+### Bug Fixes
+
+* **percentage:** add the type of 'string[]' to the function parameter ([e4794b0](https://github.com/typographist/core/commit/e4794b0))
+
 # [5.1.0](https://github.com/typographist/core/compare/v5.0.1...v5.1.0) (2019-01-18)
 
 
