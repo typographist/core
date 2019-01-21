@@ -10,21 +10,21 @@ describe('regexes', () => {
     });
   });
 
-  describe('EM_FONT_SIZE', () => {
+  describe('VAL_IN_EM', () => {
     it('should has ems', () => {
-      expect(R.test(regexes.EM_FONT_SIZE, '12em')).toEqual(true);
+      expect(R.test(regexes.VAL_IN_EM, '12em')).toEqual(true);
     });
 
     it('should floating-point number has ems', () => {
-      expect(R.test(regexes.EM_FONT_SIZE, '567.89em')).toEqual(true);
+      expect(R.test(regexes.VAL_IN_EM, '567.89em')).toEqual(true);
     });
 
     it('should does not contain pixels', () => {
-      expect(R.test(regexes.EM_FONT_SIZE, '12rem')).toEqual(false);
+      expect(R.test(regexes.VAL_IN_EM, '12rem')).toEqual(false);
     });
 
     it('should floating-point number does not contain pixels', () => {
-      expect(R.test(regexes.EM_FONT_SIZE, '99.2rem')).toEqual(false);
+      expect(R.test(regexes.VAL_IN_EM, '99.2rem')).toEqual(false);
     });
   });
 });

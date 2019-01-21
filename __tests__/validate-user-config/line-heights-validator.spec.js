@@ -1,34 +1,46 @@
 import { userConfig } from '../../src/models/user-config';
 import {
   getLineHeights,
+  isValidLineHeight,
+  eitherIsValidField,
   isValidField,
   validateFields,
 } from '../../src/validate-user-config/line-heights-validator';
 
-describe('user config validators', () => {
-  describe('line heights validator', () => {
-    describe('lineHeightsValidator function', () => {
-      describe('isNumber function', () => {
-        it('if lineHeight is valid', () => {
-          expect(isValidField(1.4)).toEqual(true);
-        });
+describe('getLineHeights', () => {
+  it('return all lineHeight values', () => {
+    expect(getLineHeights(userConfig)).toEqual([1.5, 1.7]);
+  });
+});
 
-        it('if lineHeight is not a number', () => {
-          expect(isValidField).toThrowErrorMatchingSnapshot();
-        });
-      });
+describe('isValidLineHeight', () => {
+  it('return `true` if numerical value', () => {
+    expect(isValidLineHeight(1.4)).toEqual(true);
+  });
 
-      describe('getLineHeights function', () => {
-        it('returs all values of lineHeight from user config', () => {
-          expect(getLineHeights(userConfig)).toEqual([1.5, 1.7]);
-        });
-      });
+  it('return `false` if not numerical value ', () => {
+    expect(isValidLineHeight('1.4')).toEqual(false);
+  });
+});
 
-      describe('validateFields function', () => {
-        it('all lineHeights are valid', () => {
-          expect(validateFields(userConfig)).toEqual(true);
-        });
-      });
-    });
+describe('eitherIsValidField', () => {
+  it('return `true` if is numerical value', () => {
+    expect(eitherIsValidField(1).isRight).toEqual(true);
+  });
+
+  it('return `true` if not numerical value ', () => {
+    expect(eitherIsValidField('1.4').isLeft).toEqual(true);
+  });
+});
+
+describe('isValidField', () => {
+  it('return `true` if lineHeight is valid', () => {
+    expect(isValidField(1.2)).toEqual(true);
+  });
+});
+
+describe('validateFields function', () => {
+  it('all lineHeights are valid', () => {
+    expect(validateFields(userConfig)).toEqual(true);
   });
 });
