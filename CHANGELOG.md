@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/typographist/core/compare/v5.1.2...v6.0.0) (2019-01-23)
+
+
+### Code Refactoring
+
+* **make-breakpoints:** change the output of the breakpoints ([32ccd4d](https://github.com/typographist/core/commit/32ccd4d))
+
+
+### BREAKING CHANGES
+
+* **make-breakpoints:** breakpoints are not an array but an associative array
+
 ## [5.1.2](https://github.com/typographist/core/compare/v5.1.1...v5.1.2) (2019-01-21)
 
 
