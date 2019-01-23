@@ -1,5 +1,4 @@
 // @flow
-
 import * as R from 'ramda';
 import { Just, Nothing } from 'igogo';
 import memoizeone from 'memoize-one';
