@@ -1,3 +1,15 @@
+# [6.1.0](https://github.com/typographist/core/compare/v6.0.0...v6.1.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* **flow:** add flow types for makeBreakpoints ([ba7d0c1](https://github.com/typographist/core/commit/ba7d0c1))
+
+
+### Features
+
+* **flow:** add type BreakpointsMap ([0f630b2](https://github.com/typographist/core/commit/0f630b2))
+
 # [6.0.0](https://github.com/typographist/core/compare/v5.1.2...v6.0.0) (2019-01-23)
 
 
