@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/typographist/core/compare/v6.1.0...v7.0.0) (2019-01-23)
+
+
+### Code Refactoring
+
+* **safe-make-breakpoints:** safe-make-breakpoints ([185af95](https://github.com/typographist/core/commit/185af95))
+
+
+### BREAKING CHANGES
+
+* **safe-make-breakpoints:** safe-make-breakpoints returns Maybe monad
+
 # [6.1.0](https://github.com/typographist/core/compare/v6.0.0...v6.1.0) (2019-01-23)
 
 
