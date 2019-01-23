@@ -1,4 +1,4 @@
-import { basePropProcess } from '../../src/make-breakpoints/base-prop-process';
+import { basePropProcess } from '../../src/safe-make-breakpoints/base-prop-process';
 
 describe('basePropProcess', () => {
   it('breakpoint object with a base key containing an array of numbers', () => {

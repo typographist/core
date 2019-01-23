@@ -1,4 +1,4 @@
-import { makeBreakpointsProcess } from '../../src/make-breakpoints/make-breakpoints-process';
+import { makeBreakpointsProcess } from '../../src/safe-make-breakpoints/make-breakpoints-process';
 import { userConfig } from '../../src/models/user-config';
 import { breakpointsMap } from '../../src/models/breakpoints';
 
