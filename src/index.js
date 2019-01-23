@@ -1,7 +1,7 @@
 // @flow
 
 export { modularScale } from './calculators/modular-scale';
-export { safeMakeBreakpoints } from './safe-make-breakpoints';
+export { makeBreakpoints } from './make-breakpoints';
 export * as constants from './constants';
 export { camelize } from './convertors/camelize';
 export { normalizeString } from './convertors/normalize-string';

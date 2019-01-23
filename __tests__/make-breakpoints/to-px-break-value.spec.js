@@ -1,4 +1,4 @@
-import { toPxBreakValue } from '../../src/safe-make-breakpoints/to-px-break-value';
+import { toPxBreakValue } from '../../src/make-breakpoints/to-px-break-value';
 
 describe('toPxBreakValue', () => {
   it('returns the breakpoints value converted from em to px', () => {

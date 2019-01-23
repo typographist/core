@@ -1,10 +1,10 @@
 import { userConfig } from '../../src/models/user-config';
-import { safeMakeBreakpoints } from '../../src/safe-make-breakpoints';
+import { makeBreakpoints } from '../../src/make-breakpoints';
 
 describe('make breakpoints', () => {
-  describe('safeMakeBreakpoints', () => {
+  describe('makeBreakpoints', () => {
     it('create a list of breakpoint values if the user config is valid', () => {
-      expect(safeMakeBreakpoints(userConfig).getOr()).toEqual({
+      expect(makeBreakpoints(userConfig)).toEqual({
         default: {
           base: [16, 32],
           lineHeight: 1.5,

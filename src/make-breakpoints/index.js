@@ -1,6 +1,5 @@
 // @flow
-import * as R from 'ramda';
-import { Just, Nothing } from 'igogo';
+
 import memoizeone from 'memoize-one';
 import { makeBreakpointsProcess } from './make-breakpoints-process';
 import { validateUserConfig } from '../validate-user-config';
@@ -11,11 +10,11 @@ const memoizedMakeBreakpoints: (UserConfig) => BreakpointsMap = memoizeone(
   makeBreakpointsProcess,
 );
 
-export const safeMakeBreakpoints: (UserConfig) => * = R.ifElse(
-  validateUserConfig,
-  R.compose(
-    Just,
-    memoizedMakeBreakpoints,
-  ),
-  Nothing,
-);
+/* eslint-disable consistent-return */
+export const makeBreakpoints: (UserConfig) => * = (config) => {
+  if (validateUserConfig(config)) {
+    return memoizedMakeBreakpoints(config);
+  }
+};
+
+/* eslint-enable */
