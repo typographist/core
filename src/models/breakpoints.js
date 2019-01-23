@@ -92,7 +92,7 @@ export type BreakpointWithoutName = {
   root: number,
 };
 
-type BreakpointsMap = {
+export type BreakpointsMap = {
   [string]: BreakpointWithoutName,
 };
 
