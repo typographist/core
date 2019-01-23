@@ -1,8 +1,5 @@
-// @flow
-
-import { type UserConfig } from '../models/user-config';
-
-export const makeDefaultBreak = ({ base, lineHeight, ratio }: UserConfig): * =>
+// makeDefaultBreak :: Object -> [Object]
+export const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
   Array.of({
     base,
     lineHeight,

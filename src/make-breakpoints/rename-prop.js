@@ -1,7 +1,5 @@
-// @flow
-
-type RenameProp = (string, string) => (*) => *;
-export const renameProp: RenameProp = (oldProp, newProp) => ({
+// renameProp :: (String, String) -> Object -> Object
+export const renameProp = (oldProp, newProp) => ({
   [oldProp]: old,
   ...others
 }) => ({

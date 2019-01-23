@@ -1,22 +1,23 @@
-// @flow
-
 import * as R from 'ramda';
 
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
 import { regexes } from '../constants';
 
-export const makeStepFromLiteral: (string) => number = R.compose(
+// makeStepFromLiteral :: String -> Number
+export const makeStepFromLiteral = R.compose(
   parseFloat,
   R.match(regexes.POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING),
 );
 
-export const makeFontSizeFromLiteral: (string) => number = R.compose(
+// makeFontSizeFromLiteral :: String -> Number
+export const makeFontSizeFromLiteral = R.compose(
   parseFloat,
   R.map(toPxIfHasEm),
   R.match(regexes.FONT_SIZE),
 );
 
-export const calcRatio = (ratio: string, base: number[]) =>
+// calcRatio :: (String, [Number]) -> Number
+export const calcRatio = (ratio, base) =>
   (makeFontSizeFromLiteral(ratio) / base[0]) **
   (1 / makeStepFromLiteral(ratio));
 
@@ -28,7 +29,8 @@ export type Input = {
   value: string,
 };
 
-export const calcRatioProcess = ({ base, ratio, ...item }: Input) => ({
+// calcRatioProcess :: [Object] -> [Object]
+export const calcRatioProcess = ({ base, ratio, ...item }) => ({
   ...item,
   base,
   ratio: typeof ratio === 'string' ? calcRatio(ratio, base) : ratio,

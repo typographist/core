@@ -1,6 +1,4 @@
-// @flow
-
-export const inheritProps = (acc: any, item: any, index: any): any => [
+export const inheritProps = (acc, item, index) => [
   ...acc,
   {
     ...acc[index - 1],
