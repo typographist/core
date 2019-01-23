@@ -1,3 +1,11 @@
+## [7.0.1](https://github.com/typographist/core/compare/v7.0.0...v7.0.1) (2019-01-23)
+
+
+### Bug Fixes
+
+* **error-messages:** fix error messages ([0ea8058](https://github.com/typographist/core/commit/0ea8058))
+* **error-messages:** fix error messages ([ef26a60](https://github.com/typographist/core/commit/ef26a60))
+
 # [7.0.0](https://github.com/typographist/core/compare/v6.1.0...v7.0.0) (2019-01-23)
 
 
