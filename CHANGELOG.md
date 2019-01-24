@@ -1,3 +1,16 @@
+# [8.0.0](https://github.com/typographist/core/compare/v7.0.1...v8.0.0) (2019-01-23)
+
+
+### Code Refactoring
+
+* **make-breakpoints:** remove safe-make-breakpoints ([ef3d8ea](https://github.com/typographist/core/commit/ef3d8ea))
+
+
+### BREAKING CHANGES
+
+* **make-breakpoints:** make breakpoints function no longer
+returns the Maybe type. The associative array is returned
+
 ## [7.0.1](https://github.com/typographist/core/compare/v7.0.0...v7.0.1) (2019-01-23)
 
 
