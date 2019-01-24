@@ -1,3 +1,16 @@
+# [9.0.0](https://github.com/typographist/core/compare/v8.0.0...v9.0.0) (2019-01-24)
+
+
+### Code Refactoring
+
+* remove helpers and modular-scale ([b294ded](https://github.com/typographist/core/commit/b294ded))
+
+
+### BREAKING CHANGES
+
+* remove fuctions modular-scale, camelize,
+normalizeString, toCebabCase, toPxIfHasEm, toSnakeCase, isNumeric
+
 # [8.0.0](https://github.com/typographist/core/compare/v7.0.1...v8.0.0) (2019-01-23)
 
 
