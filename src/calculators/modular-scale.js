@@ -30,7 +30,7 @@ const normalizeBases = (base, baseHigh, ratio) => {
 };
 /* eslint-enable */
 
-export const modularScale = (step: number) => ({ base, ratio }: Breakpoint) => {
+export const modularScale = (step: number, { base, ratio }: Breakpoint) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
@@ -38,7 +38,8 @@ export const modularScale = (step: number) => ({ base, ratio }: Breakpoint) => {
   const startPosition = calcStartPosition(step, base);
   const fontSize = calcFontSize(step, base, ratio);
   const baseHigh = Math.pow(ratio, 1) * base[0];
+  const normalizedBases = normalizeBases(base, baseHigh, ratio);
 
   // Return
-  return fontSize * normalizeBases(base, baseHigh, ratio)[startPosition];
+  return fontSize * normalizedBases[startPosition];
 };
