@@ -1,5 +1,5 @@
 import { validateUserConfig } from '../../src/validate-user-config';
-import { userConfig } from '../../src/models/user-config';
+import { userConfig } from '../../src/models';
 
 describe('user config validators', () => {
   describe('validateUserConfig function', () => {

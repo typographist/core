@@ -1,4 +1,4 @@
-import { userConfig } from '../../src/models/user-config';
+import { userConfig } from '../../src/models';
 import { makeBreakpoints } from '../../src/make-breakpoints';
 
 describe('make breakpoints', () => {
