@@ -1,9 +1,10 @@
 // @flow
+import memoizeOne from 'memoize-one';
 
 //  https://www.modularscale.com/
 //  from https://github.com/modularscale/modularscale.com/blob/master/source/javascripts/_ms.js.erb#L27-L52
 
-import type { Breakpoint } from '../models/breakpoints';
+import { type Breakpoint } from '../models';
 
 const calcStartPosition = (step: number, base: number[]) =>
   Math.round(
@@ -16,6 +17,7 @@ const calcFontSize = (step: number, base: number[], ratio: number) =>
 /* eslint-disable no-param-reassign, no-plusplus */
 const normalizeBases = (base, baseHigh, ratio) => {
   const cloneBase = [...base];
+
   for (let i = 1; i < cloneBase.length; i++) {
     // shift up if value too low
     while (cloneBase[i] / 1 < cloneBase[0] / 1) {
@@ -26,20 +28,30 @@ const normalizeBases = (base, baseHigh, ratio) => {
       cloneBase[i] *= Math.pow(ratio, -1);
     }
   }
+
   return cloneBase.sort();
 };
 /* eslint-enable */
 
-export const modularScale = (step: number, { base, ratio }: Breakpoint) => {
+const calcResult = (fontSize, bases, position) => fontSize * bases[position];
+
+const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
+
+// For the needs of Typographist
+export const dumpModularScale: (Breakpoint) => (number) => number = ({
+  base,
+  ratio,
+}) => (step) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
 
   const startPosition = calcStartPosition(step, base);
   const fontSize = calcFontSize(step, base, ratio);
-  const baseHigh = Math.pow(ratio, 1) * base[0];
+  const baseHigh = calcBaseHigh(ratio, base);
   const normalizedBases = normalizeBases(base, baseHigh, ratio);
 
-  // Return
-  return fontSize * normalizedBases[startPosition];
+  return calcResult(fontSize, normalizedBases, startPosition);
 };
+
+export const modularScale = memoizeOne(dumpModularScale);
