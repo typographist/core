@@ -1,3 +1,15 @@
+# [10.0.0](https://github.com/typographist/core/compare/v9.1.0...v10.0.0) (2019-01-27)
+
+
+### Code Refactoring
+
+* **modular-scale:** change modular-scale function api ([17b99cf](https://github.com/typographist/core/commit/17b99cf))
+
+
+### BREAKING CHANGES
+
+* **modular-scale:** uncurry modular-scale
+
 # [9.1.0](https://github.com/typographist/core/compare/v9.0.0...v9.1.0) (2019-01-26)
 
 
