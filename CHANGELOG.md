@@ -1,3 +1,16 @@
+# [11.0.0](https://github.com/typographist/core/compare/v10.0.0...v11.0.0) (2019-01-27)
+
+
+### Code Refactoring
+
+* rename make-breakpoint ([50a8694](https://github.com/typographist/core/commit/50a8694))
+
+
+### BREAKING CHANGES
+
+* rename make-breakpoint with
+make-breakpoints-map
+
 # [10.0.0](https://github.com/typographist/core/compare/v9.1.0...v10.0.0) (2019-01-27)
 
 
