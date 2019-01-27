@@ -38,10 +38,10 @@ const calcResult = (fontSize, bases, position) => fontSize * bases[position];
 const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
 
 // For the needs of Typographist
-export const dumpModularScale: (Breakpoint) => (number) => number = ({
-  base,
-  ratio,
-}) => (step) => {
+export const dumpModularScale: (number, Breakpoint) => number = (
+  step,
+  { base, ratio },
+) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
