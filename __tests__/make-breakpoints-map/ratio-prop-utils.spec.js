@@ -3,7 +3,7 @@ import {
   makeFontSizeFromLiteral,
   calcRatio,
   calcRatioProcess,
-} from '../../src/make-breakpoints/ratio-prop-utils';
+} from '../../src/make-breakpoints-map/ratio-prop-utils';
 
 const ratioLiteral = '45px at 6';
 

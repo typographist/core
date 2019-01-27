@@ -1,4 +1,4 @@
-import { makeBreaksMap } from '../../src/make-breakpoints/make-breaks-map';
+import { makeBreaksMap } from '../../src/make-breakpoints-map/make-breaks-map';
 import { breakpoints } from '../../src/models';
 
 describe('makeBreaksMap', () => {
