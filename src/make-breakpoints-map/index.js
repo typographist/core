@@ -11,7 +11,7 @@ const memoizedMakeBreakpoints: (UserConfig) => BreakpointsMap = memoizeone(
 );
 
 /* eslint-disable consistent-return */
-export const makeBreakpoints: (UserConfig) => * = (config) => {
+export const makeBreakpointsMap: (UserConfig) => * = (config) => {
   if (validateUserConfig(config)) {
     return memoizedMakeBreakpoints(config);
   }
