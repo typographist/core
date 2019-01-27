@@ -1,3 +1,10 @@
+# [9.1.0](https://github.com/typographist/core/compare/v9.0.0...v9.1.0) (2019-01-26)
+
+
+### Features
+
+* **helpers:** add helpers ([15d9a27](https://github.com/typographist/core/commit/15d9a27))
+
 # [9.0.0](https://github.com/typographist/core/compare/v8.0.0...v9.0.0) (2019-01-24)
 
 
