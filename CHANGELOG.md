@@ -1,3 +1,10 @@
+## [11.0.1](https://github.com/typographist/core/compare/v11.0.0...v11.0.1) (2019-01-27)
+
+
+### Bug Fixes
+
+* fix error message ([f016f77](https://github.com/typographist/core/commit/f016f77))
+
 # [11.0.0](https://github.com/typographist/core/compare/v10.0.0...v11.0.0) (2019-01-27)
 
 
