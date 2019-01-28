@@ -1,9 +1,7 @@
-import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import { uglify } from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import json from 'rollup-plugin-json';
 import flowEntry from 'rollup-plugin-flow-entry';
 import pkg from './package.json';
 
@@ -21,7 +19,7 @@ export default [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    plugins: [babel(), uglify(), resolve(), commonjs(), json(), flowEntry()],
+    plugins: [babel(), resolve(), uglify(), flowEntry()],
   },
 
   // ES
@@ -37,6 +35,6 @@ export default [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    plugins: [resolve(), babel(), terser(), json(), commonjs(), flowEntry()],
+    plugins: [babel(), resolve(), terser(), flowEntry()],
   },
 ];
