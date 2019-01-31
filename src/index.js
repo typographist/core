@@ -11,3 +11,8 @@ export { toEmIfHasPx } from './convertors/to-em-if-has-px';
 export { toPxIfHasEm } from './convertors/to-px-if-has-em';
 export { toSnakeCase } from './convertors/to-snake-case';
 export { isNumeric } from './helpers/is-numeric';
+export type {
+  BreakpointsMap,
+  BreakpointWithoutName,
+  UserConfig,
+} from './models';
