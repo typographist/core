@@ -1,3 +1,15 @@
+# [11.2.0](https://github.com/typographist/core/compare/v11.1.2...v11.2.0) (2019-02-03)
+
+
+### Bug Fixes
+
+* **modular-scale:** fix flow-type ([dc0e4ed](https://github.com/typographist/core/commit/dc0e4ed))
+
+
+### Features
+
+* **models:** add type  BreakpointWithoutRoot ([ec9d04c](https://github.com/typographist/core/commit/ec9d04c))
+
 ## [11.1.2](https://github.com/typographist/core/compare/v11.1.1...v11.1.2) (2019-02-03)
 
 
