@@ -2,7 +2,6 @@
 import memoizeOne from 'memoize-one';
 
 //  https://www.modularscale.com/
-//  from https://github.com/modularscale/modularscale.com/blob/master/source/javascripts/_ms.js.erb#L27-L52
 
 import { type Breakpoint } from '../models';
 
@@ -37,11 +36,10 @@ const calcResult = (fontSize, bases, position) => fontSize * bases[position];
 
 const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
 
-// For the needs of Typographist
-export const dumpModularScale: (number, Breakpoint) => number = (
-  step,
-  { base, ratio },
-) => {
+export const dumpModularScale: (
+  number,
+  { root?: number, ...Breakpoint },
+) => number = (step, { base, ratio }) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
