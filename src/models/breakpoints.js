@@ -85,6 +85,13 @@ export type Breakpoint = {|
   root: number,
 |};
 
+export type BreakpointWithoutRoot = {
+  value: string,
+  base: number[],
+  lineHeight: number,
+  ratio: number,
+};
+
 export type BreakpointsMap = {
   [string]: Breakpoint,
 };
