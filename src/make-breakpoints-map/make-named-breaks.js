@@ -1,9 +1,24 @@
-// setNameProp :: Object -> Object
-const setNameProp = ([breakName, breakBody]) => ({
+// @flow
+
+import * as R from 'ramda';
+import type {
+  UserConfig,
+  NotFilledDefaultBreakWithoutName,
+  NotFilledNamedBreak,
+} from '../models';
+
+const setNameProp: (
+  [string, NotFilledDefaultBreakWithoutName],
+) => { name: string, ...NotFilledDefaultBreakWithoutName } = ([
+  breakName,
+  breakBody,
+]) => ({
   ...breakBody,
   name: breakName,
 });
 
-// makeNamedBreaks :: Object -> [Object]
-export const makeNamedBreaks = ({ base, lineHeight, ratio, ...breakpoints }) =>
-  Object.entries(breakpoints).map(setNameProp);
+export const makeNamedBreaks: (UserConfig) => NotFilledNamedBreak[] = R.compose(
+  R.map(setNameProp),
+  R.toPairs,
+  R.omit(['base', 'lineHeight', 'ratio']),
+);

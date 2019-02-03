@@ -1,31 +1,41 @@
+// @flow
+
 import * as R from 'ramda';
 import { toPxBreakValue } from './to-px-break-value';
 import { basePropProcess } from './base-prop-process';
 import { createBreakpoints } from './create-breakpoints';
 import { renameProp } from './rename-prop';
-import { inheritProps } from './inherit-props';
+import { inheritPropsProcess } from './inherit-props';
 import { calcRatioProcess } from './ratio-prop-utils';
 import { setPropRoot } from './root-prop-utils';
-import { makeBreaksMap } from './make-breaks-map';
+import { makeBreakMap } from './make-break-map';
+import type {
+  UserConfig,
+  BreakpointsMap,
+  NotFilledNamedBreak,
+  NotFilledRenamedBreak,
+} from '../models';
 
-const reduceIndexed = R.addIndex(R.reduce);
-
-// makeBreakpointsProcess :: Object -> {a: [Object]}
-export const makeBreakpointsProcess = R.compose(
-  R.map(R.omit(['name'])),
-  R.reduce(makeBreaksMap, {}),
+export const makeBreakpointsProcess: (UserConfig) => BreakpointsMap = R.compose(
+  R.compose(
+    R.map(R.omit(['name'])),
+    R.reduce(makeBreakMap, {}),
+  ),
   R.map(
     R.compose(
       setPropRoot,
       calcRatioProcess,
     ),
   ),
-  reduceIndexed(inheritProps, []),
+  R.map(basePropProcess),
+  inheritPropsProcess,
   R.map(
     R.compose(
-      basePropProcess,
       toPxBreakValue,
-      renameProp('breakpoint', 'value'),
+      renameProp<NotFilledNamedBreak, NotFilledRenamedBreak>(
+        'breakpoint',
+        'value',
+      ),
     ),
   ),
   createBreakpoints,

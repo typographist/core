@@ -1,9 +1,11 @@
-import * as R from 'ramda';
+// @flow
+
 import { makeDefaultBreak } from './make-default-break';
 import { makeNamedBreaks } from './make-named-breaks';
 
-// createBreakpoints :: Object -> Array
-export const createBreakpoints = R.converge(R.concat, [
-  makeDefaultBreak,
-  makeNamedBreaks,
-]);
+import type { UserConfig } from '../models';
+
+export const createBreakpoints: (UserConfig) => * = (config) => [
+  ...makeDefaultBreak(config),
+  ...makeNamedBreaks(config),
+];
