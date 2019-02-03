@@ -1,3 +1,10 @@
+## [11.1.2](https://github.com/typographist/core/compare/v11.1.1...v11.1.2) (2019-02-03)
+
+
+### Bug Fixes
+
+* fix flow-types for modularScale function ([9ad04ab](https://github.com/typographist/core/commit/9ad04ab))
+
 ## [11.1.1](https://github.com/typographist/core/compare/v11.1.0...v11.1.1) (2019-02-03)
 
 
