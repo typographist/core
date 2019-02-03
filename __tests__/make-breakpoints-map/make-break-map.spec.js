@@ -1,9 +1,9 @@
-import { makeBreaksMap } from '../../src/make-breakpoints-map/make-breaks-map';
-import { breakpoints } from '../../src/models';
+import { breakpoints } from '../../src/mocks';
+import { makeBreakMap } from '../../src/make-breakpoints-map/make-break-map';
 
 describe('makeBreaksMap', () => {
   it('return breakpoints map', () => {
-    expect(breakpoints.reduce(makeBreaksMap, {})).toEqual({
+    expect(breakpoints.reduce(makeBreakMap, {})).toEqual({
       default: {
         base: [16, 32],
         lineHeight: 1.5,

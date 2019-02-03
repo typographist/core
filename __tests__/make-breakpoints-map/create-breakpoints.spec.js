@@ -9,7 +9,7 @@ describe('createBreakpoints', () => {
         lineHeight: 1.5,
         name: 'default',
         ratio: '45px at 6',
-        breakpoint: '0px',
+        value: '0px',
       },
       {
         base: '17px',

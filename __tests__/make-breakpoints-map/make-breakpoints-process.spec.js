@@ -1,5 +1,5 @@
 import { makeBreakpointsProcess } from '../../src/make-breakpoints-map/make-breakpoints-process';
-import { userConfig, breakpointsMap } from '../../src/models';
+import { userConfig, breakpointsMap } from '../../src/mocks';
 
 describe('makeBreakpointsProcess', () => {
   it('returns the breakpoints map', () => {
