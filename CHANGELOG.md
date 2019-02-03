@@ -1,3 +1,10 @@
+## [11.1.1](https://github.com/typographist/core/compare/v11.1.0...v11.1.1) (2019-02-03)
+
+
+### Bug Fixes
+
+* add correct flow-types ([299605d](https://github.com/typographist/core/commit/299605d))
+
 # [11.1.0](https://github.com/typographist/core/compare/v11.0.1...v11.1.0) (2019-01-31)
 
 
