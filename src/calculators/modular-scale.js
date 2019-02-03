@@ -1,9 +1,9 @@
 // @flow
+
 import memoizeOne from 'memoize-one';
+import type { Breakpoint, BreakpointWithoutRoot } from '../models';
 
 //  https://www.modularscale.com/
-
-import { type Breakpoint } from '../models';
 
 const calcStartPosition = (step: number, base: number[]) =>
   Math.round(
@@ -36,10 +36,10 @@ const calcResult = (fontSize, bases, position) => fontSize * bases[position];
 
 const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
 
-export const dumpModularScale: (
-  number,
-  { root?: number, ...Breakpoint },
-) => number = (step, { base, ratio }) => {
+export const dumpModularScale: (number, BreakpointWithoutRoot) => number = (
+  step,
+  { base, ratio },
+) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
   }
