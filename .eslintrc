@@ -8,6 +8,7 @@
     "jasmine": true
   },
   "rules": {
+    "flowtype/define-flow-type": 1,
     "import/prefer-default-export": 0,
     "no-restricted-syntax": 0,
     "no-restricted-properties": 0,
