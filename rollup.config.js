@@ -6,7 +6,6 @@ import flowEntry from 'rollup-plugin-flow-entry';
 import pkg from './package.json';
 
 export default [
-  // CommonJS
   {
     input: './src/index.js',
     output: {
@@ -21,8 +20,6 @@ export default [
     ],
     plugins: [babel(), resolve(), uglify(), flowEntry()],
   },
-
-  // ES
   {
     input: './src/index.js',
     output: {
