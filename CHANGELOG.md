@@ -1,3 +1,10 @@
+# [11.1.0](https://github.com/typographist/core/compare/v11.0.1...v11.1.0) (2019-01-31)
+
+
+### Features
+
+* add types for breakpoints ([a011156](https://github.com/typographist/core/commit/a011156))
+
 ## [11.0.1](https://github.com/typographist/core/compare/v11.0.0...v11.0.1) (2019-01-27)
 
 
