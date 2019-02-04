@@ -1,7 +1,6 @@
 // @flow
 
 import memoizeOne from 'memoize-one';
-import type { EntryBreakpoint } from '../models';
 
 //  https://www.modularscale.com/
 
@@ -36,9 +35,10 @@ const calcResult = (fontSize, bases, position) => fontSize * bases[position];
 
 const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
 
-export const dumpModularScale: (number, EntryBreakpoint) => number = (
-  step,
-  { base, ratio },
+export const dumpModularScale = (
+  step: number,
+  base: number[],
+  ratio: number,
 ) => {
   if (base.length === 1) {
     return Math.pow(ratio, step) * parseFloat(base);
