@@ -1,3 +1,16 @@
+# [12.0.0](https://github.com/typographist/core/compare/v11.2.1...v12.0.0) (2019-02-04)
+
+
+### Code Refactoring
+
+* **modular-scale:** uncurry modular-scale ([c299571](https://github.com/typographist/core/commit/c299571))
+
+
+### BREAKING CHANGES
+
+* **modular-scale:** uncurry modular scale.
+Now the function accepts 3 parameters `step`, `base`, `ratio`
+
 ## [11.2.1](https://github.com/typographist/core/compare/v11.2.0...v11.2.1) (2019-02-04)
 
 
