@@ -90,7 +90,7 @@
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-flow-entry": "0.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-terser": "4.0.3",
+    "rollup-plugin-terser": "4.0.4",
     "rollup-plugin-uglify": "6.0.2",
     "semantic-release": "15.13.3"
   }
