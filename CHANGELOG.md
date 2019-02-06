@@ -1,3 +1,10 @@
+# [12.1.0](https://github.com/typographist/core/compare/v12.0.0...v12.1.0) (2019-02-06)
+
+
+### Features
+
+* **calc-root:** removed the rounding to a whole number ([774299b](https://github.com/typographist/core/commit/774299b))
+
 # [12.0.0](https://github.com/typographist/core/compare/v11.2.1...v12.0.0) (2019-02-04)
 
 
