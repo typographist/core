@@ -1,10 +1,10 @@
 // @flow
 
 import * as R from 'ramda';
-import { regexes } from '../constants';
+import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '../constants';
 
 const camelizeString = R.replace(
-  regexes.DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
+  DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
   (match, chr) => chr.toUpperCase(),
 );
 

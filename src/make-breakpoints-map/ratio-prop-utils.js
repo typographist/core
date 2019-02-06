@@ -3,18 +3,21 @@
 import * as R from 'ramda';
 
 import { toPxIfHasEm } from '../convertors/to-px-if-has-em';
-import { regexes } from '../constants';
+import {
+  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
+  FONT_SIZE,
+} from '../constants';
 import type { BreakStableBase, BreakStableRatio } from '../models';
 
 export const makeStepFromLiteral: (string) => number = R.compose(
   parseFloat,
-  R.match(regexes.POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING),
+  R.match(POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING),
 );
 
 export const makeFontSizeFromLiteral: (string) => number = R.compose(
   parseFloat,
   R.map(toPxIfHasEm),
-  R.match(regexes.FONT_SIZE),
+  R.match(FONT_SIZE),
 );
 
 export const calcRatio = (ratio: string, base: number[]) =>
