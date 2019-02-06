@@ -4,8 +4,12 @@ import {
 } from '../../src/make-breakpoints-map/root-prop-utils';
 
 describe('calcRoot', () => {
-  it('calculated root', () => {
+  it('calculated int root', () => {
     expect(calcRoot(24)).toEqual(12);
+  });
+
+  it('calculated float root', () => {
+    expect(calcRoot(25)).toEqual(12.5);
   });
 });
 
