@@ -48,7 +48,7 @@ export const breakpoints: BreakpointWithName[] = [
     lineHeight: 1.7,
     name: 'desktop',
     ratio: 1.333,
-    root: 16,
+    root: 15.5,
     value: '1024px',
   },
   {
@@ -64,7 +64,7 @@ export const breakpoints: BreakpointWithName[] = [
     lineHeight: 1.7,
     name: 'xlDesktop',
     ratio: 1.333,
-    root: 19,
+    root: 18.5,
     value: '1600px',
   },
 ];
@@ -88,7 +88,7 @@ export const breakpointsMap: BreakpointsMap = {
     base: [18],
     lineHeight: 1.7,
     ratio: 1.333,
-    root: 16,
+    root: 15.5,
     value: '1024px',
   },
   lgDesktop: {
@@ -102,7 +102,7 @@ export const breakpointsMap: BreakpointsMap = {
     base: [22],
     lineHeight: 1.7,
     ratio: 1.333,
-    root: 19,
+    root: 18.5,
     value: '1600px',
   },
 };
