@@ -1,3 +1,20 @@
+# [13.0.0](https://github.com/typographist/core/compare/v12.1.0...v13.0.0) (2019-02-06)
+
+
+### Code Refactoring
+
+* **ratios:** remove ratios from constants ([c2e685b](https://github.com/typographist/core/commit/c2e685b))
+
+
+### Features
+
+* **ratios:** add ratios ([8f75c2e](https://github.com/typographist/core/commit/8f75c2e))
+
+
+### BREAKING CHANGES
+
+* **ratios:** remove regexes for postcss
+
 # [12.1.0](https://github.com/typographist/core/compare/v12.0.0...v12.1.0) (2019-02-06)
 
 
