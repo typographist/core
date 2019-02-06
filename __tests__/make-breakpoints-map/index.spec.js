@@ -22,7 +22,7 @@ describe('makeBreakpointsMap', () => {
         base: [18],
         lineHeight: 1.7,
         ratio: 1.333,
-        root: 16,
+        root: 15.5,
         value: '1024px',
       },
       lgDesktop: {
@@ -36,7 +36,7 @@ describe('makeBreakpointsMap', () => {
         base: [22],
         lineHeight: 1.7,
         ratio: 1.333,
-        root: 19,
+        root: 18.5,
         value: '1600px',
       },
     });
