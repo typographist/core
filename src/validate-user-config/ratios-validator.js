@@ -3,10 +3,10 @@
 import * as R from 'ramda';
 import { Right, Left } from 'igogo';
 import {
-  VAL_IN_PX_OR_EM_AT_BEGINNING_OF_STRING,
+  VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING,
   SPACE_AT_WORD_SPACE,
   POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
-} from '../constants/regexes';
+} from '../constants';
 import { RATIO_ERROR_MESSAGE } from '../error-messages';
 import { getAllValuesOf } from '../helpers/get-all-values-of';
 import { isNumeric } from '../helpers/is-numeric';
@@ -18,7 +18,7 @@ export const getRatios: (UserConfig) => * = getAllValuesOf('ratio');
 const isNumerical = R.both(R.is(Number), isNumeric);
 
 const ratioHasFontSize: (string) => boolean = R.test(
-  VAL_IN_PX_OR_EM_AT_BEGINNING_OF_STRING,
+  VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING,
 );
 
 const ratioHasAtWord: (string) => boolean = R.test(SPACE_AT_WORD_SPACE);
