@@ -1,6 +1,11 @@
 // @flow
 
-export const deeperObjectValues: (string, void | any[]) => (any) => any[] = (
+type Memo = void | mixed[];
+type Config = {
+  [string]: any,
+};
+
+export const deeperObjectValues: (string, Memo) => (Config) => mixed[] = (
   target,
   memo,
 ) => (obj) =>

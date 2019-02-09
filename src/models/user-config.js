@@ -1,17 +1,15 @@
 // @flow
 
-export type UserConfigBreakpoint = {
-  breakpoint: string,
-  base?: string | string[],
-  lineHeight?: number,
-  ratio?: number,
-};
-
 export type UserConfig = {
   base: string | string[],
   lineHeight: number,
   ratio: string | number,
-  [string]: ?UserConfigBreakpoint,
+  [string]: ?{
+    breakpoint: string,
+    base?: string | string[],
+    lineHeight?: number,
+    ratio?: number,
+  },
 };
 
 export const userConfig: UserConfig = {
