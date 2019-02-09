@@ -8,12 +8,12 @@ import {
   POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
 } from '../constants';
 import { RATIO_ERROR_MESSAGE } from '../error-messages';
-import { getAllValuesOf } from '../helpers/get-all-values-of';
+import { deeperObjectValues } from '../helpers/deeper-object-values';
 import { isNumeric } from '../helpers/is-numeric';
 import { type UserConfig } from '../models/user-config';
 import { errorReporter } from '../helpers/error-reporter';
 
-export const getRatios: (UserConfig) => * = getAllValuesOf('ratio');
+export const getRatios: (UserConfig) => * = deeperObjectValues('ratio');
 
 const isNumerical = R.both(R.is(Number), isNumeric);
 

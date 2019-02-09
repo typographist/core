@@ -4,11 +4,13 @@ import * as R from 'ramda';
 import { Right, Left } from 'igogo';
 import { VAL_WITH_PX_OR_EM } from '../constants';
 import { BREAKPOINT_ERROR_MESSAGE } from '../error-messages';
-import { getAllValuesOf } from '../helpers/get-all-values-of';
+import { deeperObjectValues } from '../helpers/deeper-object-values';
 import { errorReporter } from '../helpers/error-reporter';
 import { type UserConfig } from '../models/user-config';
 
-export const getBreakValues: (UserConfig) => * = getAllValuesOf('breakpoint');
+export const getBreakValues: (UserConfig) => * = deeperObjectValues(
+  'breakpoint',
+);
 
 export const hasPxOrEm: (any) => boolean = R.test(VAL_WITH_PX_OR_EM);
 

@@ -3,12 +3,14 @@
 import * as R from 'ramda';
 import { Right, Left } from 'igogo';
 import { LINE_HEIGHT_ERRROR_MESSAGE } from '../error-messages';
-import { getAllValuesOf } from '../helpers/get-all-values-of';
+import { deeperObjectValues } from '../helpers/deeper-object-values';
 import { errorReporter } from '../helpers/error-reporter';
 import { isNumeric } from '../helpers/is-numeric';
 import { type UserConfig } from '../models/user-config';
 
-export const getLineHeights: (UserConfig) => * = getAllValuesOf('lineHeight');
+export const getLineHeights: (UserConfig) => * = deeperObjectValues(
+  'lineHeight',
+);
 
 export const isValidLineHeight: (mixed) => boolean = R.both(
   R.is(Number),
