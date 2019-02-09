@@ -1,3 +1,15 @@
+# [13.1.0](https://github.com/typographist/core/compare/v13.0.0...v13.1.0) (2019-02-09)
+
+
+### Bug Fixes
+
+* **get-all-values-of:**  remove maximum call stack error ([ebc998a](https://github.com/typographist/core/commit/ebc998a))
+
+
+### Features
+
+* rewritten in an immutable style ([983da8a](https://github.com/typographist/core/commit/983da8a))
+
 # [13.0.0](https://github.com/typographist/core/compare/v12.1.0...v13.0.0) (2019-02-06)
 
 
