@@ -1,3 +1,10 @@
+## [13.1.1](https://github.com/typographist/core/compare/v13.1.0...v13.1.1) (2019-02-09)
+
+
+### Bug Fixes
+
+* **flow:** fix flow-types ([1d7b7c5](https://github.com/typographist/core/commit/1d7b7c5))
+
 # [13.1.0](https://github.com/typographist/core/compare/v13.0.0...v13.1.0) (2019-02-09)
 
 
