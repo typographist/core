@@ -1,3 +1,10 @@
+## [13.1.3](https://github.com/typographist/core/compare/v13.1.2...v13.1.3) (2019-02-21)
+
+
+### Bug Fixes
+
+* **package:** update igogo to version 1.6.0 ([b32ff65](https://github.com/typographist/core/commit/b32ff65))
+
 ## [13.1.2](https://github.com/typographist/core/compare/v13.1.1...v13.1.2) (2019-02-21)
 
 
