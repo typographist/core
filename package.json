@@ -1,6 +1,6 @@
 {
   "name": "@typographist/core",
-  "version": "13.1.1",
+  "version": "13.1.2",
   "description": "Core API for typographist",
   "main": "lib/typographist-core.cjs.js",
   "module": "es/typographist-core.es.js",
