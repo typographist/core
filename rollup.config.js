@@ -9,7 +9,7 @@ export default [
   {
     input: './src/index.js',
     output: {
-      file: 'lib/typographist-core.cjs.js',
+      file: 'lib/index.cjs.js',
       format: 'cjs',
       indent: false,
       sourcemap: false,
@@ -23,7 +23,7 @@ export default [
   {
     input: './src/index.js',
     output: {
-      file: 'es/typographist-core.es.js',
+      file: 'es/index.es.js',
       format: 'es',
       indent: false,
       sourcemap: false,
