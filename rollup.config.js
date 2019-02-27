@@ -12,7 +12,7 @@ export default [
       file: 'lib/index.cjs.js',
       format: 'cjs',
       indent: false,
-      sourcemap: false,
+      sourcemap: true,
     },
     external: [
       ...Object.keys(pkg.dependencies || {}),
@@ -26,7 +26,7 @@ export default [
       file: 'es/index.es.js',
       format: 'es',
       indent: false,
-      sourcemap: false,
+      sourcemap: true,
     },
     external: [
       ...Object.keys(pkg.dependencies || {}),
