@@ -5,7 +5,24 @@
   ],
   "plugins": [
     "@babel/plugin-proposal-export-default-from",
-    "@babel/plugin-proposal-export-namespace-from"
+    "@babel/plugin-proposal-export-namespace-from",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@calculators": "./src/calculators",
+          "@convertors": "./src/convertors",
+          "@make-breakpoints-map": "./src/make-breakpoints-map",
+          "@models": "./src/models",
+          "@public-utils": "./src/public-utils",
+          "@utils": "./src/utils",
+          "@constants": "./src/constants",
+          "@error-messages": "./src/error-messages",
+          "@validate-user-config": "./src/validate-user-config",
+          "@mocks": "./src/mocks"
+        }
+      }
+    ]
   ],
   "env": {
     "test": {
