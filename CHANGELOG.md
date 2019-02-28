@@ -1,3 +1,10 @@
+# [13.2.0](https://github.com/typographist/core/compare/v13.1.3...v13.2.0) (2019-02-27)
+
+
+### Features
+
+* add source-maps ([9da9668](https://github.com/typographist/core/commit/9da9668))
+
 ## [13.1.3](https://github.com/typographist/core/compare/v13.1.2...v13.1.3) (2019-02-21)
 
 
