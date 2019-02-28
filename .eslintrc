@@ -4,8 +4,7 @@
   "plugins": ["prettier", "jest", "flowtype"],
   "env": {
     "node": true,
-    "mocha": true,
-    "jasmine": true
+    "jest": true
   },
   "rules": {
     "flowtype/define-flow-type": 1,
@@ -17,5 +16,10 @@
     "no-restricted-globals": 0,
     "no-unused-vars": 1,
     "global-require": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
