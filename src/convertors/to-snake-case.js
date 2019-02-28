@@ -1,4 +1,4 @@
 // @flow
-import { separateWords } from '../helpers/separate-words';
+import { separateWords } from '@utils/separate-words';
 
 export const toSnakeCase: (string) => string = separateWords('_');

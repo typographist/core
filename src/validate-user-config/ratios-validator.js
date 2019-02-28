@@ -2,29 +2,27 @@
 
 import * as R from 'ramda';
 import { Right, Left } from 'igogo';
-import {
-  VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING,
-  SPACE_AT_WORD_SPACE,
-  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
-} from '../constants';
-import { RATIO_ERROR_MESSAGE } from '../error-messages';
-import { deeperObjectValues } from '../helpers/deeper-object-values';
-import { isNumeric } from '../helpers/is-numeric';
-import { type UserConfig } from '../models/user-config';
-import { errorReporter } from '../helpers/error-reporter';
+import { type UserConfig } from '@models/user-config';
+import { RATIO_ERROR_MESSAGE } from '@error-messages';
+import { deeperObjectValues } from '@utils/deeper-object-values';
+import { isNumeric } from '@utils/is-numeric';
+import { errorReporter } from '@utils/error-reporter';
+import * as constants from '@constants';
 
 export const getRatios: (UserConfig) => * = deeperObjectValues('ratio');
 
 const isNumerical = R.both(R.is(Number), isNumeric);
 
 const ratioHasFontSize: (string) => boolean = R.test(
-  VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING,
+  constants.VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING,
 );
 
-const ratioHasAtWord: (string) => boolean = R.test(SPACE_AT_WORD_SPACE);
+const ratioHasAtWord: (string) => boolean = R.test(
+  constants.SPACE_AT_WORD_SPACE,
+);
 
 const ratioHasStep: (string) => boolean = R.test(
-  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
+  constants.POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
 );
 
 // if ratio is string. Example '36px at 6'
