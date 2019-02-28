@@ -1,5 +1,5 @@
 import { createBreakpoints } from '@make-breakpoints-map/create-breakpoints';
-import { userConfig } from '../../src/models';
+import { userConfig } from '@mocks';
 
 describe('createBreakpoints', () => {
   it('returns raw breakpoints from user config', () => {

@@ -1,5 +1,5 @@
 import { makeDefaultBreak } from '@make-breakpoints-map/make-default-break';
-import { userConfig } from '../../src/models';
+import { userConfig } from '@mocks';
 
 describe('makeDefaultBreak', () => {
   it('returns array with default breakpoint', () => {

@@ -1,5 +1,5 @@
 import { makeBreakMap } from '@make-breakpoints-map/make-break-map';
-import { breakpoints } from '../../src/mocks';
+import { breakpoints } from '@mocks';
 
 describe('makeBreaksMap', () => {
   it('return breakpoints map', () => {

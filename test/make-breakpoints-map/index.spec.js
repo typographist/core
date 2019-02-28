@@ -1,5 +1,5 @@
-import { userConfig } from '../../src/models';
-import { makeBreakpointsMap } from '../../src/make-breakpoints-map';
+import { userConfig } from '@mocks';
+import { makeBreakpointsMap } from '@make-breakpoints-map';
 
 describe('makeBreakpointsMap', () => {
   it('create a list of breakpoint values if the user config is valid', () => {
