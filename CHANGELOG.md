@@ -1,3 +1,10 @@
+## [17.1.1](https://github.com/typographist/core/compare/v17.1.0...v17.1.1) (2019-03-02)
+
+
+### Bug Fixes
+
+* fix paths ([58cea83](https://github.com/typographist/core/commit/58cea83))
+
 # [17.1.0](https://github.com/typographist/core/compare/v17.0.0...v17.1.0) (2019-03-02)
 
 
