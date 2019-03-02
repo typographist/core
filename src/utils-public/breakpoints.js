@@ -1,16 +1,5 @@
 import * as R from 'ramda';
-import { DEFAULT_BREAK, DEFAULT_BREAK_MAP } from '@constants';
-import { makeBreakpointsMap } from '@make-breakpoints-map';
-
-const headOr: (Breakpoint[]) => Breakpoint = R.compose(
-  R.defaultTo(DEFAULT_BREAK),
-  R.head,
-);
-
-export const getBreaksMapOr: (UserConfig) => * = R.compose(
-  R.defaultTo(DEFAULT_BREAK_MAP),
-  makeBreakpointsMap,
-);
+import { getBreaksMapOr, headOr } from '@utils';
 
 export const getBreaksWithoutDefault: (BreakpointsMap) => * = R.compose(
   R.tail,
