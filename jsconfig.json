@@ -8,7 +8,7 @@
       "@convertors/*": ["./convertors/*"],
       "@make-breakpoints-map/*": ["./make-breakpoints-map/*"],
       "@models/*": ["./models/*"],
-      "@utils/*": ["./utils/*"],
+      "@utils/*": ["./utils.js"],
       "@utils-public/*": ["./utils-public/*"],
       "@validate-user-config/*": ["./validate-user-config/*"],
       "@constants": ["./constants"],
