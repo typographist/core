@@ -88,3 +88,7 @@ export type Breakpoint = {|
 export type BreakpointsMap = {
   [string]: Breakpoint,
 };
+
+export type Breakpoints = {
+  [string]: string,
+};
