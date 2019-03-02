@@ -1,6 +1,6 @@
 // @flow
 
-import { toPxIfHasEm } from '@convertors/to-px-if-has-em';
+import { toPxIfHasEm } from '@convertors/to-px';
 import { type NotFilledRenamedBreak } from '../models';
 
 export const toPxBreakValue: (NotFilledRenamedBreak) => NotFilledRenamedBreak = ({

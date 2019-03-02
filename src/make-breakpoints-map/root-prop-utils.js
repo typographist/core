@@ -2,7 +2,7 @@
 
 import { HALF } from '../constants';
 
-import { calcLeading } from '../calculators/calc-leading';
+import { calcLeading } from '../calculators';
 import type { BreakStableRatio, BreakWithRoot } from '../models';
 
 export const calcRoot = (leading: number) => leading * HALF;

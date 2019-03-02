@@ -2,7 +2,7 @@
 
 import * as R from 'ramda';
 
-import { toPxIfHasEm } from '@convertors/to-px-if-has-em';
+import { toPxIfHasEm } from '@convertors/to-px';
 import {
   POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
   FONT_SIZE,

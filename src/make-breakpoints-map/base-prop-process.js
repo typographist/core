@@ -2,7 +2,7 @@
 
 import * as R from 'ramda';
 import { toArrIsNotArr } from '@convertors/to-arr-is-not-arr';
-import { toPxIfHasEm } from '@convertors/to-px-if-has-em';
+import { toPxIfHasEm } from '@convertors/to-px';
 
 import type { FillledBreak, BreakStableBase } from '../models';
 
