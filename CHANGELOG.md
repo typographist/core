@@ -1,3 +1,21 @@
+# [16.0.0](https://github.com/typographist/core/compare/v15.0.0...v16.0.0) (2019-03-02)
+
+
+### Code Refactoring
+
+* **add utils for breakpoints:** add utils for breakpoints ([262ae0e](https://github.com/typographist/core/commit/262ae0e))
+
+
+### Features
+
+* **add utils for breakpoints:** add utils for breakpoints ([009bd3d](https://github.com/typographist/core/commit/009bd3d))
+
+
+### BREAKING CHANGES
+
+* **add utils for breakpoints:** add utils for breakpoints
+* **add utils for breakpoints:** add utils for breakpoints
+
 # [15.0.0](https://github.com/typographist/core/compare/v14.0.0...v15.0.0) (2019-03-02)
 
 
