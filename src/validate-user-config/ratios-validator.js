@@ -2,9 +2,11 @@
 
 import * as R from 'ramda';
 import { Right, Left } from 'igogo';
-import { type UserConfig } from '@models/user-config';
 import { RATIO_ERROR_MESSAGE } from '@error-messages';
-import { isNumeric, errorReporter, deeperObjectValues } from '@utils';
+import { isNumeric } from '@utils/is-numeric';
+import { errorReporter } from '@utils/error-reporter';
+import { deeperObjectValues } from '@utils/deeper-object-values';
+import { type UserConfig } from '@models/user-config';
 
 import * as constants from '@constants';
 

@@ -1,12 +1,5 @@
 // @flow
 
-export const isNumeric = (x: mixed) =>
-  !Number.isNaN(parseFloat(x)) && isFinite(x);
-
-export const errorReporter = (message: string) => {
-  throw new Error(`[typographist-core]: Check your user config. ${message}`);
-};
-
 type Memo = void | mixed[];
 type Config = {
   [string]: any,

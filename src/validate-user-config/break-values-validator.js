@@ -2,10 +2,11 @@
 
 import * as R from 'ramda';
 import { Right, Left } from 'igogo';
-import { type UserConfig } from '@models/user-config';
 import { VAL_WITH_PX_OR_EM } from '@constants';
 import { BREAKPOINT_ERROR_MESSAGE } from '@error-messages';
-import { errorReporter, deeperObjectValues } from '@utils';
+import { errorReporter } from '@utils/error-reporter';
+import { deeperObjectValues } from '@utils/deeper-object-values';
+import { type UserConfig } from '@models/user-config';
 
 export const getBreakValues: (UserConfig) => * = deeperObjectValues(
   'breakpoint',

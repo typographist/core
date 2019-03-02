@@ -3,7 +3,7 @@
 export { percentage } from '@convertors/percentage';
 export { toEm } from '@convertors/to-em';
 export { toPx } from '@convertors/to-px';
-export { isNumeric } from '@utils';
+export { isNumeric } from '@utils/is-numeric';
 
 export * from './breakpoints';
 export { camelize } from './camelize';

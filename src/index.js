@@ -5,7 +5,7 @@ export * as constants from '@constants';
 export { percentage } from '@convertors/percentage';
 export { toEm } from '@convertors/to-em';
 export { toPx } from '@convertors/to-px';
-export { isNumeric } from '@utils';
+export { isNumeric } from '@utils/is-numeric';
 export { camelize } from '@utils-public/camelize';
 export { modularScale } from '@utils-public/modular-scale';
 export { normalizeString } from '@utils-public/normalize-string';

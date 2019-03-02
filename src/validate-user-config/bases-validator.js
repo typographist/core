@@ -2,7 +2,8 @@
 
 import * as R from 'ramda';
 import { Left, Right } from 'igogo';
-import { errorReporter, deeperObjectValues } from '@utils';
+import { errorReporter } from '@utils/error-reporter';
+import { deeperObjectValues } from '@utils/deeper-object-values';
 import { VAL_WITH_PX_OR_EM } from '@constants';
 import { BASE_ERROR_MESSAGE } from '@error-messages';
 import { type UserConfig } from '@models/user-config';
