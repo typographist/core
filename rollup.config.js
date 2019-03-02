@@ -11,7 +11,6 @@ const CJS = ENV === 'cjs';
 
 const plugins = [babel(), resolve(), flowEntry()];
 const isCoreModules = [ES, CJS].some(Boolean);
-
 const indexOutput = isCoreModules && CJS ? main : module;
 
 export default [
