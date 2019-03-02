@@ -12,7 +12,13 @@ export { normalizeString } from '@utils-public/normalize-string';
 export { toCebabCase } from '@utils-public/to-cebab-case';
 export { toRem } from '@utils-public/to-rem';
 export { toSnakeCase } from '@utils-public/to-snake-case';
-export * as breakpoints from '@utils-public/breakpoints';
+export {
+  getBreaksWithoutDefault,
+  getBreakNames,
+  makeBreakNamesRow,
+  makeBreakpoints,
+  getDefaultBreak,
+} from '@utils-public/breakpoints';
 export type { BreakpointsMap, Breakpoint } from '@models/breakpoints';
 export type { UserConfig } from '@models/user-config';
 
