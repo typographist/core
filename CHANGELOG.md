@@ -1,3 +1,18 @@
+# [14.0.0](https://github.com/typographist/core/compare/v13.2.0...v14.0.0) (2019-03-02)
+
+
+### Code Refactoring
+
+*  make utils ([fc074bf](https://github.com/typographist/core/commit/fc074bf))
+
+
+### BREAKING CHANGES
+
+* transferred functions of
+percentage, toEm, toPx, isNumeric, camelize,
+modularScale, normalizeString, toCebabCase,
+toRem, toSnakeCase to the utils file
+
 # [13.2.0](https://github.com/typographist/core/compare/v13.1.3...v13.2.0) (2019-02-27)
 
 
