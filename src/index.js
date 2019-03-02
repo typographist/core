@@ -18,6 +18,7 @@ export {
   makeBreakNamesRow,
   makeBreakpoints,
   getDefaultBreak,
+  getBreaksModelOrDefaultModel,
 } from '@utils-public/breakpoints';
 export type { BreakpointsModel, Breakpoint } from '@models/breakpoints';
 export type { UserConfig } from '@models/user-config';
