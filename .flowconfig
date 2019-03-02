@@ -1,7 +1,7 @@
  [options]
   esproposal.export_star_as=enable
   module.name_mapper='@convertors' -> '<PROJECT_ROOT>/src/convertors'
-  module.name_mapper='@make-breakpoints-map' -> '<PROJECT_ROOT>/src/make-breakpoints-map'
+  module.name_mapper='@make-breakpoints-model' -> '<PROJECT_ROOT>/src/make-breakpoints-model'
   module.name_mapper='@models' -> '<PROJECT_ROOT>/src/models'
   module.name_mapper='@utils' -> '<PROJECT_ROOT>/src/utils'
   module.name_mapper='@utils-public' -> '<PROJECT_ROOT>/src/utils-public'

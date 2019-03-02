@@ -85,7 +85,7 @@ export type Breakpoint = {|
   root: number,
 |};
 
-export type BreakpointsMap = {
+export type BreakpointsModel = {
   [string]: Breakpoint,
 };
 

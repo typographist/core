@@ -1,9 +1,9 @@
-import { makeBreakpointsProcess } from '@make-breakpoints-map/make-breakpoints-process';
-import { userConfig, breakpointsMap } from '@mocks';
+import { makeBreakpointsProcess } from '@make-breakpoints-model/make-breakpoints-model-process';
+import { userConfig, breakpointsModel } from '@mocks';
 
 describe('makeBreakpointsProcess', () => {
   it('returns the breakpoints map', () => {
-    expect(makeBreakpointsProcess(userConfig)).toEqual(breakpointsMap);
+    expect(makeBreakpointsProcess(userConfig)).toEqual(breakpointsModel);
   });
 
   it('returns the breakpoint model from default user config', () => {

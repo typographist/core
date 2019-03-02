@@ -1,16 +1,9 @@
-import { createBreakpoints } from '@make-breakpoints-map/create-breakpoints';
+import { makeNamedBreaks } from '@make-breakpoints-model/make-named-breaks';
 import { userConfig } from '@mocks';
 
-describe('createBreakpoints', () => {
-  it('returns raw breakpoints from user config', () => {
-    expect(createBreakpoints(userConfig)).toEqual([
-      {
-        base: ['1em', '2em'],
-        lineHeight: 1.5,
-        name: 'default',
-        ratio: '45px at 6',
-        value: '0px',
-      },
+describe('makeNamedBreaks', () => {
+  it('returns array of breakpoints with prop `value`', () => {
+    expect(makeNamedBreaks(userConfig)).toEqual([
       {
         base: '17px',
         name: 'tablet',

@@ -1,4 +1,4 @@
-import { inheritProps } from '@make-breakpoints-map/inherit-props';
+import { inheritProps } from '@make-breakpoints-model/inherit-props';
 
 describe('inheritProps', () => {
   it('inherits all missing key values', () => {

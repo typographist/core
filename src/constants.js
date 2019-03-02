@@ -1,5 +1,5 @@
 // @flow
-import type { UserConfig, Breakpoint, BreakpointsMap } from '@models';
+import type { UserConfig, Breakpoint, BreakpointsModel } from '@models';
 
 export const HALF = 0.5;
 export const BROWSER_VIEWPORT_WIDTH = '100vw';
@@ -21,7 +21,7 @@ export const DEFAULT_CONFIG: UserConfig = {
   ratio: 1.333,
 };
 
-export const DEFAULT_BREAK_MAP: BreakpointsMap = {
+export const DEFAULT_BREAK_MAP: BreakpointsModel = {
   default: {
     base: [16],
     lineHeight: 1.5,

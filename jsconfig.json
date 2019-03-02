@@ -6,7 +6,7 @@
     "paths": {
       "@calculators/*": ["./calculators/*"],
       "@convertors/*": ["./convertors/*"],
-      "@make-breakpoints-map/*": ["./make-breakpoints-map/*"],
+      "@make-breakpoints-model/*": ["./make-breakpoints-model/*"],
       "@models/*": ["./models/*"],
       "@utils/*": ["./utils/*"],
       "@utils-public/*": ["./utils-public/*"],

@@ -1,6 +1,6 @@
 // @flow
 
-export { makeBreakpointsMap } from '@make-breakpoints-map';
+export { makeBreakpointsModel } from '@make-breakpoints-model';
 export * as constants from '@constants';
 export { percentage } from '@convertors/percentage';
 export { toEm } from '@convertors/to-em';
@@ -13,13 +13,13 @@ export { toCebabCase } from '@utils-public/to-cebab-case';
 export { toRem } from '@utils-public/to-rem';
 export { toSnakeCase } from '@utils-public/to-snake-case';
 export {
-  getBreaksWithoutDefault,
-  getBreakNames,
+  getTailBreaksValues,
+  getTailBreaksNames,
   makeBreakNamesRow,
   makeBreakpoints,
   getDefaultBreak,
 } from '@utils-public/breakpoints';
-export type { BreakpointsMap, Breakpoint } from '@models/breakpoints';
+export type { BreakpointsModel, Breakpoint } from '@models/breakpoints';
 export type { UserConfig } from '@models/user-config';
 
 export const ratios = {

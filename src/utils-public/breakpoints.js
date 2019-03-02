@@ -1,35 +1,35 @@
 // @flow
 
 import * as R from 'ramda';
-import { getBreaksMapOr } from '@utils/get-breaks-map-or';
+import { getBreaksModelOrDefaultModel } from '@utils/get-breaks-model-or-default-model';
 import { headOr } from '@utils/head-or';
 import type {
-  BreakpointsMap,
+  BreakpointsModel,
   UserConfig,
   Breakpoints,
   Breakpoint,
 } from '@models';
 
-export const getBreaksWithoutDefault: (BreakpointsMap) => * = R.compose(
+export const getTailBreaksValues: (BreakpointsModel) => * = R.compose(
   R.tail,
   R.values,
 );
 
-export const getBreakNames: (BreakpointsMap) => string[] = R.compose(
+export const getTailBreaksNames: (BreakpointsModel) => string[] = R.compose(
   R.tail,
   R.keys,
 );
 
-export const makeBreakNamesRow = (breaksMap: BreakpointsMap) =>
-  `'${getBreakNames(breaksMap).join(', ')}'`;
+export const makeBreakNamesRow = (breaksMap: BreakpointsModel) =>
+  `'${getTailBreaksNames(breaksMap).join(', ')}'`;
 
 export const makeBreakpoints: (UserConfig) => Breakpoints = R.compose(
   R.dissoc('default'),
   R.map(R.prop('value')),
-  getBreaksMapOr,
+  getBreaksModelOrDefaultModel,
 );
 
-export const getDefaultBreak: (BreakpointsMap) => Breakpoint = R.compose(
+export const getDefaultBreak: (BreakpointsModel) => Breakpoint = R.compose(
   headOr,
   R.values,
 );

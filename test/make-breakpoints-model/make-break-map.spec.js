@@ -1,15 +1,16 @@
-import { userConfig } from '@mocks';
-import { makeBreakpointsMap } from '@make-breakpoints-map';
+import { makeBreakMap } from '@make-breakpoints-model/make-break-map';
+import { breakpoints } from '@mocks';
 
-describe('makeBreakpointsMap', () => {
-  it('create a list of breakpoint values if the user config is valid', () => {
-    expect(makeBreakpointsMap(userConfig)).toEqual({
+describe('makeBreaksMap', () => {
+  it('return breakpoints map', () => {
+    expect(breakpoints.reduce(makeBreakMap, {})).toEqual({
       default: {
         base: [16, 32],
         lineHeight: 1.5,
         ratio: 1.1880883987824906,
         root: 12,
         value: '0px',
+        name: 'default',
       },
       tablet: {
         base: [17],
@@ -17,6 +18,7 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.1761442744249144,
         root: 13,
         value: '640px',
+        name: 'tablet',
       },
       desktop: {
         base: [18],
@@ -24,6 +26,7 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.333,
         root: 15.5,
         value: '1024px',
+        name: 'desktop',
       },
       lgDesktop: {
         base: [20],
@@ -31,6 +34,7 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.333,
         root: 17,
         value: '1200px',
+        name: 'lgDesktop',
       },
       xlDesktop: {
         base: [22],
@@ -38,6 +42,7 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.333,
         root: 18.5,
         value: '1600px',
+        name: 'xlDesktop',
       },
     });
   });

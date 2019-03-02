@@ -11,12 +11,12 @@ import { setPropRoot } from './root-prop-utils';
 import { makeBreakMap } from './make-break-map';
 import type {
   UserConfig,
-  BreakpointsMap,
+  BreakpointsModel,
   NotFilledNamedBreak,
   NotFilledRenamedBreak,
 } from '../models';
 
-export const makeBreakpointsProcess: (UserConfig) => BreakpointsMap = R.compose(
+export const makeBreakpointsProcess: (UserConfig) => BreakpointsModel = R.compose(
   R.compose(
     R.map(R.omit(['name'])),
     R.reduce(makeBreakMap, {}),

@@ -12,7 +12,7 @@
         "alias": {
           "@calculators": "./src/calculators",
           "@convertors": "./src/convertors",
-          "@make-breakpoints-map": "./src/make-breakpoints-map",
+          "@make-breakpoints-model": "./src/make-breakpoints-model",
           "@models": "./src/models",
           "@utils": "./src/utils",
           "@utils-public": "./src/utils-public",

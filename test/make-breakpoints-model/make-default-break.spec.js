@@ -1,4 +1,4 @@
-import { makeDefaultBreak } from '@make-breakpoints-map/make-default-break';
+import { makeDefaultBreak } from '@make-breakpoints-model/make-default-break';
 import { userConfig } from '@mocks';
 
 describe('makeDefaultBreak', () => {
