@@ -13,27 +13,12 @@ const plugins = [babel(), resolve(), flowEntry()];
 const isCoreModules = [ES, CJS].some(Boolean);
 
 const indexOutput = isCoreModules && CJS ? main : module;
-const utilsOutput = CJS ? 'dist/lib/utils.cjs.js' : 'dist/es/utils.es.js';
 
 export default [
   {
     input: './src/index.js',
     output: {
       file: indexOutput,
-      format: ENV,
-      indent: false,
-      sourcemap: true,
-    },
-    external: [
-      ...Object.keys(dependencies || {}),
-      ...Object.keys(peerDependencies || {}),
-    ],
-    plugins: CJS ? [...plugins, uglify()] : [...plugins, terser()],
-  },
-  {
-    input: './src/utils-public/index.js',
-    output: {
-      file: utilsOutput,
       format: ENV,
       indent: false,
       sourcemap: true,
