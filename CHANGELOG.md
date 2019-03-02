@@ -1,3 +1,15 @@
+# [15.0.0](https://github.com/typographist/core/compare/v14.0.0...v15.0.0) (2019-03-02)
+
+
+### Code Refactoring
+
+* **refactor: return helpers:** return helpers ([4e38fe6](https://github.com/typographist/core/commit/4e38fe6))
+
+
+### BREAKING CHANGES
+
+* **refactor: return helpers:** return helpers
+
 # [14.0.0](https://github.com/typographist/core/compare/v13.2.0...v14.0.0) (2019-03-02)
 
 
