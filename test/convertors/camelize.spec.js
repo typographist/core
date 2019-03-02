@@ -1,4 +1,4 @@
-import { camelize } from '@utils-public/camelize';
+import { camelize } from '../../src/utils-public/camelize';
 
 describe('camelize', () => {
   it('convert cebabcase string to camalcase', () => {

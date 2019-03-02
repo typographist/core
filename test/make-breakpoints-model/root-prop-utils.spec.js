@@ -1,7 +1,7 @@
 import {
   calcRoot,
   setPropRoot,
-} from '@make-breakpoints-model/root-prop-utils';
+} from '../../src/make-breakpoints-model/root-prop-utils';
 
 describe('calcRoot', () => {
   it('calculated int root', () => {

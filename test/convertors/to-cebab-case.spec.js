@@ -1,4 +1,4 @@
-import { toCebabCase } from '@utils-public/to-cebab-case';
+import { toCebabCase } from '../../src/utils-public/to-cebab-case';
 
 describe('toCebabCase', () => {
   it('convert string to cebab case notation', () => {

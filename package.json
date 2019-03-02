@@ -16,7 +16,7 @@
     "test": "cross-env npx flow && npm run test:code",
     "test:watch": "cross-env jest --coverage --watch --updateSnapshot",
     "test:code": "cross-env jest --coverage",
-    "lint": "cross-env eslint ."
+    "lint": "cross-env eslint --fix ."
   },
   "license": "MIT",
   "homepage": "https://github.com/typographist/core#readme",

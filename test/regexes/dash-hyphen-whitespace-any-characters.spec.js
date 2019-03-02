@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '@constants';
+import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '../../src/constants';
 
 describe('DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS', () => {
   it('should replace dash, hyphen, whitespace and any characters', () => {

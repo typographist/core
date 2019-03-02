@@ -1,7 +1,7 @@
 // @flow
 
 import * as R from 'ramda';
-import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '@constants';
+import { DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS } from '../constants';
 
 const camelizeString = R.replace(
   DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,

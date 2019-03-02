@@ -1,5 +1,5 @@
-import { makeNamedBreaks } from '@make-breakpoints-model/make-named-breaks';
-import { userConfig } from '@mocks';
+import { makeNamedBreaks } from '../../src/make-breakpoints-model/make-named-breaks';
+import { userConfig } from '../../src/mocks';
 
 describe('makeNamedBreaks', () => {
   it('returns array of breakpoints with prop `value`', () => {

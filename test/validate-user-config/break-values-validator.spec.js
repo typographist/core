@@ -5,8 +5,8 @@ import {
   eitherIsValidField,
   isValidField,
   validateFields,
-} from '@validate-user-config/break-values-validator';
-import { userConfig } from '@mocks';
+} from '../../src/validate-user-config/break-values-validator';
+import { userConfig } from '../../src/mocks';
 
 describe('getBreakValues function', () => {
   it('returs all values of breakpoint from user config', () => {

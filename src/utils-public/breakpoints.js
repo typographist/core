@@ -1,15 +1,15 @@
 // @flow
 
 import * as R from 'ramda';
-import { headOr } from '@utils/head-or';
-import { DEFAULT_BREAK_MAP } from '@constants';
-import { makeBreakpointsModel } from '@make-breakpoints-model';
+import { headOr } from '../utils/head-or';
+import { DEFAULT_BREAK_MAP } from '../constants';
+import { makeBreakpointsModel } from '../make-breakpoints-model';
 import type {
   BreakpointsModel,
   UserConfig,
   Breakpoints,
   Breakpoint,
-} from '@models';
+} from '../models';
 
 export const getBreaksModelOrDefaultModel: (UserConfig) => * = R.compose(
   R.defaultTo(DEFAULT_BREAK_MAP),

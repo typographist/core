@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { FONT_SIZE } from '@constants';
+import { FONT_SIZE } from '../../src/constants';
 
 describe('FONT_SIZE', () => {
   it('should found number with pixels', () => {

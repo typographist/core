@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_BEGINNING_OF_STRING } from '@constants';
+import { POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_BEGINNING_OF_STRING } from '../../src/constants';
 
 describe('POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_BEGINNING_OF_STRING', () => {
   it('should integer support', () => {

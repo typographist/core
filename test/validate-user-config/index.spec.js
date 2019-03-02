@@ -1,5 +1,5 @@
-import { validateUserConfig } from '@validate-user-config';
-import { userConfig } from '@mocks';
+import { validateUserConfig } from '../../src/validate-user-config';
+import { userConfig } from '../../src/mocks';
 
 describe('user config validators', () => {
   describe('validateUserConfig function', () => {

@@ -2,11 +2,11 @@
 
 import * as R from 'ramda';
 import { Left, Right } from 'igogo';
-import { errorReporter } from '@utils/error-reporter';
-import { deeperObjectValues } from '@utils/deeper-object-values';
-import { VAL_WITH_PX_OR_EM } from '@constants';
-import { BASE_ERROR_MESSAGE } from '@error-messages';
-import { type UserConfig } from '@models/user-config';
+import { type UserConfig } from '../models/user-config';
+import { deeperObjectValues } from '../utils/deeper-object-values';
+import { VAL_WITH_PX_OR_EM } from '../constants';
+import { BASE_ERROR_MESSAGE } from '../error-messages';
+import { errorReporter } from '../utils/error-reporter';
 
 export const getBases: (UserConfig) => * = deeperObjectValues('base');
 

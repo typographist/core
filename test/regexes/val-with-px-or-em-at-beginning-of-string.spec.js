@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING } from '@constants';
+import { VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING } from '../../src/constants';
 
 describe('VAL_WITH_PX_OR_EM_AT_BEGINNING_OF_STRING', () => {
   it('return `true` if contain positive integer mumber with pixels at the beggining of the string', () => {

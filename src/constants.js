@@ -1,5 +1,5 @@
 // @flow
-import type { UserConfig, Breakpoint, BreakpointsModel } from '@models';
+import type { UserConfig, Breakpoint, BreakpointsModel } from './models';
 
 export const HALF = 0.5;
 export const BROWSER_VIEWPORT_WIDTH = '100vw';

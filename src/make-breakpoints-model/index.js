@@ -1,9 +1,9 @@
 // @flow
 
 import memoizeone from 'memoize-one';
-import { validateUserConfig } from '@validate-user-config';
-import { type UserConfig } from '@models/user-config';
-import { type BreakpointsModel } from '@models/breakpoints';
+import { type UserConfig } from '../models/user-config';
+import { type BreakpointsModel } from '../models/breakpoints';
+import { validateUserConfig } from '../validate-user-config';
 import { makeBreakpointsProcess } from './make-breakpoints-model-process';
 
 const memoizedMakeBreakpoints: (UserConfig) => BreakpointsModel = memoizeone(

@@ -1,8 +1,8 @@
 // @flow
 
 import * as R from 'ramda';
-import { toArrIsNotArr } from '@convertors/to-arr-is-not-arr';
-import { toPxIfHasEm } from '@convertors/to-px';
+import { toPxIfHasEm } from '../convertors/to-px';
+import { toArrIsNotArr } from '../convertors/to-arr-is-not-arr';
 
 import type { FillledBreak, BreakStableBase } from '../models';
 

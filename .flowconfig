@@ -1,13 +1,3 @@
  [options]
   esproposal.export_star_as=enable
-  module.name_mapper='@convertors' -> '<PROJECT_ROOT>/src/convertors'
-  module.name_mapper='@make-breakpoints-model' -> '<PROJECT_ROOT>/src/make-breakpoints-model'
-  module.name_mapper='@models' -> '<PROJECT_ROOT>/src/models'
-  module.name_mapper='@utils' -> '<PROJECT_ROOT>/src/utils'
-  module.name_mapper='@utils-public' -> '<PROJECT_ROOT>/src/utils-public'
-  module.name_mapper='@validate-user-config' -> '<PROJECT_ROOT>/src/validate-user-config'
-  module.name_mapper='@constants' -> '<PROJECT_ROOT>/src/constants'
-  module.name_mapper='@error-messages' -> '<PROJECT_ROOT>/src/error-messages'
-  module.name_mapper='@calculators' -> '<PROJECT_ROOT>/src/calculators'
-  module.name_mapper='@mocks' -> '<PROJECT_ROOT>/src/mocks'
   

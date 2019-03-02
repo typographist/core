@@ -1,4 +1,4 @@
-import { renameProp } from '@make-breakpoints-model/rename-prop';
+import { renameProp } from '../../src/make-breakpoints-model/rename-prop';
 
 describe('renameProp', () => {
   it('return object with ranamed prop', () => {

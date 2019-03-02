@@ -1,5 +1,5 @@
-import { userConfig } from '@mocks';
-import { makeBreakpointsModel } from '@make-breakpoints-model';
+import { userConfig } from '../../src/mocks';
+import { makeBreakpointsModel } from '../../src/make-breakpoints-model';
 
 describe('makeBreakpointsModel', () => {
   it('create a list of breakpoint values if the user config is valid', () => {

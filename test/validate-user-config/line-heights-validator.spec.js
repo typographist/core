@@ -4,8 +4,8 @@ import {
   eitherIsValidField,
   isValidField,
   validateFields,
-} from '@validate-user-config/line-heights-validator';
-import { userConfig } from '@mocks';
+} from '../../src/validate-user-config/line-heights-validator';
+import { userConfig } from '../../src/mocks';
 
 describe('getLineHeights', () => {
   it('return all lineHeight values', () => {

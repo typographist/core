@@ -3,8 +3,8 @@ import {
   eitherIsValidField,
   isValidField,
   validateFields,
-} from '@validate-user-config/bases-validator';
-import { userConfig } from '@mocks';
+} from '../../src/validate-user-config/bases-validator';
+import { userConfig } from '../../src/mocks';
 
 describe('getBases function', () => {
   it('returs all values of base from user config', () => {

@@ -1,4 +1,4 @@
-import { percentage } from '@convertors/percentage';
+import { percentage } from '../../src/convertors/percentage';
 
 describe('percentage', () => {
   it('should convert to percents', () => {

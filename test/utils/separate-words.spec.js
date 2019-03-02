@@ -1,4 +1,4 @@
-import { separateWords } from '@utils-public/separate-words';
+import { separateWords } from '../../src/utils-public/separate-words';
 
 describe('separateWords', () => {
   it('should separate word', () => {

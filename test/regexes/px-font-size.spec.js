@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { VAL_IN_PX } from '@constants';
+import { VAL_IN_PX } from '../../src/constants';
 
 describe('VAL_IN_PX', () => {
   it('should has pixels', () => {

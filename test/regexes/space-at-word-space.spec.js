@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { SPACE_AT_WORD_SPACE } from '@constants';
+import { SPACE_AT_WORD_SPACE } from '../../src/constants';
 
 describe('AT_WORD', () => {
   it('should ratio string has `at` word', () => {

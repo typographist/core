@@ -1,4 +1,4 @@
-import { toEmIfHasPx } from '@convertors/to-em';
+import { toEmIfHasPx } from '../../src/convertors/to-em';
 
 describe('toEmIfHasPx', () => {
   it('should convert to em if has pixels', () => {

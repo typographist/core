@@ -5,8 +5,8 @@ import {
   eitherIsValidRatioNumber,
   isValidField,
   validateFields,
-} from '@validate-user-config/ratios-validator';
-import { userConfig } from '@mocks';
+} from '../../src/validate-user-config/ratios-validator';
+import { userConfig } from '../../src/mocks';
 
 describe('getRatios', () => {
   it('returns all values of the ratio', () => {
