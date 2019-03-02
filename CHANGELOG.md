@@ -1,3 +1,10 @@
+# [17.1.0](https://github.com/typographist/core/compare/v17.0.0...v17.1.0) (2019-03-02)
+
+
+### Features
+
+* add function getBreaksModelOrDefaultModel ([ea94f63](https://github.com/typographist/core/commit/ea94f63))
+
 # [17.0.0](https://github.com/typographist/core/compare/v16.0.0...v17.0.0) (2019-03-02)
 
 
