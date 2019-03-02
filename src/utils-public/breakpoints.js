@@ -1,5 +1,13 @@
+// @flow
+
 import * as R from 'ramda';
 import { getBreaksMapOr, headOr } from '@utils';
+import type {
+  BreakpointsMap,
+  Breakpoint,
+  UserConfig,
+  Breakpoints,
+} from '@models';
 
 export const getBreaksWithoutDefault: (BreakpointsMap) => * = R.compose(
   R.tail,
