@@ -1,4 +1,4 @@
-import { errorReporter } from '@utils/error-reporter';
+import { errorReporter } from '@utils';
 
 describe('errorReporter', () => {
   it('return object Error with error message', () => {

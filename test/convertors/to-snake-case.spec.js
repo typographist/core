@@ -1,4 +1,4 @@
-import { toSnakeCase } from '@convertors/to-snake-case';
+import { toSnakeCase } from '@utils-public';
 
 describe('toSnakeCase', () => {
   it('convert string to snake case notation', () => {

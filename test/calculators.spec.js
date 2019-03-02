@@ -1,5 +1,5 @@
-import { calcLeading } from '@calculators/calc-leading';
-import { modularScale } from '@calculators/modular-scale';
+import { calcLeading } from '@calculators';
+import { modularScale } from '@utils-public/modular-scale';
 
 describe('calculators', () => {
   describe('calcLeading', () => {

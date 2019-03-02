@@ -1,4 +1,4 @@
-import { toPxIfHasEm } from '@convertors/to-px-if-has-em';
+import { toPxIfHasEm } from '@convertors/to-px';
 
 describe('toPxIfHasEm', () => {
   it('should convert to px if has em unit', () => {

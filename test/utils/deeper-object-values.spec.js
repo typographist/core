@@ -1,4 +1,4 @@
-import { deeperObjectValues } from '@utils/deeper-object-values';
+import { deeperObjectValues } from '@utils';
 
 const config = {
   aa: 1,
