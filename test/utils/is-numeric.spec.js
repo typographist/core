@@ -1,4 +1,4 @@
-import { isNumeric } from '@utils';
+import { isNumeric } from '@utils/is-numeric';
 
 describe('isNumeric', () => {
   it('should if number', () => {
