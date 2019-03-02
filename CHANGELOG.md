@@ -1,3 +1,16 @@
+# [17.0.0](https://github.com/typographist/core/compare/v16.0.0...v17.0.0) (2019-03-02)
+
+
+### Code Refactoring
+
+* rename utils ([6f5ed76](https://github.com/typographist/core/commit/6f5ed76))
+
+
+### BREAKING CHANGES
+
+* rename makeBreakpointsMap with
+makeBreakpointsModel
+
 # [16.0.0](https://github.com/typographist/core/compare/v15.0.0...v16.0.0) (2019-03-02)
 
 
