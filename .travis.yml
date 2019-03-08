@@ -2,15 +2,15 @@ language: node_js
 cache: yarn
 node_js:
   - node
-  - '10'
-  - '8'
+  - "10"
+  - "8"
 os:
   - linux
   - osx
 branches:
   only:
     - master
-    - '/^greenkeeper/.*$/'
+    - "/^greenkeeper/.*$/"
 script:
   - npm test
 after_success:
