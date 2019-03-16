@@ -49,7 +49,7 @@
     "access": "public"
   },
   "dependencies": {
-    "igogo": "1.6.0",
+    "igogo": "1.7.0",
     "ramda": "0.26.1"
   },
   "devDependencies": {
