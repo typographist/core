@@ -1,29 +1,25 @@
-// @flow
-
-export { makeBreakpointsModel } from './make-breakpoints-model';
-export * as constants from './constants';
-export { percentage } from './convertors/percentage';
-export { toEm } from './convertors/to-em';
-export { toPx } from './convertors/to-px';
-export { isNumeric } from './utils/is-numeric';
-export { camelize } from './utils-public/camelize';
-export { modularScale } from './utils-public/modular-scale';
-export { normalizeString } from './utils-public/normalize-string';
-export { toCebabCase } from './utils-public/to-cebab-case';
-export { toRem } from './utils-public/to-rem';
-export { toSnakeCase } from './utils-public/to-snake-case';
-export {
+const { makeBreakpointsModel } = require('./make-breakpoints-model');
+const constants = require('./constants');
+const { percentage, toEm, toPx } = require('./convertors');
+const { isNumeric } = require('./validators');
+const {
+  camelize,
+  normalizeString,
+  toCebabCase,
+  toRem,
+  toSnakeCase,
+} = require('./utils-public');
+const { modularScale } = require('./utils-public/modular-scale');
+const {
   getTailBreaksValues,
   getTailBreaksNames,
   makeBreakNamesRow,
   makeBreakpoints,
   getDefaultBreak,
   getBreaksModelOrDefaultModel,
-} from './utils-public/breakpoints';
-export type { BreakpointsModel, Breakpoint } from './models/breakpoints';
-export type { UserConfig } from './models/user-config';
+} = require('./utils-public/breakpoints');
 
-export const ratios = {
+const ratios = {
   AUGMENTED_FOURTH: 1.41421,
   DOUBLE_OCTAVE: 4,
   GOLDEN_SECTION: 1.618034,
@@ -41,4 +37,26 @@ export const ratios = {
   PERFECT_FIFTH: 1.5,
   PERFECT_FOURTH: 1.333333333,
   PHI: 1.618034,
+};
+
+module.exports = {
+  makeBreakpointsModel,
+  constants,
+  percentage,
+  toEm,
+  toPx,
+  isNumeric,
+  camelize,
+  modularScale,
+  normalizeString,
+  toCebabCase,
+  toRem,
+  toSnakeCase,
+  getTailBreaksValues,
+  getTailBreaksNames,
+  makeBreakNamesRow,
+  makeBreakpoints,
+  getDefaultBreak,
+  getBreaksModelOrDefaultModel,
+  ratios,
 };

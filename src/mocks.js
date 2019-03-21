@@ -1,12 +1,4 @@
-// @flow
-
-import type {
-  UserConfig,
-  BreakpointWithName,
-  BreakpointsModel,
-} from './models';
-
-export const userConfig: UserConfig = {
+exports.userConfig = {
   base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',
@@ -30,11 +22,11 @@ export const userConfig: UserConfig = {
   },
 };
 
-export const breakpoints: BreakpointWithName[] = [
+exports.breakpoints = [
   {
     base: [16, 32],
     lineHeight: 1.5,
-    name: 'default',
+    name: 'initial',
     ratio: 1.1880883987824906,
     root: 12,
     value: '0px',
@@ -73,8 +65,8 @@ export const breakpoints: BreakpointWithName[] = [
   },
 ];
 
-export const breakpointsModel: BreakpointsModel = {
-  default: {
+exports.breakpointsModel = {
+  initial: {
     base: [16, 32],
     lineHeight: 1.5,
     ratio: 1.1880883987824906,

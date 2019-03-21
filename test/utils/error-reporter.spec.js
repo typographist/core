@@ -1,7 +1,7 @@
-import { errorReporter } from '../../src/utils/error-reporter';
+import { invariant } from '../../src/utils/invariant';
 
-describe('errorReporter', () => {
+describe('makeError', () => {
   it('return object Error with error message', () => {
-    expect(errorReporter).toThrow();
+    expect(invariant).toThrow();
   });
 });

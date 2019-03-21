@@ -1,18 +1,20 @@
-// @flow
-
-import memoizeOne from 'memoize-one';
+const memoizeOne = require('memoize-one');
 
 //  https://www.modularscale.com/
 
-const calcStartPosition = (step: number, base: number[]) =>
+// calcStartPosition :: (Number, [Number]) -> [Number]
+const calcStartPosition = (step, base) =>
   Math.round(
     (step / base.length - Math.floor(step / base.length)) * base.length,
   );
 
-const calcFontSize = (step: number, base: number[], ratio: number) =>
+// calcFontSize :: (Number, [Number], Number) -> Number
+const calcFontSize = (step, base, ratio) =>
   Math.pow(ratio, Math.floor(step / base.length));
 
 /* eslint-disable no-param-reassign, no-plusplus */
+
+// normalizeBases :: ([Number], Number, Number) -> Number
 const normalizeBases = (base, baseHigh, ratio) => {
   const cloneBase = [...base];
 
@@ -31,25 +33,35 @@ const normalizeBases = (base, baseHigh, ratio) => {
 };
 /* eslint-enable */
 
+// calcResult :: (Number, [Number], Number) -> Number
 const calcResult = (fontSize, bases, position) => fontSize * bases[position];
 
+// calcBaseHigh :: (Number, [Number]) -> Number
 const calcBaseHigh = (ratio, base) => Math.pow(ratio, 1) * base[0];
 
-export const dumpModularScale = (
-  step: number,
-  base: number[],
-  ratio: number,
-) => {
-  if (base.length === 1) {
-    return Math.pow(ratio, step) * parseFloat(base);
+// dumpModularScale :: (Number, [Number], Number) -> Number
+const dumpModularScale = (step, base, ratio) => {
+  if (base.length !== 1) {
+    const startPosition = calcStartPosition(step, base);
+    const fontSize = calcFontSize(step, base, ratio);
+    const baseHigh = calcBaseHigh(ratio, base);
+    const normalizedBases = normalizeBases(base, baseHigh, ratio);
+
+    return calcResult(fontSize, normalizedBases, startPosition);
   }
 
-  const startPosition = calcStartPosition(step, base);
-  const fontSize = calcFontSize(step, base, ratio);
-  const baseHigh = calcBaseHigh(ratio, base);
-  const normalizedBases = normalizeBases(base, baseHigh, ratio);
-
-  return calcResult(fontSize, normalizedBases, startPosition);
+  return Math.pow(ratio, step) * parseFloat(base);
 };
 
-export const modularScale = memoizeOne(dumpModularScale);
+// modularScale :: (Number, [Number], Number) -> Number
+const modularScale = memoizeOne(dumpModularScale);
+
+module.exports = {
+  calcStartPosition,
+  calcFontSize,
+  normalizeBases,
+  calcResult,
+  calcBaseHigh,
+  dumpModularScale,
+  modularScale,
+};

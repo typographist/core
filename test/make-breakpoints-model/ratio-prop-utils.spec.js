@@ -1,27 +1,27 @@
 import {
-  makeStepFromLiteral,
-  makeFontSizeFromLiteral,
+  makeStepFromRatio,
   calcRatio,
   calcRatioProcess,
 } from '../../src/make-breakpoints-model/ratio-prop-utils';
+import { makeFontSizeFromRatio } from '../../src/utils/ratio';
 
-const ratioLiteral = '45px at 6';
+const ratio = '45px at 6';
 
-describe('makeStepFromLiteral', () => {
+describe('makeStepFromRatio', () => {
   it('returns step from ratio literal', () => {
-    expect(makeStepFromLiteral(ratioLiteral)).toEqual(6);
+    expect(makeStepFromRatio(ratio)).toEqual(6);
   });
 });
 
-describe('makeFontSizeFromLiteral', () => {
+describe('makeFontSizeFromRatio', () => {
   it('returns `font-size` from ratio literal', () => {
-    expect(makeFontSizeFromLiteral(ratioLiteral)).toEqual(45);
+    expect(makeFontSizeFromRatio(ratio)).toEqual(45);
   });
 });
 
 describe('calcRatio', () => {
   it('calculate ratio', () => {
-    expect(calcRatio(ratioLiteral, [16, 32])).toEqual(1.1880883987824906);
+    expect(calcRatio(ratio, [16, 32])).toEqual(1.1880883987824906);
   });
 });
 

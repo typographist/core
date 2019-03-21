@@ -1,4 +1,4 @@
-import { deeperObjectValues } from '../../src/utils/deeper-object-values';
+import { objectValues } from '../../src/utils/deeper-object-values';
 
 const config = {
   aa: 1,
@@ -15,8 +15,8 @@ const config = {
   },
 };
 
-describe('deeperObjectValues', () => {
+describe('objectValues', () => {
   it('should', () => {
-    expect(deeperObjectValues('d')(config)).toEqual([{ x: 9 }, { y: 9 }]);
+    expect(objectValues('d')(config)).toEqual([{ x: 9 }, { y: 9 }]);
   });
 });
