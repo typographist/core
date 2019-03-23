@@ -67,7 +67,7 @@ makeBreakpointsModel
 
 * transferred functions of
 percentage, toEm, toPx, isNumeric, camelize,
-modularScale, normalizeString, toCebabCase,
+modularScale, normalizeString, toKebabCase,
 toRem, toSnakeCase to the utils file
 
 # [13.2.0](https://github.com/typographist/core/compare/v13.1.3...v13.2.0) (2019-02-27)
@@ -237,7 +237,7 @@ make-breakpoints-map
 ### BREAKING CHANGES
 
 * remove fuctions modular-scale, camelize,
-normalizeString, toCebabCase, toPxIfHasEm, toSnakeCase, isNumeric
+normalizeString, toKebabCase, toPxIfHasEm, toSnakeCase, isNumeric
 
 # [8.0.0](https://github.com/typographist/core/compare/v7.0.1...v8.0.0) (2019-01-23)
 
