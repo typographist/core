@@ -1,25 +1,25 @@
-const { makeBreakpointsModel } = require('./make-breakpoints-model');
-const constants = require('./constants');
-const { percentage, toEm, toPx } = require('./convertors');
-const { isNumeric } = require('./validators');
-const {
+import { makeBreakpointsModel } from './make-breakpoints-model';
+import constants from './constants';
+import { percentage, toEm, toPx } from './convertors';
+import { isNumeric } from './validators';
+import {
   camelize,
   normalizeString,
-  toCebabCase,
+  toKebabCase,
   toRem,
   toSnakeCase,
-} = require('./utils-public');
-const { modularScale } = require('./utils-public/modular-scale');
-const {
+} from './utils-public';
+import { modularScale } from './utils-public/modular-scale';
+import {
   getTailBreaksValues,
   getTailBreaksNames,
   makeBreakNamesRow,
   makeBreakpoints,
   getDefaultBreak,
   getBreaksModelOrDefaultModel,
-} = require('./utils-public/breakpoints');
+} from './utils-public/breakpoints';
 
-const ratios = {
+export const ratios = {
   AUGMENTED_FOURTH: 1.41421,
   DOUBLE_OCTAVE: 4,
   GOLDEN_SECTION: 1.618034,
@@ -37,26 +37,4 @@ const ratios = {
   PERFECT_FIFTH: 1.5,
   PERFECT_FOURTH: 1.333333333,
   PHI: 1.618034,
-};
-
-module.exports = {
-  makeBreakpointsModel,
-  constants,
-  percentage,
-  toEm,
-  toPx,
-  isNumeric,
-  camelize,
-  modularScale,
-  normalizeString,
-  toCebabCase,
-  toRem,
-  toSnakeCase,
-  getTailBreaksValues,
-  getTailBreaksNames,
-  makeBreakNamesRow,
-  makeBreakpoints,
-  getDefaultBreak,
-  getBreaksModelOrDefaultModel,
-  ratios,
 };

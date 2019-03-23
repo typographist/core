@@ -1,13 +1,13 @@
-const memoizeone = require('memoize-one');
-const { validateUserConfig } = require('../validators');
-const { toPxBreakValue } = require('../break-value/utils');
-const { basePropProcess } = require('../base/utils');
-const { calcRatioProcess } = require('../ratio/utils');
-const { setPropRoot } = require('../root/utils');
-const { pipe, map, reduce } = require('../helpers');
+import memoizeone from 'memoize-one';
+import { toPxBreakValue } from '../utils/breakpoint-value';
+import { basePropProcess } from '../utils/base';
+import { calcRatioProcess } from '../utils/ratio';
+import { setPropRoot } from '../utils/root';
+import { isValidUserConfig } from '../validate-user-config';
+import { pipe, map, reduce } from '../helpers';
 
 // makeDefaultBreak :: UserConfig -> [Object]
-const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
+export const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
   Array.of({
     base,
     lineHeight,
@@ -17,29 +17,32 @@ const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
   });
 
 // setNameProp :: [[String, Object]] -> Object
-const setNameProp = ([breakName, breakBody]) => ({
+export const setNameProp = ([breakName, breakBody]) => ({
   ...breakBody,
   name: breakName,
 });
 
 // makeNamedBreaks :: UserConfig -> [Object]
-const makeNamedBreaks = ({ base, lineHeight, ratio, ...breaks }) =>
+export const makeNamedBreaks = ({ base, lineHeight, ratio, ...breaks }) =>
   Object.entries(breaks).map(setNameProp);
 
 // createBreakpoints :: UserConfig -> [Object]
-const createBreakpoints = (x) => [
+export const createBreakpoints = (x) => [
   ...makeDefaultBreak(x),
   ...makeNamedBreaks(x),
 ];
 
 // renameProp :: (String, String) -> Object -> Object
-const renameProp = (oldProp, newProp) => ({ [oldProp]: old, ...others }) => ({
+export const renameProp = (oldProp, newProp) => ({
+  [oldProp]: old,
+  ...others
+}) => ({
   [newProp]: old,
   ...others,
 });
 
 // inheritProps :: ([] | [Object], Object, Number) -> Object
-const inheritProps = (acc, item, index) => [
+export const inheritProps = (acc, item, index) => [
   ...acc,
   {
     ...acc[index - 1],
@@ -48,16 +51,16 @@ const inheritProps = (acc, item, index) => [
 ];
 
 // makeBreakMap :: (Object, Object) -> Object
-const makeBreakMap = (acc, breakpoint) => ({
+export const makeBreakMap = (acc, breakpoint) => ({
   ...acc,
   [breakpoint.name]: breakpoint,
 });
 
 // removeNameProp :: Object -> Object
-const removeNameProp = ({ name, ...breaks }) => breaks;
+export const removeNameProp = ({ name, ...breaks }) => breaks;
 
 // makeMemoizedBreakpoints :: UserConfig -> Object
-const makeMemoizedBreakpoints = pipe(
+export const makeMemoizedBreakpoints = pipe(
   createBreakpoints,
   map(renameProp('breakpoint', 'value')),
   map(toPxBreakValue),
@@ -71,5 +74,5 @@ const makeMemoizedBreakpoints = pipe(
 );
 
 // makeBreakpointsModel :: UserConfig -> Object | Void
-exports.makeBreakpointsModel = (x) =>
-  validateUserConfig(x) ? makeMemoizedBreakpoints(x) : null;
+export const makeBreakpointsModel = (x) =>
+  isValidUserConfig(x) ? makeMemoizedBreakpoints(x) : null;

@@ -1,4 +1,4 @@
-exports.userConfig = {
+export const userConfig = {
   base: ['1em', '2em'],
   lineHeight: 1.5,
   ratio: '45px at 6',
@@ -22,7 +22,31 @@ exports.userConfig = {
   },
 };
 
-exports.breakpoints = [
+export const invalidUserConfig = {
+  base: ['1rem', '2em'],
+  lineHeight: 1.5,
+  ratio: '45 at 6',
+  tablet: {
+    breakpoint: '40rem',
+    base: '17px',
+  },
+  desktop: {
+    breakpoint: '64rem',
+    base: '18px',
+    lineHeight: '1.7',
+    ratio: 1.333,
+  },
+  lgDesktop: {
+    breakpoint: '75rem',
+    base: '20px',
+  },
+  xlDesktop: {
+    breakpoint: '100rem',
+    base: '22px',
+  },
+};
+
+export const breakpoints = [
   {
     base: [16, 32],
     lineHeight: 1.5,
@@ -65,7 +89,7 @@ exports.breakpoints = [
   },
 ];
 
-exports.breakpointsModel = {
+export const breakpointsModel = {
   initial: {
     base: [16, 32],
     lineHeight: 1.5,
