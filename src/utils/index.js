@@ -4,7 +4,7 @@ import {
 } from '../constants';
 import { invariantWithPrefix } from '../helpers';
 
-export const customInvariant = invariantWithPrefix(
+export const invariant = invariantWithPrefix(
   '[typographist]: Check your config.',
 );
 

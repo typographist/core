@@ -1,5 +1,5 @@
 import { all, pipe, objectValues, every } from '../../helpers';
-import { customInvariant } from '../../utils';
+import { invariant } from '../../utils';
 import { isString, hasPxOrEm } from '../../utils/validators';
 
 // BREAKPOINTS
@@ -7,10 +7,7 @@ const BREAKPOINT_ERROR_MESSAGE = `is invalid value. Breakpoint must be a string 
 
 // isValidField :: a -> Boolean | Error
 export const isValidField = (x) => {
-  customInvariant(
-    all(isString, hasPxOrEm)(x),
-    `'${x}' ${BREAKPOINT_ERROR_MESSAGE}`,
-  );
+  invariant(all(isString, hasPxOrEm)(x), `'${x}' ${BREAKPOINT_ERROR_MESSAGE}`);
 
   return true;
 };

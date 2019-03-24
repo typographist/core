@@ -7,26 +7,27 @@ export const getTailBreakpointsValues = pipe(
   tail,
 );
 
-// getTailBreakpointsNames :: UserConfig -> [String]
+// getTailBreakpointsNames :: Object -> [String]
 export const getTailBreakpointsNames = pipe(
   Object.keys,
   tail,
 );
 
-// makeBreakNamesRow :: UserConfig -> String
-export const makeBreakNamesRow = (breaksMap) =>
+// makeBreakpointNamesList :: UserConfig -> String
+export const makeBreakpointNamesList = (breaksMap) =>
   `'${getTailBreakpointsNames(breaksMap).join(', ')}'`;
 
 // getPropValue :: Object -> String
 // eslint-disable-next-line no-unused-vars
 export const getPropValue = ({ value, ...breaks }) => value;
 
-export const removeInitialBreak = ({ initial, ...breaks }) => breaks;
+// removeDefaultBreakpooint :: Object -> Object
+export const removeDefaultBreakpooint = ({ initial, ...breaks }) => breaks;
 
 // makeBreakpoints :: UserConfig -> Object
 export const makeBreakpoints = pipe(
   makeBreakpointsModel,
-  removeInitialBreak,
+  removeDefaultBreakpooint,
   map(getPropValue),
 );
 

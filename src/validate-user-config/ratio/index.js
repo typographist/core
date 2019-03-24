@@ -1,4 +1,4 @@
-import { customInvariant } from '../../utils';
+import { invariant } from '../../utils';
 import {
   ratioHasFontSize,
   ratioHasAtWord,
@@ -12,7 +12,7 @@ const RATIO_ERROR_MESSAGE = `is ivalid value. Ratio must be a number or string c
 // if ratio is string. Example '36px at 6'
 // isValidRatioString :: String -> Boolean | Error
 export const isValidRatioString = (x) => {
-  customInvariant(
+  invariant(
     all(ratioHasFontSize, ratioHasAtWord, ratioHasStep)(x),
     `'${x}' ${RATIO_ERROR_MESSAGE}`,
   );
@@ -22,7 +22,7 @@ export const isValidRatioString = (x) => {
 
 // isValidRatioNumber :: a -> Boolean | Error
 export const isValidRatioNumber = (x) => {
-  customInvariant(isNumerical(x), `'${x}' ${RATIO_ERROR_MESSAGE}`);
+  invariant(isNumerical(x), `'${x}' ${RATIO_ERROR_MESSAGE}`);
 
   return true;
 };
