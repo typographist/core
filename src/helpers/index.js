@@ -27,6 +27,9 @@ export const tail = ([first, ...rest]) => rest;
 // every :: Function -> Array -> Boolean
 export const every = (f) => (arr) => arr.every(f);
 
+// some :: Function -> Array -> Boolean
+export const some = (f) => (arr) => arr.some(f);
+
 // all :: [Function] -> a -> Boolean
 export const all = (...fns) => (x) =>
   fns.map((f) => f(x)).every((y) => y === true);
@@ -64,6 +67,9 @@ export const map = (f) => (x) =>
 // invariant :: (a, String) -> Void
 export const invariant = (condition, message) => {
   if (!condition) {
-    throw new Error(`[typographist-core]: Check your user config. ${message}`);
+    throw new Error(message);
   }
 };
+
+export const invariantWithPrefix = (prefix) => (condition, message) =>
+  invariant(condition, `${prefix} ${message}`);
