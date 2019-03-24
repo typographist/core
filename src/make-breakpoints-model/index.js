@@ -6,8 +6,8 @@ import { setPropRoot } from '../utils/root';
 import { isValidUserConfig } from '../validate-user-config';
 import { pipe, map, reduce } from '../helpers';
 
-// makeDefaultBreak :: UserConfig -> [Object]
-export const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
+// makeDefaultBreakpoint :: UserConfig -> [Object]
+export const makeDefaultBreakpoint = ({ base, lineHeight, ratio }) =>
   Array.of({
     base,
     lineHeight,
@@ -16,20 +16,20 @@ export const makeDefaultBreak = ({ base, lineHeight, ratio }) =>
     value: '0px',
   });
 
-// setNameProp :: [[String, Object]] -> Object
-export const setNameProp = ([breakName, breakBody]) => ({
+// setPropName :: [[String, Object]] -> Object
+export const setPropName = ([breakName, breakBody]) => ({
   ...breakBody,
   name: breakName,
 });
 
-// makeNamedBreaks :: UserConfig -> [Object]
-export const makeNamedBreaks = ({ base, lineHeight, ratio, ...breaks }) =>
-  Object.entries(breaks).map(setNameProp);
+// makeNamedBreakpoints :: UserConfig -> [Object]
+export const makeNamedBreakpoints = ({ base, lineHeight, ratio, ...breaks }) =>
+  Object.entries(breaks).map(setPropName);
 
 // createBreakpoints :: UserConfig -> [Object]
 export const createBreakpoints = (x) => [
-  ...makeDefaultBreak(x),
-  ...makeNamedBreaks(x),
+  ...makeDefaultBreakpoint(x),
+  ...makeNamedBreakpoints(x),
 ];
 
 // renameProp :: (String, String) -> Object -> Object
@@ -50,14 +50,14 @@ export const inheritProps = (acc, item, index) => [
   },
 ];
 
-// makeBreakMap :: (Object, Object) -> Object
-export const makeBreakMap = (acc, breakpoint) => ({
+// makeBreakpointsMap :: (Object, Object) -> Object
+export const makeBreakpointsMap = (acc, breakpoint) => ({
   ...acc,
   [breakpoint.name]: breakpoint,
 });
 
-// removeNameProp :: Object -> Object
-export const removeNameProp = ({ name, ...breaks }) => breaks;
+// removePropName :: Object -> Object
+export const removePropName = ({ name, ...breaks }) => breaks;
 
 // makeMemoizedBreakpoints :: UserConfig -> Object
 export const makeMemoizedBreakpoints = pipe(
@@ -68,8 +68,8 @@ export const makeMemoizedBreakpoints = pipe(
   map(basePropProcess),
   map(calcRatioProcess),
   map(setPropRoot),
-  reduce(makeBreakMap, {}),
-  map(removeNameProp),
+  reduce(makeBreakpointsMap, {}),
+  map(removePropName),
   memoizeone,
 );
 
