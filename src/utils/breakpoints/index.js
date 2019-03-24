@@ -1,21 +1,21 @@
 const { makeBreakpointsModel } = require('../../make-breakpoints-model');
 const { pipe, map, tail, head } = require('../../helpers');
 
-// getTailBreaksValues :: Object -> [Object]
-export const getTailBreaksValues = pipe(
+// getTailBreakpointsValues :: Object -> [Object]
+export const getTailBreakpointsValues = pipe(
   Object.values,
   tail,
 );
 
-// getTailBreaksNames :: Object -> [String]
-export const getTailBreaksNames = pipe(
+// getTailBreakpointsNames :: UserConfig -> [String]
+export const getTailBreakpointsNames = pipe(
   Object.keys,
   tail,
 );
 
-// makeBreakNamesRow :: Object -> String
+// makeBreakNamesRow :: UserConfig -> String
 export const makeBreakNamesRow = (breaksMap) =>
-  `'${getTailBreaksNames(breaksMap).join(', ')}'`;
+  `'${getTailBreakpointsNames(breaksMap).join(', ')}'`;
 
 // getPropValue :: Object -> String
 // eslint-disable-next-line no-unused-vars
@@ -30,8 +30,8 @@ export const makeBreakpoints = pipe(
   map(getPropValue),
 );
 
-// getDefaultBreak :: [Object] -> Object
-export const getDefaultBreak = pipe(
+// getInitialBreakpoint :: [Object] -> Object
+export const getInitialBreakpoint = pipe(
   Object.values,
   head,
 );
