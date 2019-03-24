@@ -70,4 +70,8 @@ describe('separateWords', () => {
       'my awesome fucking sting',
     );
   });
+
+  it('separate word with default separator', () => {
+    expect(separateWords()('HelloWorld')).toEqual('hello world');
+  });
 });

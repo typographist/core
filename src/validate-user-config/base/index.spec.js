@@ -1,35 +1,35 @@
-import { isValidBase, isValidBases } from '.';
+import { isValidField, isValidFields } from '.';
 import { userConfig, invalidUserConfig } from '../../mocks';
 
-describe('isValidBase', () => {
+describe('isValidField', () => {
   it('return `true` is base contains px', () => {
-    expect(isValidBase('12px')).toEqual(true);
+    expect(isValidField('12px')).toEqual(true);
   });
 
   it("show warn if the base isn't valid", () => {
     try {
-      isValidBase('1rem');
-      expect(true).toBe(false);
+      isValidField('1rem');
+      expect(true).toEqual(false);
     } catch (e) {
-      expect(e.message).toBe(
-        `[typographist-core]: Check your user config. '1rem' is invalid value. Base must be a string with the value in pixels or ems or an array of strings. Example 'base': ['14px', '32px'] or 'base': '16em'.`,
+      expect(e.message).toEqual(
+        `[typographist]: Check your config. '1rem' is invalid value. Base must be a string with the value in pixels or ems or an array of strings. Example 'base': ['14px', '32px'] or 'base': '16em'.`,
       );
     }
   });
 });
 
-describe('isValidBases', () => {
+describe('isValidFields', () => {
   it('return `true` is all bases are valid', () => {
-    expect(isValidBases(userConfig)).toEqual(true);
+    expect(isValidFields(userConfig)).toEqual(true);
   });
 
-  it("show warn if the base isn't valid", () => {
+  it("show warn if the bases aren't valid", () => {
     try {
-      isValidBases(invalidUserConfig);
-      expect(true).toBe(false);
+      isValidFields(invalidUserConfig);
+      expect(true).toEqual(false);
     } catch (e) {
-      expect(e.message).toBe(
-        `[typographist-core]: Check your user config. '1rem' is invalid value. Base must be a string with the value in pixels or ems or an array of strings. Example 'base': ['14px', '32px'] or 'base': '16em'.`,
+      expect(e.message).toEqual(
+        `[typographist]: Check your config. '1rem' is invalid value. Base must be a string with the value in pixels or ems or an array of strings. Example 'base': ['14px', '32px'] or 'base': '16em'.`,
       );
     }
   });

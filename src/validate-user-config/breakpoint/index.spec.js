@@ -1,39 +1,39 @@
-import { isValidBreakpointValue, isValidBreakpointValues } from '.';
+import { isValidField, isValidFields } from '.';
 import { userConfig, invalidUserConfig } from '../../mocks';
 
-describe('isValidBreakpointValue', () => {
+describe('isValidField', () => {
   it('return `true` is the breakpoint contains the value in pixels', () => {
-    expect(isValidBreakpointValue('760px')).toEqual(true);
+    expect(isValidField('760px')).toEqual(true);
   });
 
   it('return `true` is the breakpoint contains the value in ems', () => {
-    expect(isValidBreakpointValue('75em')).toEqual(true);
+    expect(isValidField('75em')).toEqual(true);
   });
 
-  it('return `true` is the breakpoint contains the value in ems', () => {
+  it("show warn if the breakpoint value isn't valid", () => {
     try {
-      isValidBreakpointValue('60rem');
-      expect(true).toBe(false);
+      isValidField('60rem');
+      expect(true).toEqual(false);
     } catch (e) {
-      expect(e.message).toBe(
-        `[typographist-core]: Check your user config. '60rem' is invalid value. Breakpoint must be a string with a value in pixels or ems. Example 'breakpoint': '1024px' or 'breakpoint': '40em'.`,
+      expect(e.message).toEqual(
+        `[typographist]: Check your config. '60rem' is invalid value. Breakpoint must be a string with a value in pixels or ems. Example 'breakpoint': '1024px' or 'breakpoint': '40em'.`,
       );
     }
   });
 });
 
-describe('isValidBreakpointValues', () => {
+describe('isValidFields', () => {
   it('return `true` is all breakpoint are valid', () => {
-    expect(isValidBreakpointValues(userConfig)).toEqual(true);
+    expect(isValidFields(userConfig)).toEqual(true);
   });
 
-  it('return `true` is the breakpoint contains the value in ems', () => {
+  it("show warn if the breakpoint values aren't valid", () => {
     try {
-      isValidBreakpointValues(invalidUserConfig);
-      expect(true).toBe(false);
+      isValidFields(invalidUserConfig);
+      expect(true).toEqual(false);
     } catch (e) {
-      expect(e.message).toBe(
-        `[typographist-core]: Check your user config. '40rem' is invalid value. Breakpoint must be a string with a value in pixels or ems. Example 'breakpoint': '1024px' or 'breakpoint': '40em'.`,
+      expect(e.message).toEqual(
+        `[typographist]: Check your config. '40rem' is invalid value. Breakpoint must be a string with a value in pixels or ems. Example 'breakpoint': '1024px' or 'breakpoint': '40em'.`,
       );
     }
   });
