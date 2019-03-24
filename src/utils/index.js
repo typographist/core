@@ -2,6 +2,11 @@ import {
   SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER,
   DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
 } from '../constants';
+import { invariantWithPrefix } from '../helpers';
+
+export const customInvariant = invariantWithPrefix(
+  '[typographist]: Check your config.',
+);
 
 // getFirstLetter :: String -> String
 export const getFirstLetter = (word) => word[0].toLowerCase();
