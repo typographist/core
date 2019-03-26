@@ -6,7 +6,18 @@ const {
   hasEm,
   hasPxOrEm,
   isValidStep,
+  isObject,
 } = require('.');
+
+describe('isObject', () => {
+  it('returns `true` if is the object', () => {
+    expect(isObject({})).toEqual(true);
+  });
+
+  it("returns `true` if isn't object", () => {
+    expect(isObject(1)).toEqual(false);
+  });
+});
 
 describe('ratioHasFontSize', () => {
   it('return `true` if contain positive floating point mumber with ems at the beggining of the string', () => {
