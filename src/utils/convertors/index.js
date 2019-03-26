@@ -1,5 +1,4 @@
-const { BROWSER_DEFAULT_FONT_SIZE } = require('../../constants');
-const { hasPx, hasEm } = require('../validators');
+import { BROWSER_DEFAULT_FONT_SIZE } from '../../constants';
 
 // percentage :: (x: Number | String | [Number]) -> String
 export const percentage = (x) =>
@@ -18,9 +17,3 @@ export const toEm = (x) =>
 
 // toRem :: (Number, Number | [Number]) -> String
 export const toRem = (root, fontSize) => `${parseFloat(fontSize) / root}rem`;
-
-// toEmIfHasPx :: String -> String
-export const toEmIfHasPx = (x) => (hasPx(x) ? toEm(x) : x);
-
-// toPxIfHasEm :: String -> String
-export const toPxIfHasEm = (x) => (hasEm(x) ? toPx(x) : x);

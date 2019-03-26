@@ -1,8 +1,7 @@
-import { toPxIfHasEm, toArrIsNotArr } from '../convertors';
+import { toArrIsNotArr } from '../convertors';
 
 // makeBase :: (String | [String]) -> [Number]
-export const makeBase = (x) =>
-  toArrIsNotArr(x).map((b) => parseFloat(toPxIfHasEm(b)));
+export const makeBase = (x) => toArrIsNotArr(x).map((b) => parseFloat(b));
 
 // basePropProcess :: Object -> Object
 export const basePropProcess = ({ base, ...breakpoint }) => ({

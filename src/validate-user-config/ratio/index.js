@@ -7,10 +7,10 @@ import {
 } from '../../utils/validators';
 import { all, objectValues, pipe, every } from '../../helpers';
 
-const RATIO_ERROR_MESSAGE = `is ivalid value. Ratio must be a number or string containing the font size (in pixels or ems), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`;
+const RATIO_ERROR_MESSAGE = `is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`;
 
 // if ratio is string. Example '36px at 6'
-// isValidRatioString :: String -> Boolean | Error
+// isValidRatioString :: String -> Boolean
 export const isValidRatioString = (x) => {
   invariant(
     all(ratioHasFontSize, ratioHasAtWord, ratioHasStep)(x),
@@ -20,7 +20,7 @@ export const isValidRatioString = (x) => {
   return true;
 };
 
-// isValidRatioNumber :: a -> Boolean | Error
+// isValidRatioNumber :: a -> Boolean
 export const isValidRatioNumber = (x) => {
   invariant(isNumerical(x), `'${x}' ${RATIO_ERROR_MESSAGE}`);
 

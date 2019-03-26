@@ -1,12 +1,12 @@
 import { pipe, flatten, every, objectValues } from '../../helpers';
 import { invariant } from '../../utils';
-import { hasPxOrEm } from '../../utils/validators';
+import { hasPx } from '../../utils/validators';
 
-const BASE_ERROR_MESSAGE = `is invalid value. Base must be a string with the value in pixels or ems or an array of strings. Example 'base': ['14px', '32px'] or 'base': '16em'.`;
+const BASE_ERROR_MESSAGE = `is invalid value. Base must be a string with the value in pixels or an array of strings. Example 'base': '16px' or 'base': ['14px', '32px'].`;
 
-// isValidField :: a -> Boolean | Error
+// isValidField :: a -> Boolean
 export const isValidField = (x) => {
-  invariant(hasPxOrEm(x), `'${x}' ${BASE_ERROR_MESSAGE}`);
+  invariant(hasPx(x), `'${x}' ${BASE_ERROR_MESSAGE}`);
 
   return true;
 };

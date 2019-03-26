@@ -2,7 +2,6 @@ import {
   FONT_SIZE,
   POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
 } from '../../constants';
-import { toPxIfHasEm } from '../convertors';
 
 // getFontSizeFromRatio :: (String) -> [String] | Null
 export const getFontSizeFromRatio = (x) => x.trim().match(FONT_SIZE);
@@ -12,8 +11,7 @@ export const getStepFromRatio = (x) =>
   x.trim().match(POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING);
 
 // makeFontSizeFromRatio :: String -> Number
-export const makeFontSizeFromRatio = (x) =>
-  parseFloat(getFontSizeFromRatio(x).map(toPxIfHasEm));
+export const makeFontSizeFromRatio = (x) => parseFloat(getFontSizeFromRatio(x));
 
 // makeStepFromRatio :: String -> Number
 export const makeStepFromRatio = (x) => parseFloat(getStepFromRatio(x));

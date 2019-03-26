@@ -1,17 +1,15 @@
 import memoizeone from 'memoize-one';
-import { toPxBreakValue } from '../utils/breakpoint-value';
 import { basePropProcess } from '../utils/base';
 import { calcRatioProcess } from '../utils/ratio';
 import { setPropRoot } from '../utils/root';
+import { isNotObject, isObject } from '../utils/validators';
 import { isValidUserConfig } from '../validate-user-config';
-import { pipe, map, reduce } from '../helpers';
+import { pipe, map, reduce, filter } from '../helpers';
 
-// makeDefaultBreakpoint :: UserConfig -> [Object]
-export const makeDefaultBreakpoint = ({ base, lineHeight, ratio }) =>
+// makeInitialBreakpoint :: UserConfig -> [Object]
+export const makeInitialBreakpoint = (x) =>
   Array.of({
-    base,
-    lineHeight,
-    ratio,
+    ...filter(isNotObject)(x),
     name: 'initial',
     value: '0px',
   });
@@ -23,12 +21,15 @@ export const setPropName = ([breakName, breakBody]) => ({
 });
 
 // makeNamedBreakpoints :: UserConfig -> [Object]
-export const makeNamedBreakpoints = ({ base, lineHeight, ratio, ...breaks }) =>
-  Object.entries(breaks).map(setPropName);
+export const makeNamedBreakpoints = pipe(
+  filter(isObject),
+  Object.entries,
+  map(setPropName),
+);
 
 // createBreakpoints :: UserConfig -> [Object]
 export const createBreakpoints = (x) => [
-  ...makeDefaultBreakpoint(x),
+  ...makeInitialBreakpoint(x),
   ...makeNamedBreakpoints(x),
 ];
 
@@ -50,29 +51,30 @@ export const inheritProps = (acc, item, index) => [
   },
 ];
 
-// makeBreakpointsMap :: (Object, Object) -> Object
-export const makeBreakpointsMap = (acc, breakpoint) => ({
+// setBreakpointNameProp :: (Object, Object) -> Object
+export const setBreakpointNameProp = (acc, { name, ...breakpoint }) => ({
   ...acc,
-  [breakpoint.name]: breakpoint,
+  [name]: breakpoint,
 });
 
-// removePropName :: Object -> Object
-export const removePropName = ({ name, ...breaks }) => breaks;
-
-// makeMemoizedBreakpoints :: UserConfig -> Object
-export const makeMemoizedBreakpoints = pipe(
+// makeBreakpointsProcess :: UserConfig -> Object
+export const makeBreakpointsProcess = pipe(
   createBreakpoints,
   map(renameProp('breakpoint', 'value')),
-  map(toPxBreakValue),
   reduce(inheritProps, []),
   map(basePropProcess),
   map(calcRatioProcess),
   map(setPropRoot),
-  reduce(makeBreakpointsMap, {}),
-  map(removePropName),
-  memoizeone,
+  reduce(setBreakpointNameProp, {}),
 );
 
+const memoizedMakeBreakpoints = memoizeone(makeBreakpointsProcess);
+
 // makeBreakpointsModel :: UserConfig -> Object | Void
-export const makeBreakpointsModel = (x) =>
-  isValidUserConfig(x) ? makeMemoizedBreakpoints(x) : null;
+
+// eslint-disable-next-line consistent-return
+export const makeBreakpointsModel = (x) => {
+  if (isValidUserConfig(x)) {
+    return memoizedMakeBreakpoints(x);
+  }
+};

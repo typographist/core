@@ -2,10 +2,9 @@ import { pipe, objectValues, every } from '../../helpers';
 import { invariant } from '../../utils';
 import { isNumerical } from '../../utils/validators';
 
-// LINE HEIGHTS
 const LINE_HEIGHT_ERRROR_MESSAGE = `is invalid value. LineHeight must be a number. Example 'lineHeight': 1.5'`;
 
-// isValidField :: a -> Boolean | Error
+// isValidField :: a -> Boolean
 export const isValidField = (x) => {
   invariant(isNumerical(x), `'${x}' ${LINE_HEIGHT_ERRROR_MESSAGE}`);
 
