@@ -1,20 +1,21 @@
 import {
-  makeDefaultBreakpoint,
+  makeInitialBreakpoint,
   setPropName,
   makeNamedBreakpoints,
   createBreakpoints,
   renameProp,
   inheritProps,
-  makeBreakpointsMap,
-  removePropName,
+  makeBreakpointsProcess,
+  makeBreakpointsModel,
+  setBreakpointNameProp,
 } from '.';
-import { userConfig, breakpoints } from '../mocks';
+import { userConfig, breakpointsModel } from '../mocks';
 
-describe('makeDefaultBreakpoint', () => {
+describe('makeInitialBreakpoint', () => {
   it('returns the array with a initial breakpoint', () => {
-    expect(makeDefaultBreakpoint(userConfig)).toEqual([
+    expect(makeInitialBreakpoint(userConfig)).toEqual([
       {
-        base: ['1em', '2em'],
+        base: ['16px', '32px'],
         lineHeight: 1.5,
         name: 'initial',
         ratio: '45px at 6',
@@ -34,25 +35,25 @@ describe('makeNamedBreakpoints', () => {
     expect(makeNamedBreakpoints(userConfig)).toEqual([
       {
         base: '17px',
+        breakpoint: '768px',
         name: 'tablet',
-        breakpoint: '40em',
       },
       {
         base: '18px',
+        breakpoint: '992px',
         lineHeight: 1.7,
         name: 'desktop',
         ratio: 1.333,
-        breakpoint: '64em',
       },
       {
         base: '20px',
+        breakpoint: '1200px',
         name: 'lgDesktop',
-        breakpoint: '75em',
       },
       {
         base: '22px',
+        breakpoint: '1600px',
         name: 'xlDesktop',
-        breakpoint: '100em',
       },
     ]);
   });
@@ -62,7 +63,7 @@ describe('createBreakpoints', () => {
   it('returns raw breakpoints from user config', () => {
     expect(createBreakpoints(userConfig)).toEqual([
       {
-        base: ['1em', '2em'],
+        base: ['16px', '32px'],
         lineHeight: 1.5,
         name: 'initial',
         ratio: '45px at 6',
@@ -71,24 +72,24 @@ describe('createBreakpoints', () => {
       {
         base: '17px',
         name: 'tablet',
-        breakpoint: '40em',
+        breakpoint: '768px',
       },
       {
         base: '18px',
         lineHeight: 1.7,
         name: 'desktop',
         ratio: 1.333,
-        breakpoint: '64em',
+        breakpoint: '992px',
       },
       {
         base: '20px',
         name: 'lgDesktop',
-        breakpoint: '75em',
+        breakpoint: '1200px',
       },
       {
         base: '22px',
         name: 'xlDesktop',
-        breakpoint: '100em',
+        breakpoint: '1600px',
       },
     ]);
   });
@@ -107,7 +108,7 @@ describe('inheritProps', () => {
   it('inherits all missing key values', () => {
     const breaks = [
       {
-        base: ['1em', '2em'],
+        base: ['16px', '32px'],
         lineHeight: 1.5,
         name: 'initial',
         ratio: '45px at 6',
@@ -116,30 +117,30 @@ describe('inheritProps', () => {
       {
         base: '17px',
         name: 'tablet',
-        value: '40em',
+        value: '768px',
       },
       {
         base: '18px',
         lineHeight: 1.7,
         name: 'desktop',
         ratio: 1.333,
-        value: '64em',
+        value: '992px',
       },
       {
         base: '20px',
         name: 'lgDesktop',
-        value: '75em',
+        value: '1200px',
       },
       {
         base: '22px',
         name: 'xlDesktop',
-        value: '100em',
+        value: '1600px',
       },
     ];
 
     expect(breaks.reduce(inheritProps, [])).toEqual([
       {
-        base: ['1em', '2em'],
+        base: ['16px', '32px'],
         lineHeight: 1.5,
         name: 'initial',
         ratio: '45px at 6',
@@ -150,59 +151,70 @@ describe('inheritProps', () => {
         lineHeight: 1.5,
         name: 'tablet',
         ratio: '45px at 6',
-        value: '40em',
+        value: '768px',
       },
       {
         base: '18px',
         lineHeight: 1.7,
         name: 'desktop',
         ratio: 1.333,
-        value: '64em',
+        value: '992px',
       },
       {
         base: '20px',
         lineHeight: 1.7,
         name: 'lgDesktop',
         ratio: 1.333,
-        value: '75em',
+        value: '1200px',
       },
       {
         base: '22px',
         lineHeight: 1.7,
         name: 'xlDesktop',
         ratio: 1.333,
-        value: '100em',
+        value: '1600px',
       },
     ]);
   });
 });
 
-describe('makeBreakpointsMap', () => {
-  it('return breakpoints map', () => {
-    expect(breakpoints.reduce(makeBreakpointsMap, {})).toEqual({
+describe('setBreakpointNameProp', () => {
+  it('set breakpoint name prop', () => {
+    expect([{ a: 1, name: 'test' }].reduce(setBreakpointNameProp, {})).toEqual({
+      test: { a: 1 },
+    });
+  });
+});
+
+describe('makeBreakpointsProcess', () => {
+  it('return breakpoints model', () => {
+    expect(makeBreakpointsProcess(userConfig)).toEqual(breakpointsModel);
+  });
+});
+
+describe('makeBreakpointsModel', () => {
+  it('create a list of breakpoint values if the user config is valid', () => {
+    expect(makeBreakpointsModel(userConfig)).toEqual({
       initial: {
         base: [16, 32],
         lineHeight: 1.5,
         ratio: 1.1880883987824906,
         root: 12,
         value: '0px',
-        name: 'initial',
       },
       tablet: {
         base: [17],
         lineHeight: 1.5,
         ratio: 1.1761442744249144,
         root: 13,
-        value: '640px',
-        name: 'tablet',
+        value: '768px',
       },
       desktop: {
         base: [18],
         lineHeight: 1.7,
         ratio: 1.333,
         root: 15.5,
-        value: '1024px',
-        name: 'desktop',
+        value: '992px',
       },
       lgDesktop: {
         base: [20],
@@ -210,7 +222,6 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.333,
         root: 17,
         value: '1200px',
-        name: 'lgDesktop',
       },
       xlDesktop: {
         base: [22],
@@ -218,14 +229,7 @@ describe('makeBreakpointsMap', () => {
         ratio: 1.333,
         root: 18.5,
         value: '1600px',
-        name: 'xlDesktop',
       },
     });
-  });
-});
-
-describe('removePropName', () => {
-  it('remove the propery name in the object', () => {
-    expect(removePropName({ a: 1, name: test })).toEqual({ a: 1 });
   });
 });

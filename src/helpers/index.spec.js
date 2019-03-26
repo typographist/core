@@ -27,6 +27,41 @@ describe('is', () => {
   });
 });
 
+describe('type', () => {
+  it('return `Number` type', () => {
+    expect(helpers.type(1)).toEqual('Number');
+  });
+
+  it('return `String` type', () => {
+    expect(helpers.type('str')).toEqual('String');
+  });
+
+  it('return `Boolean` type', () => {
+    expect(helpers.type(true)).toEqual('Boolean');
+  });
+
+  it('return `Null` type', () => {
+    expect(helpers.type(null)).toEqual('Null');
+  });
+
+  it('return `Undefined` type', () => {
+    expect(helpers.type(undefined)).toEqual('Undefined');
+  });
+
+  it('return `Function` type', () => {
+    const fn = (x) => x;
+    expect(helpers.type(fn)).toEqual('Function');
+  });
+
+  it('return `Object` type', () => {
+    expect(helpers.type({})).toEqual('Object');
+  });
+
+  it('return `Array` type', () => {
+    expect(helpers.type([])).toEqual('Array');
+  });
+});
+
 describe('objectValues', () => {
   it('return an array of a values from the object', () => {
     const config = {
@@ -109,7 +144,7 @@ describe('flatten', () => {
 
 describe('reduce', () => {
   it('reduces the argument passed', () => {
-    expect(helpers.reduce((acc, item) => acc + item)([1, 2, 3], 0)).toEqual(6);
+    expect(helpers.reduce((acc, item) => acc + item, 0)([1, 2, 3])).toEqual(6);
   });
 });
 
@@ -123,6 +158,22 @@ describe('map', () => {
       a: 2,
       b: 3,
       c: 4,
+    });
+  });
+});
+
+describe('filter', () => {
+  it('return filtered array', () => {
+    expect(helpers.filter((_) => _ > 1)([1, 2, 3, 4])).toEqual([2, 3, 4]);
+  });
+
+  it('return filtered Object', () => {
+    expect(
+      helpers.filter((item) => item > 1)({ a: 1, b: 2, c: 3, d: 4 }),
+    ).toEqual({
+      b: 2,
+      c: 3,
+      d: 4,
     });
   });
 });

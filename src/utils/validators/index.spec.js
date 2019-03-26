@@ -1,12 +1,12 @@
 const {
+  isObject,
+  isNumeric,
+  isNumerical,
   ratioHasFontSize,
   ratioHasAtWord,
   ratioHasStep,
   hasPx,
-  hasEm,
-  hasPxOrEm,
   isValidStep,
-  isObject,
 } = require('.');
 
 describe('isObject', () => {
@@ -19,12 +19,45 @@ describe('isObject', () => {
   });
 });
 
-describe('ratioHasFontSize', () => {
-  it('return `true` if contain positive floating point mumber with ems at the beggining of the string', () => {
-    expect(ratioHasFontSize('3.5em at 6')).toEqual(true);
+describe('isNumeric', () => {
+  it('return `true` if the number', () => {
+    expect(isNumeric(14.88)).toBe(true);
   });
-  it('return `true` if contain positive integer mumber with ems at the beggining of the string', () => {
-    expect(ratioHasFontSize('35em at 6')).toEqual(true);
+
+  it('return `true` if the string contains number', () => {
+    expect(isNumeric('111')).toBe(true);
+  });
+
+  it('return `true` if string contains number with units', () => {
+    expect(isNumeric('56.78px')).toBe(false);
+  });
+
+  it('return `false` if is not a number', () => {
+    expect(isNumeric(NaN)).toBe(false);
+  });
+
+  it('return `true` if is the boolean', () => {
+    expect(isNumeric(false)).toBe(false);
+  });
+
+  it('return `true` if is Infinity number', () => {
+    expect(isNumeric(Infinity)).toBe(false);
+  });
+});
+
+describe('isNumerical', () => {
+  it('return `true` is a number', () => {
+    expect(isNumerical(1)).toEqual(true);
+  });
+
+  it('return `false` is not a number', () => {
+    expect(isNumerical('1')).toEqual(false);
+  });
+});
+
+describe('ratioHasFontSize', () => {
+  it('return `false` if the font size does not contain pixels', () => {
+    expect(ratioHasFontSize('35em at 6')).toEqual(false);
   });
 
   it('return `true` if contain positive integer mumber with pixels at the beggining of the string', () => {
@@ -75,30 +108,6 @@ describe('hasPx', () => {
 
   it("returns `false` if value doesn't contain px", () => {
     expect(hasPx(12)).toEqual(false);
-  });
-});
-
-describe('hasEm', () => {
-  it('returns `true` if value contains em', () => {
-    expect(hasEm('12em')).toEqual(true);
-  });
-
-  it("returns `false` if value doesn't contain px", () => {
-    expect(hasEm(12)).toEqual(false);
-  });
-});
-
-describe('hasPxOrEm', () => {
-  it("returns `false` if value doesn't contain px or em", () => {
-    expect(hasPxOrEm(12)).toEqual(false);
-  });
-
-  it('returns `true` if value contains pixels', () => {
-    expect(hasPxOrEm('12px')).toEqual(true);
-  });
-
-  it('returns `true` if value contained ems', () => {
-    expect(hasPxOrEm('12em')).toEqual(true);
   });
 });
 

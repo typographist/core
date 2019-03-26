@@ -1,12 +1,4 @@
-const {
-  percentage,
-  toArrIsNotArr,
-  toPx,
-  toEm,
-  toRem,
-  toEmIfHasPx,
-  toPxIfHasEm,
-} = require('.');
+const { percentage, toArrIsNotArr, toPx, toEm, toRem } = require('.');
 
 describe('percentage', () => {
   it('should convert to percents', () => {
@@ -43,25 +35,5 @@ describe('toRem', () => {
 
   it('extracts the value in pixels from the array and convers it to rem', () => {
     expect(toRem(16, ['24px'])).toEqual('1.5rem');
-  });
-});
-
-describe('toEmIfHasPx', () => {
-  it('should convert to em if has pixels', () => {
-    expect(toEmIfHasPx('32px')).toEqual('2em');
-  });
-
-  it('should return value in ems', () => {
-    expect(toEmIfHasPx('32em')).toEqual('32em');
-  });
-});
-
-describe('toPxIfHasEm', () => {
-  it('should convert to px if has em unit', () => {
-    expect(toPxIfHasEm('2em')).toEqual('32px');
-  });
-
-  it('should return value in pixels', () => {
-    expect(toPxIfHasEm('2px')).toEqual('2px');
   });
 });

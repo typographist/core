@@ -17,7 +17,7 @@ describe('isValidRatioString', () => {
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
-        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels or ems), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
+        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
       );
     }
   });
@@ -34,7 +34,7 @@ describe('isValidRatioNumber', () => {
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
-        `[typographist]: Check your config. '1.333px' is ivalid value. Ratio must be a number or string containing the font size (in pixels or ems), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
+        `[typographist]: Check your config. '1.333px' is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
       );
     }
   });
@@ -55,7 +55,7 @@ describe('isValidField', () => {
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
-        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels or ems), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
+        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
       );
     }
   });
@@ -72,7 +72,7 @@ describe('isValidFields', () => {
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
-        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels or ems), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
+        `[typographist]: Check your config. '45 at 6' is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`,
       );
     }
   });

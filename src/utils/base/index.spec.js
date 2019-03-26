@@ -6,12 +6,12 @@ describe('makeBase', () => {
   });
 
   it('returns an array with base value converted to pixels without units of measurement', () => {
-    expect(makeBase('10em')).toEqual([160]);
+    expect(makeBase('160px')).toEqual([160]);
   });
 });
 
 describe('basePropProcess', () => {
   it('return object with calculated base', () => {
-    expect(basePropProcess({ base: '10em' })).toEqual({ base: [160] });
+    expect(basePropProcess({ base: '10px' })).toEqual({ base: [10] });
   });
 });
