@@ -6,7 +6,7 @@
   "module": "dist/es/index.es.js",
   "scripts": {
     "build": "npm run clean && cross-env npx rollup -c && npm run size",
-    "clean": "cross-env rimraf dist",
+    "clean": "cross-env rimraf dist coverage",
     "commit": "cross-env npx git-cz",
     "coverage": "cross-env cat ./coverage/lcov.info | coveralls",
     "prettier": "cross-env prettier './**/**/**.{json,js}' --write",
