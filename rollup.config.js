@@ -19,7 +19,7 @@ export default [
       file: indexOutput,
       format: ENV,
       indent: false,
-      sourcemap: true,
+      sourcemap: false,
     },
     external: [
       ...Object.keys(dependencies || {}),
