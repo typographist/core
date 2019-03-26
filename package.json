@@ -5,18 +5,19 @@
   "main": "dist/lib/index.cjs.js",
   "module": "dist/es/index.es.js",
   "scripts": {
-    "build": "npm run build:cjs && npm run build:es",
+    "build": "npm run clean && npm run build:cjs && npm run build:es && npm run size",
     "build:es": "cross-env NODE_ENV=es rollup -c",
     "build:cjs": "cross-env NODE_ENV=cjs rollup -c",
     "clean": "cross-env rimraf dist",
     "commit": "cross-env npx git-cz",
     "coverage": "cross-env cat ./coverage/lcov.info | coveralls",
-    "prettier": "cross-env prettier './**/**/**.{json,js,eslintrc}' --write",
+    "prettier": "cross-env prettier './**/**/**.{json,js}' --write",
     "semantic-release": "cross-env npx semantic-release",
     "test": "npm run test:code",
     "test:watch": "cross-env jest --coverage --watch --updateSnapshot",
     "test:code": "cross-env jest --coverage",
-    "lint": "cross-env eslint --fix ."
+    "lint": "cross-env eslint --fix .",
+    "size": "cross-env size-limit"
   },
   "license": "MIT",
   "homepage": "https://github.com/typographist/core#readme",
@@ -42,8 +43,12 @@
     "web-typography"
   ],
   "files": [
-    "src",
     "dist"
+  ],
+  "size-limit": [
+    {
+      "path": "dist"
+    }
   ],
   "publishConfig": {
     "access": "public"
@@ -85,6 +90,7 @@
     "rollup-plugin-node-resolve": "4.0.1",
     "rollup-plugin-terser": "4.0.4",
     "rollup-plugin-uglify": "6.0.2",
-    "semantic-release": "15.13.3"
+    "semantic-release": "15.13.3",
+    "size-limit": "0.21.1"
   }
 }
