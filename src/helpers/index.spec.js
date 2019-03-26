@@ -121,6 +121,18 @@ describe('all', () => {
   });
 });
 
+describe('any', () => {
+  it('return `true` is the function argument meets all the above conditions', () => {
+    const isNumber = (item) => typeof item === 'number';
+    expect(helpers.any(isNumber, hasPx)('1px')).toEqual(true);
+  });
+
+  it('return `false` is the function argument not meet all the above conditions', () => {
+    const isNumber = (item) => typeof item === 'number';
+    expect(helpers.any(isNumber, hasPx)('1rem')).toEqual(false);
+  });
+});
+
 describe('pipe', () => {
   const sum = (x) => (y) => x + y;
   const mul = (x) => (y) => x * y;
