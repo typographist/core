@@ -1,3 +1,16 @@
+# [18.0.0](https://github.com/typographist/core/compare/v17.1.3...v18.0.0) (2019-03-26)
+
+
+### Code Refactoring
+
+* total rafactoring ([839fc4f](https://github.com/typographist/core/commit/839fc4f))
+
+
+### BREAKING CHANGES
+
+* Rewrote the user configuration validation module, deleted Ramda and Flow.
+Reduced library size from 16.1kb to 4.07
+
 ## [17.1.3](https://github.com/typographist/core/compare/v17.1.2...v17.1.3) (2019-03-23)
 
 
