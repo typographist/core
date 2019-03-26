@@ -1,3 +1,10 @@
+## [17.1.3](https://github.com/typographist/core/compare/v17.1.2...v17.1.3) (2019-03-23)
+
+
+### Bug Fixes
+
+* **package:** update igogo to version 1.7.1 ([81b5980](https://github.com/typographist/core/commit/81b5980))
+
 ## [17.1.2](https://github.com/typographist/core/compare/v17.1.1...v17.1.2) (2019-03-16)
 
 
