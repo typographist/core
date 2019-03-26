@@ -21,23 +21,25 @@ export const objectValues = (target, memo) => (obj) =>
     !Array.isArray(memo) ? [] : memo,
   );
 
+// head :: [a] -> a | Undefined
 // eslint-disable-next-line no-unused-vars
 export const head = ([first, ...tail]) => first;
 
+// tail :: [a] -> a | Undefined
 // eslint-disable-next-line no-unused-vars
 export const tail = ([first, ...rest]) => rest;
 
-// every :: Function -> Array -> Boolean
+// every :: a -> Boolean -> [a] -> Boolean
 export const every = (f) => (arr) => arr.every(f);
 
-// some :: Function -> Array -> Boolean
+// some ::  a -> Boolean -> [a] -> Boolean
 export const some = (f) => (arr) => arr.some(f);
 
-// all :: [Function] -> a -> Boolean
+// all :: [a -> Boolean] -> a -> Boolean
 export const all = (...fns) => (x) =>
   fns.map((f) => f(x)).every((y) => y === true);
 
-// any :: [Function] -> a -> Boolean
+// any :: [a -> Boolean] -> a -> Boolean
 export const any = (...fns) => (x) =>
   fns.map((f) => f(x)).some((y) => y === true);
 
@@ -52,7 +54,7 @@ export const flatten = (arr) =>
     [],
   );
 
-// reduce :: (Function, a) -> a -> a
+// reduce :: ((a, b) -> a) -> a ->[b] -> a
 export const reduce = (fn, acc) => (x) => x.reduce(fn, acc);
 
 // map :: (a -> b) -> a -> b
@@ -82,5 +84,6 @@ export const invariant = (condition, message) => {
   }
 };
 
+// invariantWithPrefix :: String -> (a, String) -> Void
 export const invariantWithPrefix = (prefix) => (condition, message) =>
   invariant(condition, `${prefix} ${message}`);
