@@ -1,3 +1,10 @@
+# [18.1.0](https://github.com/typographist/core/compare/v18.0.0...v18.1.0) (2019-03-29)
+
+
+### Features
+
+* **modular-scale:** add memoization ([b74ec3b](https://github.com/typographist/core/commit/b74ec3b))
+
 # [18.0.0](https://github.com/typographist/core/compare/v17.1.3...v18.0.0) (2019-03-26)
 
 
