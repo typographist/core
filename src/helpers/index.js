@@ -4,7 +4,7 @@ export const is = (type) => (x) => Object(x) instanceof type;
 // type :: a -> String
 export const type = (x) => Object.prototype.toString.call(x).slice(8, -1);
 
-// objectValues :: (String, Maybe [a]) -> [a]
+// objectValues :: (String, ?[a]) -> [a]
 export const objectValues = (target, memo) => (obj) =>
   Object.keys(Object(obj)).reduce(
     (acc, key) => {
@@ -43,7 +43,7 @@ export const all = (...fns) => (x) =>
 export const any = (...fns) => (x) =>
   fns.map((f) => f(x)).some((y) => y === true);
 
-// pipe :: [Function] -> a -> a
+// pipe :: (((a, b, ...,n) -> o), (o -> p), ..., (x -> y), (y -> z)) -> ((a, b, ..., n) -> z)
 export const pipe = (...fns) => (x) => fns.reduce((acc, f) => f(acc), x);
 
 // flatten :: [a] -> [b]
@@ -54,10 +54,10 @@ export const flatten = (arr) =>
     [],
   );
 
-// reduce :: ((a, b) -> a) -> a ->[b] -> a
+// reduce :: ((a, b) -> a) -> a -> [b] -> a
 export const reduce = (fn, acc) => (x) => x.reduce(fn, acc);
 
-// map :: (a -> b) -> a -> b
+// map :: (a -> b) -> f a -> f b
 export const map = (f) => (x) =>
   Array.isArray(x)
     ? x.map(f)
@@ -69,7 +69,7 @@ export const map = (f) => (x) =>
         {},
       );
 
-// filter :: (x -> Boolean) -> a -> a
+// filter :: (x -> Boolean) -> f a -> f a
 export const filter = (f) => (x) =>
   Array.isArray(x)
     ? x.filter(f)
