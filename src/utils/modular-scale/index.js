@@ -1,4 +1,4 @@
-import memoizeOne from 'memoize-one';
+import memoize from 'memoize-one';
 
 //  https://www.modularscale.com/
 
@@ -55,4 +55,4 @@ export const dumpModularScale = (step, base, ratio) => {
 };
 
 // modularScale :: (Number, [Number], Number) -> Number
-export const modularScale = memoizeOne(dumpModularScale);
+export const modularScale = memoize(dumpModularScale);
