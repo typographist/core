@@ -4,7 +4,7 @@ export const is = (type) => (x) => Object(x) instanceof type;
 // type :: a -> String
 export const type = (x) => Object.prototype.toString.call(x).slice(8, -1);
 
-// objectValues :: (String, ?[a]) -> [a]
+// objectValues :: (String, Maybe a | [a]) -> [a]
 export const objectValues = (target, memo) => (obj) =>
   Object.keys(Object(obj)).reduce(
     (acc, key) => {
@@ -35,11 +35,11 @@ export const every = (f) => (arr) => arr.every(f);
 // some ::  a -> Boolean -> [a] -> Boolean
 export const some = (f) => (arr) => arr.some(f);
 
-// all :: [a -> Boolean] -> a -> Boolean
+// all :: (*... -> Boolean) -> (*... -> Boolean)
 export const all = (...fns) => (x) =>
   fns.map((f) => f(x)).every((y) => y === true);
 
-// any :: [a -> Boolean] -> a -> Boolean
+// any :: (*... -> Boolean) -> (*... -> Boolean)
 export const any = (...fns) => (x) =>
   fns.map((f) => f(x)).some((y) => y === true);
 
