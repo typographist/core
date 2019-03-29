@@ -89,7 +89,7 @@
     "rollup-plugin-terser": "4.0.4",
     "rollup-plugin-uglify": "6.0.2",
     "semantic-release": "15.13.3",
-    "size-limit": "0.21.1"
+    "size-limit": "0.22.0"
   },
   "dependencies": {
     "memoize-one": "5.0.2"
