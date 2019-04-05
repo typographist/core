@@ -36,12 +36,10 @@ export const every = (f) => (arr) => arr.every(f);
 export const some = (f) => (arr) => arr.some(f);
 
 // all :: (*... -> Boolean) -> (*... -> Boolean)
-export const all = (...fns) => (x) =>
-  fns.map((f) => f(x)).every((y) => y === true);
+export const all = (...fns) => (x) => fns.map((f) => f(x)).every(Boolean);
 
 // any :: (*... -> Boolean) -> (*... -> Boolean)
-export const any = (...fns) => (x) =>
-  fns.map((f) => f(x)).some((y) => y === true);
+export const any = (...fns) => (x) => fns.map((f) => f(x)).some(Boolean);
 
 // pipe :: (((a, b, ...,n) -> o), (o -> p), ..., (x -> y), (y -> z)) -> ((a, b, ..., n) -> z)
 export const pipe = (...fns) => (x) => fns.reduce((acc, f) => f(acc), x);
