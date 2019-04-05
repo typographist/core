@@ -1,6 +1,6 @@
 {
   "name": "@typographist/core",
-  "version": "18.0.0",
+  "version": "18.1.0",
   "description": "Core API for typographist",
   "main": "dist/lib/index.cjs.js",
   "module": "dist/es/index.es.js",
@@ -52,10 +52,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/core": "7.4.0",
+    "@babel/core": "7.4.3",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-proposal-export-namespace-from": "7.2.0",
-    "@babel/preset-env": "7.4.2",
+    "@babel/preset-env": "7.4.3",
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@semantic-release/changelog": "3.0.2",
@@ -70,7 +70,7 @@
     "coveralls": "3.0.3",
     "cross-env": "5.2.0",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "5.15.3",
+    "eslint": "5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-import": "2.16.0",
@@ -82,14 +82,14 @@
     "nyc": "13.3.0",
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
-    "rollup": "1.7.3",
+    "rollup": "1.8.0",
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-node-resolve": "4.0.1",
     "rollup-plugin-replace": "2.1.1",
     "rollup-plugin-terser": "4.0.4",
     "rollup-plugin-uglify": "6.0.2",
     "semantic-release": "15.13.3",
-    "size-limit": "0.21.1"
+    "size-limit": "0.22.0"
   },
   "dependencies": {
     "memoize-one": "5.0.2"
