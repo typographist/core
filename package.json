@@ -92,6 +92,6 @@
     "size-limit": "1.0.1"
   },
   "dependencies": {
-    "memoize-one": "5.0.2"
+    "memoize-one": "5.0.3"
   }
 }
