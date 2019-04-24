@@ -4,7 +4,6 @@ import {
   makeBreakpointNamesList,
   makeBreakpoints,
   getInitialBreakpoint,
-  setBreakpointNameProp,
 } from '.';
 import { breakpointsModel, userConfig } from '../../mocks';
 
