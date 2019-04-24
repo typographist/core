@@ -2,7 +2,7 @@ import {
   SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER,
   DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
 } from '../constants';
-import { invariantWithPrefix } from '../helpers';
+import { invariantWithPrefix } from '../lib';
 
 export const invariant = invariantWithPrefix(
   '[typographist]: Check your config.',

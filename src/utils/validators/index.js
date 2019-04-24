@@ -1,4 +1,4 @@
-import { type } from '../../helpers';
+import { type } from '../../lib';
 
 // isObject :: a -> Boolean
 export const isObject = (x) => type(x) === 'Object';

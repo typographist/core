@@ -4,7 +4,7 @@ import { calcRatioProcess } from '../utils/ratio';
 import { setPropRoot } from '../utils/root';
 import { isNotObject, isObject } from '../utils/validators';
 import { isValidUserConfig } from '../validate-user-config';
-import { pipe, map, reduce, filter } from '../helpers';
+import { pipe, map, reduce, filter } from '../lib';
 
 // makeInitialBreakpoint :: UserConfig -> [Object]
 export const makeInitialBreakpoint = (x) =>

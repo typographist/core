@@ -1,4 +1,4 @@
-import { all, pipe, filter, objectValues, every } from '../../helpers';
+import { all, pipe, filter, objectValues, every } from '../../lib';
 import { invariant } from '../../utils';
 import { isObject, isString, hasPx } from '../../utils/validators';
 

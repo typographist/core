@@ -1,5 +1,5 @@
 import { makeBreakpointsProcess } from '../../make-breakpoints-model';
-import { pipe, tail, head, map } from '../../helpers';
+import { pipe, tail, head, map } from '../../lib';
 
 // getTailBreakpointsValues :: BreakpointsModel -> [Object]
 export const getTailBreakpointsValues = pipe(

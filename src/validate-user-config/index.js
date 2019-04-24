@@ -5,7 +5,7 @@ import {
 } from './breakpoint';
 import { isValidFields as isValidLineHeights } from './line-height';
 import { isValidFields as isValidRatios } from './ratio';
-import { all } from '../helpers';
+import { all } from '../lib';
 
 // isValidUserConfig :: UserConfig -> Boolean
 export const isValidUserConfig = all(

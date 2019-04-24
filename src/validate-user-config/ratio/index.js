@@ -5,7 +5,7 @@ import {
   ratioHasStep,
   isNumerical,
 } from '../../utils/validators';
-import { all, objectValues, pipe, every } from '../../helpers';
+import { all, objectValues, pipe, every } from '../../lib';
 
 const RATIO_ERROR_MESSAGE = `is ivalid value. Ratio must be a number or string containing the font size (in pixels), the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.`;
 
