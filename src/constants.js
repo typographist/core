@@ -1,5 +1,4 @@
 export const HALF = 0.5;
-export const BROWSER_VIEWPORT_WIDTH = '100vw';
 export const BROWSER_CONTEXT = 16;
 export const POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_BEGINNING_OF_THE_STRING = /^-?\d+(\.\d+)?$/;
 export const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
