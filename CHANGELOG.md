@@ -1,3 +1,10 @@
+## [18.1.1](https://github.com/typographist/core/compare/v18.1.0...v18.1.1) (2019-04-11)
+
+
+### Bug Fixes
+
+* **package:** update memoize-one to version 5.0.3 ([d0f466e](https://github.com/typographist/core/commit/d0f466e))
+
 # [18.1.0](https://github.com/typographist/core/compare/v18.0.0...v18.1.0) (2019-03-29)
 
 
