@@ -14,7 +14,7 @@ export {
   invariant,
   invariantWithPrefix,
 } from './lib';
-export { isNumeric } from './utils/validators';
+export { isNumeric, hasPx } from './utils/validators';
 export { camelize, normalizeString, toKebabCase, toSnakeCase } from './utils';
 export { modularScale } from './utils/modular-scale';
 export {
