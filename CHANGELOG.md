@@ -1,3 +1,28 @@
+# [19.0.0](https://github.com/typographist/core/compare/v18.1.1...v19.0.0) (2019-04-24)
+
+
+### Bug Fixes
+
+* remove lib from the gitignore ([716ef90](https://github.com/typographist/core/commit/716ef90))
+
+
+### Code Refactoring
+
+* remove BROWSER_VIEWPORT_WIDTH constant ([7dd4537](https://github.com/typographist/core/commit/7dd4537))
+* rename BROWSER_DEFAULT_FONT_SIZE with ([d4ffecf](https://github.com/typographist/core/commit/d4ffecf))
+
+
+### Features
+
+* add hasPx function ([09e4960](https://github.com/typographist/core/commit/09e4960))
+
+
+### BREAKING CHANGES
+
+* remove BROWSER_VIEWPORT_WIDTH constant
+* rename BROWSER_DEFAULT_FONT_SIZE with
+BROWSER_CONTEXT
+
 ## [18.1.1](https://github.com/typographist/core/compare/v18.1.0...v18.1.1) (2019-04-11)
 
 
