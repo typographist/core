@@ -3517,11 +3517,12 @@ del@^3.0.0:
     pify "^3.0.0"
     rimraf "^2.2.8"
 
-del@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/del/-/del-4.1.0.tgz#049543b8290e1a9293e2bd150ab3a06f637322b8"
-  integrity sha512-C4kvKNlYrwXhKxz97BuohF8YoGgQ23Xm9lvoHmgT7JaPGprSEjk3+XFled74Yt/x0ZABUHg2D67covzAPUKx5Q==
+del@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/del/-/del-4.1.1.tgz#9e8f117222ea44a31ff3a156c049b99052a9f0b4"
+  integrity sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==
   dependencies:
+    "@types/glob" "^7.1.1"
     globby "^6.1.0"
     is-path-cwd "^2.0.0"
     is-path-in-cwd "^2.0.0"
@@ -9914,10 +9915,10 @@ sisteransi@^1.0.0:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.0.tgz#77d9622ff909080f1c19e5f4a1df0c1b0a27b88c"
   integrity sha512-N+z4pHB4AmUv0SjveWRd6q1Nj5w62m5jodv+GD8lvmbY/83T/rpbJGZOnK5T149OldDj4Db07BSv9xY4K6NTPQ==
 
-size-limit@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-1.2.0.tgz#8326d21e2f2cbd47a872914cd09d130db3565838"
-  integrity sha512-2TVutcBc3uUXsJd8xgr1V6RS7+RsLrqnZkgn/6sS2xTdMzundVpMivJzZZxTjWIclRIGJ4IzyvvnNZmigPM1bA==
+size-limit@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-1.3.1.tgz#7521239b6772a66201ee98a4250bf2f24f68aa59"
+  integrity sha512-jCJsjchM1APF1ntl1x4+85rLCPj3da3oe/NFqr6JB9PeCI/sM8Ql7jkuyNV+T49febfBrFKH0h0JzGOYtX1ZvQ==
   dependencies:
     bytes "^3.1.0"
     chalk "^2.4.2"
@@ -9925,7 +9926,7 @@ size-limit@1.2.0:
     compression-webpack-plugin "^2.0.0"
     cosmiconfig "^5.2.0"
     css-loader "^2.1.1"
-    del "^4.1.0"
+    del "^4.1.1"
     escape-string-regexp "^2.0.0"
     estimo "^0.1.9"
     file-loader "^3.0.1"
