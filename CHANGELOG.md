@@ -1,3 +1,11 @@
+## [19.1.1](https://github.com/typographist/core/compare/v19.1.0...v19.1.1) (2019-05-05)
+
+
+### Bug Fixes
+
+* fix lint-staged config ([b41dec6](https://github.com/typographist/core/commit/b41dec6))
+* update lint-staged ([0941f30](https://github.com/typographist/core/commit/0941f30))
+
 # [19.1.0](https://github.com/typographist/core/compare/v19.0.0...v19.1.0) (2019-05-05)
 
 
