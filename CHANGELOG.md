@@ -1,3 +1,11 @@
+# [19.1.0](https://github.com/typographist/core/compare/v19.0.0...v19.1.0) (2019-05-05)
+
+
+### Features
+
+* add create memoize function ([4cc36d0](https://github.com/typographist/core/commit/4cc36d0))
+* export createMemoize ([c4d556f](https://github.com/typographist/core/commit/c4d556f))
+
 # [19.0.0](https://github.com/typographist/core/compare/v18.1.1...v19.0.0) (2019-04-24)
 
 
