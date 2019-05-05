@@ -12,6 +12,7 @@ export {
   reduce,
   filter,
   invariant,
+  createMemoize,
   invariantWithPrefix,
 } from './lib';
 export { isNumeric, hasPx } from './utils/validators';
