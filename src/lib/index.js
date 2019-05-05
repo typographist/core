@@ -85,3 +85,16 @@ export const invariant = (condition, message) => {
 // invariantWithPrefix :: String -> (a, String) -> Void
 export const invariantWithPrefix = (prefix) => (condition, message) =>
   invariant(condition, `${prefix} ${message}`);
+
+export const createMemoize = () => (fn) => {
+  let lastArgs = [];
+  let lastResult;
+
+  return (...args) => {
+    const isSaved = args.every((item, index) => item === lastArgs[index]);
+    if (isSaved) return lastResult;
+
+    lastArgs = args;
+    return (lastResult = fn(...args));
+  };
+};

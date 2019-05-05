@@ -1,4 +1,4 @@
-import memoize from 'memoize-one';
+import { createMemoize } from '../../lib';
 
 //  https://www.modularscale.com/
 
@@ -53,6 +53,8 @@ export const dumpModularScale = (step, base, ratio) => {
 
   return Math.round(Math.pow(ratio, step) * parseFloat(base));
 };
+
+const memoize = createMemoize();
 
 // modularScale :: (Number, [Number], Number) -> Number
 export const modularScale = memoize(dumpModularScale);

@@ -1,10 +1,9 @@
-import memoizeone from 'memoize-one';
 import { basePropProcess } from '../utils/base';
 import { calcRatioProcess } from '../utils/ratio';
 import { setPropRoot } from '../utils/root';
 import { isNotObject, isObject } from '../utils/validators';
 import { isValidUserConfig } from '../validate-user-config';
-import { pipe, map, reduce, filter } from '../lib';
+import { pipe, map, reduce, filter, createMemoize } from '../lib';
 
 // makeInitialBreakpoint :: UserConfig -> [Object]
 export const makeInitialBreakpoint = (x) =>
@@ -68,7 +67,9 @@ export const makeBreakpointsProcess = pipe(
   reduce(setBreakpointNameProp, {}),
 );
 
-const memoizedMakeBreakpoints = memoizeone(makeBreakpointsProcess);
+const memoize = createMemoize();
+
+const memoizedMakeBreakpoints = memoize(makeBreakpointsProcess);
 
 // makeBreakpointsModel :: UserConfig -> Object | Void
 
