@@ -22,12 +22,11 @@ export const objectValues = (target, memo) => (obj) =>
   );
 
 // head :: [a] -> a | Undefined
-// eslint-disable-next-line no-unused-vars
-export const head = ([first, ...tail]) => first;
+
+export const head = ([first, ..._]) => first;
 
 // tail :: [a] -> a | Undefined
-// eslint-disable-next-line no-unused-vars
-export const tail = ([first, ...rest]) => rest;
+export const tail = ([_, ...rest]) => rest;
 
 // every :: a -> Boolean -> [a] -> Boolean
 export const every = (f) => (arr) => arr.every(f);
