@@ -3090,6 +3090,16 @@ cosmiconfig@^5.0.1:
     lodash.get "^4.4.2"
     parse-json "^4.0.0"
 
+cosmiconfig@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
+  integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
+  dependencies:
+    import-fresh "^2.0.0"
+    is-directory "^0.3.1"
+    js-yaml "^3.13.1"
+    parse-json "^4.0.0"
+
 coveralls@3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.3.tgz#83b1c64aea1c6afa69beaf50b55ac1bc4d13e2b8"
@@ -3969,11 +3979,6 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-
-escape-string-regexp@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
-  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
 
 escodegen@^1.9.1:
   version "1.11.1"
@@ -4987,10 +4992,10 @@ gzip-size@^5.0.0:
     duplexer "^0.1.1"
     pify "^3.0.0"
 
-gzip-size@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.0.tgz#2db0396c71f5c902d5cf6b52add5030b93c99bd2"
-  integrity sha512-wfSnvypBDRW94v5W3ckvvz/zFUNdJ81VgOP6tE4bPpRUcc0wGqU+y0eZjJEvKxwubJFix6P84sE8M51YWLT7rQ==
+gzip-size@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
+  integrity sha512-FNHi6mmoHvs1mxZAds4PpdCS6QG8B4C1krxJsMutgxl5t3+GlRTzzI3NEkifXx2pVsOvJdOGSmIgDhQ55FwdPA==
   dependencies:
     duplexer "^0.1.1"
     pify "^4.0.1"
@@ -10330,29 +10335,28 @@ sisteransi@^1.0.0:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.0.tgz#77d9622ff909080f1c19e5f4a1df0c1b0a27b88c"
   integrity sha512-N+z4pHB4AmUv0SjveWRd6q1Nj5w62m5jodv+GD8lvmbY/83T/rpbJGZOnK5T149OldDj4Db07BSv9xY4K6NTPQ==
 
-size-limit@1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-1.3.2.tgz#4aff3aa673691af0d2b755dbe79fb0db692d82ff"
-  integrity sha512-erz5Gph9JjcA2AtfvymLi64gCIgdMUKYzWObjD3OJp37P3cHbuXC1PcOM1vofqmUQSEv59zn1qS/dPwatnTdDg==
+size-limit@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-1.3.3.tgz#ccada083238589c224da126f59b4ebff9707bcf9"
+  integrity sha512-XoHborDGVhivRPP4D/R6csoraZ7WgrCvhfKV1WZ5fpurlDdn+DdOoTZst6GXxaCTx/UpuUqHPiLe0QMBqysZmQ==
   dependencies:
     bytes "^3.1.0"
     chalk "^2.4.2"
     ci-job-number "^0.3.0"
     compression-webpack-plugin "^2.0.0"
-    cosmiconfig "^5.2.0"
+    cosmiconfig "^5.2.1"
     css-loader "^2.1.1"
     del "^4.1.1"
-    escape-string-regexp "^2.0.0"
     estimo "^0.1.9"
     file-loader "^3.0.1"
     globby "^9.2.0"
-    gzip-size "^5.1.0"
+    gzip-size "^5.1.1"
     make-dir "^3.0.0"
     optimize-css-assets-webpack-plugin "^5.0.1"
     react "16.8.6"
     read-pkg-up "^6.0.0"
     style-loader "^0.23.1"
-    webpack "^4.31.0"
+    webpack "^4.32.2"
     webpack-bundle-analyzer "^3.3.2"
     yargs "^13.2.4"
 
@@ -11562,10 +11566,10 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.31.0:
-  version "4.31.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.31.0.tgz#ae201d45f0571336e42d1c2b5c8ab56c4d3b0c63"
-  integrity sha512-n6RVO3X0LbbipoE62akME9K/JI7qYrwwufs20VvgNNpqUoH4860KkaxJTbGq5bgkVZF9FqyyTG/0WPLH3PVNJA==
+webpack@^4.32.2:
+  version "4.32.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.32.2.tgz#3639375364a617e84b914ddb2c770aed511e5bc8"
+  integrity sha512-F+H2Aa1TprTQrpodRAWUMJn7A8MgDx82yQiNvYMaj3d1nv3HetKU0oqEulL9huj8enirKi8KvEXQ3QtuHF89Zg==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
