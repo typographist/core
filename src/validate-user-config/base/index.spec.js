@@ -1,14 +1,10 @@
-import { isValidField, isValidFields } from '.';
-import { userConfig, invalidUserConfig } from '../../mocks';
+import { validateField, validateFields } from '.';
+import { invalidUserConfig } from '../../mocks';
 
-describe('isValidField', () => {
-  it('return `true` is base contains px', () => {
-    expect(isValidField('12px')).toEqual(true);
-  });
-
+describe('validateField', () => {
   it("show warn if the base isn't valid", () => {
     try {
-      isValidField('1rem');
+      validateField('1rem');
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
@@ -18,14 +14,10 @@ describe('isValidField', () => {
   });
 });
 
-describe('isValidFields', () => {
-  it('return `true` is all bases are valid', () => {
-    expect(isValidFields(userConfig)).toEqual(true);
-  });
-
+describe('validateFields', () => {
   it("show warn if the bases aren't valid", () => {
     try {
-      isValidFields(invalidUserConfig);
+      validateFields(invalidUserConfig);
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(

@@ -1,14 +1,10 @@
-import { isValidUserConfig } from '.';
-import { userConfig, invalidUserConfig } from '../mocks';
+import { validateUserConfig } from '.';
+import { invalidUserConfig } from '../mocks';
 
-describe('isValidUserConfig', () => {
-  it('return `true` if the user config is valid', () => {
-    expect(isValidUserConfig(userConfig)).toEqual(true);
-  });
-
+describe('validateUserConfig', () => {
   it("show warn if the user config isn't valid", () => {
     try {
-      isValidUserConfig(invalidUserConfig);
+      validateUserConfig(invalidUserConfig);
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(

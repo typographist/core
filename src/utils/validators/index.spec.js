@@ -136,11 +136,3 @@ describe('isValidStep', () => {
     expect(isValidStep('myNameIsMax')).toEqual(false);
   });
 });
-
-// // describe('user config validators', () => {
-// //   describe('isValidUserConfig function', () => {
-// //     it('if valid user config ', () => {
-// //       expect(isValidUserConfig(userConfig)).toEqual(true);
-// //     });
-// //   });
-// // });

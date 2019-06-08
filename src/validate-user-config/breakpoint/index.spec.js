@@ -1,21 +1,10 @@
-import {
-  hasBreakpointProp,
-  isValidBreakpoints,
-  isValidField,
-  isValidFields,
-} from '.';
-import { userConfig, invalidUserConfig } from '../../mocks';
+import { validateBreakpoints, validateField, validateFields } from '.';
+import { invalidUserConfig } from '../../mocks';
 
-describe('hasBreakpointProp', () => {
-  it('return `true` if the object contains the breakpoint prop', () => {
-    expect(hasBreakpointProp(['tablet', { breakpoint: '768px' }])).toEqual(
-      true,
-    );
-  });
-
+describe('validateBreakpoints', () => {
   it("show warn if the breakpoint doesn't contain the breakpoint property", () => {
     try {
-      isValidBreakpoints(invalidUserConfig);
+      validateBreakpoints(invalidUserConfig);
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
@@ -27,14 +16,10 @@ describe('hasBreakpointProp', () => {
 
 describe('Name of the group', () => {});
 
-describe('isValidField', () => {
-  it('return `true` is the breakpoint contains the value in pixels', () => {
-    expect(isValidField('760px')).toEqual(true);
-  });
-
+describe('validateField', () => {
   it("show warn if the breakpoint value isn't valid", () => {
     try {
-      isValidField('60rem');
+      validateField('60rem');
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
@@ -44,14 +29,10 @@ describe('isValidField', () => {
   });
 });
 
-describe('isValidFields', () => {
-  it('return `true` is all breakpoint are valid', () => {
-    expect(isValidFields(userConfig)).toEqual(true);
-  });
-
+describe('validateFields', () => {
   it("show warn if the breakpoint values aren't valid", () => {
     try {
-      isValidFields(invalidUserConfig);
+      validateFields(invalidUserConfig);
       expect(true).toEqual(false);
     } catch (e) {
       expect(e.message).toEqual(
