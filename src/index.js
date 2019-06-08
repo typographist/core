@@ -26,7 +26,6 @@ export {
   getInitialBreakpoint,
 } from './utils/breakpoints';
 export { makeBreakpointsModel } from './make-breakpoints-model';
-export * as constants from './constants';
 export { percentage, toEm, toPx, toRem } from './utils/convertors';
 
 export const ratios = {
