@@ -1,4 +1,4 @@
-import { makeBreakpointsProcess } from '../../make-breakpoints-model';
+import { makeBreakpointsProcess } from '../../make-breakpoints-map';
 import { pipe, tail, head, map } from '../../lib';
 
 // getTailBreakpointsValues :: BreakpointsModel -> [Object]

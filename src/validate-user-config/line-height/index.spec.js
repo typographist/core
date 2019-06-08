@@ -1,5 +1,5 @@
 import { validateField, validateFields } from '.';
-import { userConfig, invalidUserConfig } from '../../mocks';
+import { invalidUserConfig } from '../../mocks';
 
 describe('validateField', () => {
   it("show warn if the line height value isn't valid", () => {

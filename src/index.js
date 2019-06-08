@@ -25,7 +25,7 @@ export {
   makeBreakpoints,
   getInitialBreakpoint,
 } from './utils/breakpoints';
-export { makeBreakpointsModel } from './make-breakpoints-model';
+export { makeBreakpointsMap } from './make-breakpoints-map';
 export { percentage, toEm, toPx, toRem } from './utils/convertors';
 
 export const ratios = {
