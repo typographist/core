@@ -1,4 +1,4 @@
-import { HALF } from '../../constants';
+const HALF = 0.5;
 
 // calcLeading :: ([Number] | Number) -> Number
 export const calcLeading = (base, lineHeight) =>

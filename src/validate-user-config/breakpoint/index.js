@@ -1,35 +1,29 @@
-import { all, pipe, filter, objectValues, every } from '../../lib';
+import { all, pipe, filter, objectValues, forEach } from '../../lib';
 import { invariant } from '../../utils';
 import { isObject, isString, hasPx } from '../../utils/validators';
 
-// hasBreakpointProp :: [String, Object] -> Boolean
-export const hasBreakpointProp = ([name, body]) => {
+// validateBreakpointProp :: [String, Object] -> Void
+export const validateBreakpointProp = ([name, body]) => {
   invariant(
     body.breakpoint,
     `"${name}": must contain the mandatory breakpoint property. Example "${name}": {breakpoint: '768px'}.`,
   );
-
-  return true;
 };
 
-// isValidBreakpoints :: UserConfig -> Boolean
-export const isValidBreakpoints = pipe(
+// validateBreakpoint :: UserConfig -> Void
+export const validateBreakpoints = pipe(
   filter(isObject),
   Object.entries,
-  every(hasBreakpointProp),
+  forEach(validateBreakpointProp),
 );
 
 const BREAKPOINT_ERROR_MESSAGE = `is invalid value. Breakpoint must be a string with a value (in pixels). Example 'breakpoint': '1024px'.`;
 
-// isValidField :: a -> Boolean
-export const isValidField = (x) => {
+// validateField :: a -> Void
+export const validateField = (x) => {
   invariant(all(isString, hasPx)(x), `'${x}' ${BREAKPOINT_ERROR_MESSAGE}`);
-
-  return true;
 };
 
-// isValidFields :: UserConfig -> Boolean
-export const isValidFields = pipe(
-  objectValues('breakpoint'),
-  every(isValidField),
-);
+// validateFields :: UserConfig -> Void
+export const validateFields = (x) =>
+  objectValues('breakpoint')(x).forEach(validateField);

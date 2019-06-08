@@ -43,11 +43,13 @@ export const any = (...fns) => (x) => fns.map((f) => f(x)).some(Boolean);
 // pipe :: (((a, b, ...,n) -> o), (o -> p), ..., (x -> y), (y -> z)) -> ((a, b, ..., n) -> z)
 export const pipe = (...fns) => (x) => fns.reduce((acc, f) => f(acc), x);
 
+// forEach :: (a -> *) -> [a] -> [a]
+export const forEach = (fn) => (x) => x.forEach(fn);
+
 // flatten :: [a] -> [b]
 export const flatten = (arr) =>
   arr.reduce(
-    (acc, item) =>
-      Array.isArray(item) ? [...acc, ...flatten(item)] : [...acc, item],
+    (acc, item) => acc.concat(Array.isArray(item) ? flatten(item) : item),
     [],
   );
 

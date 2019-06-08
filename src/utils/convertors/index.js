@@ -1,8 +1,7 @@
-import { BROWSER_CONTEXT } from '../../constants';
+const BROWSER_CONTEXT = 16;
 
 // percentage :: (x: Number | String | [Number]) -> String
-export const percentage = (x) =>
-  ''.concat((parseFloat(x) / BROWSER_CONTEXT) * 100, '%');
+export const percentage = (x) => `${(parseFloat(x) / BROWSER_CONTEXT) * 100}%`;
 
 // toArrIsNotArr :: (String | [String]) -> [String]
 export const toArrIsNotArr = (value) =>
@@ -12,7 +11,7 @@ export const toArrIsNotArr = (value) =>
 export const toPx = (x) => `${parseFloat(x) * BROWSER_CONTEXT}px`;
 
 // toEm :: String -> String
-export const toEm = (x) => ''.concat(parseFloat(x) / BROWSER_CONTEXT, 'em');
+export const toEm = (x) => `${parseFloat(x) / BROWSER_CONTEXT}em`;
 
 // toRem :: (Number, Number | [Number]) -> String
 export const toRem = (root, fontSize) => `${parseFloat(fontSize) / root}rem`;

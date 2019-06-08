@@ -1,3 +1,4 @@
+// userConfig :: UserConfig
 export const userConfig = {
   base: ['16px', '32px'],
   lineHeight: 1.5,
@@ -22,6 +23,7 @@ export const userConfig = {
   },
 };
 
+// invalidUserConfig :: InvalidUserConfig
 export const invalidUserConfig = {
   base: ['1rem', '2em'],
   lineHeight: 1.5,

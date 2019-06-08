@@ -1,17 +1,16 @@
-import { isValidFields as isValidBases } from './base';
+import { validateFields as validateBases } from './base';
 import {
-  isValidBreakpoints,
-  isValidFields as isValidBreakpointValues,
+  validateBreakpoints,
+  validateFields as validateBreakpointValues,
 } from './breakpoint';
-import { isValidFields as isValidLineHeights } from './line-height';
-import { isValidFields as isValidRatios } from './ratio';
-import { all } from '../lib';
+import { validateFields as validateLineHeights } from './line-height';
+import { validateFields as validateRatios } from './ratio';
 
-// isValidUserConfig :: UserConfig -> Boolean
-export const isValidUserConfig = all(
-  isValidBases,
-  isValidBreakpoints,
-  isValidBreakpointValues,
-  isValidLineHeights,
-  isValidRatios,
-);
+// validateUserConfig :: UserConfig -> Boolean
+export const validateUserConfig = (x) => {
+  validateBases(x);
+  validateBreakpoints(x);
+  validateBreakpointValues(x);
+  validateLineHeights(x);
+  validateRatios(x);
+};

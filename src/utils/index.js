@@ -1,8 +1,7 @@
-import {
-  SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER,
-  DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS,
-} from '../constants';
 import { invariantWithPrefix } from '../lib';
+
+export const DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS = /[-_\s]+(.)?/g;
+export const SEPARATE_STRING_INTO_WORDS_WITH_CAPITAL_LETTER = /(?=[A-Z])/;
 
 export const invariant = invariantWithPrefix(
   '[typographist]: Check your config.',
@@ -15,7 +14,7 @@ export const getFirstLetter = (word) => word[0].toLowerCase();
 export const getWordTail = (word) =>
   word
     .slice(1)
-    .replace(DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS, (match, chr) =>
+    .replace(DASH_HYPHEN_WHITESPACE_ANY_CHARACTERS, (_, chr) =>
       chr.toUpperCase(),
     );
 

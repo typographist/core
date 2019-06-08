@@ -2,8 +2,8 @@ import { basePropProcess } from '../utils/base';
 import { calcRatioProcess } from '../utils/ratio';
 import { setPropRoot } from '../utils/root';
 import { isNotObject, isObject } from '../utils/validators';
-import { isValidUserConfig } from '../validate-user-config';
-import { pipe, map, reduce, filter, createMemoize } from '../lib';
+import { validateUserConfig } from '../validate-user-config';
+import { pipe, map, reduce, filter } from '../lib';
 
 // makeInitialBreakpoint :: UserConfig -> [Object]
 export const makeInitialBreakpoint = (x) =>
@@ -67,15 +67,9 @@ export const makeBreakpointsProcess = pipe(
   reduce(setBreakpointNameProp, {}),
 );
 
-const memoize = createMemoize();
-
-const memoizedMakeBreakpoints = memoize(makeBreakpointsProcess);
-
 // makeBreakpointsModel :: UserConfig -> Object | Void
-
-// eslint-disable-next-line consistent-return
 export const makeBreakpointsModel = (x) => {
-  if (isValidUserConfig(x)) {
-    return memoizedMakeBreakpoints(x);
-  }
+  validateUserConfig(x);
+
+  return makeBreakpointsProcess(x);
 };

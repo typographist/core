@@ -1,7 +1,5 @@
-import {
-  FONT_SIZE,
-  POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING,
-} from '../../constants';
+const FONT_SIZE = /\b\d+(\.\d+)?(px|em)\b/g;
+const POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING = /-?\b\d+(\.\d+)?\b\s*$/g;
 
 // getFontSizeFromRatio :: (String) -> [String] | Null
 export const getFontSizeFromRatio = (x) => x.trim().match(FONT_SIZE);
