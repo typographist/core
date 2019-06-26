@@ -12,12 +12,11 @@ export const calcStartPosition = (step, base) =>
 export const calcFontSize = (step, base, ratio) =>
   Math.pow(ratio, Math.floor(step / base.length));
 
-/* eslint-disable no-param-reassign, no-plusplus */
-
 // normalizeBases :: ([Number], Number, Number) -> Number
 export const normalizeBases = (base, baseHigh, ratio) => {
   const cloneBase = [...base];
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 1; i < cloneBase.length; i++) {
     // shift up if value too low
     while (cloneBase[i] / 1 < cloneBase[0] / 1) {
