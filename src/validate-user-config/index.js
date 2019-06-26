@@ -6,7 +6,7 @@ import {
 import { validateFields as validateLineHeights } from './line-height';
 import { validateFields as validateRatios } from './ratio';
 
-// validateUserConfig :: UserConfig -> Boolean
+// validateUserConfig :: UserConfig -> Void
 export const validateUserConfig = (x) => {
   validateBases(x);
   validateBreakpoints(x);
