@@ -16,7 +16,6 @@ export {
   invariantWithPrefix,
 } from './lib';
 export { isNumeric, hasPx } from './utils/validators';
-export { camelize, normalizeString, toKebabCase, toSnakeCase } from './utils';
 export { modularScale } from './utils/modular-scale';
 export {
   getTailBreakpointsValues,
