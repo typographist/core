@@ -1,3 +1,16 @@
+# [20.0.0](https://github.com/typographist/core/compare/v19.1.1...v20.0.0) (2019-06-26)
+
+
+### Code Refactoring
+
+* remove functions ([3683436](https://github.com/typographist/core/commit/3683436))
+
+
+### BREAKING CHANGES
+
+* getFirstLetter, getWordTail, camelize, normalizeString, separateWords,
+toKebabCase, toSnakeCase
+
 ## [19.1.1](https://github.com/typographist/core/compare/v19.1.0...v19.1.1) (2019-05-05)
 
 
