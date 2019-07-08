@@ -62,7 +62,7 @@
     "@babel/core": "7.5.0",
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
     "@babel/plugin-proposal-export-namespace-from": "7.5.2",
-    "@babel/preset-env": "7.5.0",
+    "@babel/preset-env": "7.5.2",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@semantic-release/changelog": "^3.0.4",
