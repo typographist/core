@@ -23,10 +23,10 @@ export const objectValues = (target, memo) => (obj) =>
 
 // head :: [a] -> a | Undefined
 
-export const head = ([first, ..._]) => first;
+export const head = ([h]) => h;
 
 // tail :: [a] -> a | Undefined
-export const tail = ([_, ...rest]) => rest;
+export const tail = ([, ...tail]) => tail;
 
 // every :: a -> Boolean -> [a] -> Boolean
 export const every = (f) => (arr) => arr.every(f);
