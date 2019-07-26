@@ -1,17 +1,11 @@
 import { makeBreakpointsProcess } from '../../make-breakpoints-map';
-import { pipe, tail, head, map } from '../../lib';
+import { pipe, map } from '../../lib';
 
 // getTailBreakpointsValues :: BreakpointsModel -> [Object]
-export const getTailBreakpointsValues = pipe(
-  Object.values,
-  tail,
-);
+export const getTailBreakpointsValues = (x) => Object.values(x).slice(1);
 
 // getTailBreakpointsNames :: BreakpointsModel -> [String]
-export const getTailBreakpointsNames = pipe(
-  Object.keys,
-  tail,
-);
+export const getTailBreakpointsNames = (x) => Object.keys(x).slice(1);
 
 // makeBreakpointNamesList :: BreakpointsModel -> String
 export const makeBreakpointNamesList = (x) =>
@@ -32,10 +26,7 @@ export const makeBreakpoints = pipe(
 );
 
 // getInitialBreakpoint :: BreakpointsModel -> Object
-export const getInitialBreakpoint = pipe(
-  Object.values,
-  head,
-);
+export const getInitialBreakpoint = (x) => Object.values(x)[0];
 
 // setBreakpointNameProp :: (Object, Object) -> Object
 export const setBreakpointNameProp = (acc, { name, ...breakpoint }) => ({
