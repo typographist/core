@@ -1,3 +1,10 @@
+## [21.0.1](https://github.com/typographist/core/compare/v21.0.0...v21.0.1) (2019-07-26)
+
+
+### Bug Fixes
+
+* **scripts:** add lint:all and pretty ([e6b69b1](https://github.com/typographist/core/commit/e6b69b1))
+
 # [21.0.0](https://github.com/typographist/core/compare/v20.0.0...v21.0.0) (2019-07-21)
 
 
