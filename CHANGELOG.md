@@ -1,3 +1,15 @@
+# [21.0.0](https://github.com/typographist/core/compare/v20.0.0...v21.0.0) (2019-07-21)
+
+
+### Continuous Integration
+
+* **travis:** remove node.js 8 ([070d743](https://github.com/typographist/core/commit/070d743))
+
+
+### BREAKING CHANGES
+
+* **travis:** remove node.js 8
+
 # [20.0.0](https://github.com/typographist/core/compare/v19.1.1...v20.0.0) (2019-06-26)
 
 
