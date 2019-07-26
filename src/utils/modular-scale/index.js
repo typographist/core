@@ -30,7 +30,6 @@ export const normalizeBases = (base, baseHigh, ratio) => {
 
   return cloneBase.sort();
 };
-/* eslint-enable */
 
 // calcResult :: (Number, [Number], Number) -> Number
 export const calcResult = (fontSize, bases, position) =>
