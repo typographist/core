@@ -97,7 +97,7 @@
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-uglify": "6.0.2",
     "semantic-release": "^15.13.18",
-    "size-limit": "^1.3.7"
+    "size-limit": "^2.0.0"
   },
   "dependencies": {}
 }
