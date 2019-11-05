@@ -1,6 +1,8 @@
 const { deepObjectValues, flatten, invariant } = require('../utils');
 
 const {
+  merge,
+  omit,
   percentage,
   toPx,
   toEm,
@@ -12,6 +14,18 @@ const {
   hasPx,
   isValidStep,
 } = require('../utils');
+
+describe('merge', () => {
+  it('merge all transfered objects', () => {
+    expect(merge({ a: 1 }, { b: 2 }, { c: 3 })).toEqual({ a: 1, b: 2, c: 3 });
+  });
+});
+
+describe('omit', () => {
+  it('return object without a  parameter passed', () => {
+    expect(omit('a', { a: 1, b: 2 })).toEqual({ b: 2 });
+  });
+});
 
 describe('deepObjectValues', () => {
   it('return an array of a values from the object', () => {
