@@ -1,3 +1,19 @@
+# [22.0.0](https://github.com/typographist/core/compare/v21.0.1...v22.0.0) (2019-11-05)
+
+
+### Code Refactoring
+
+* remove legacy utils ([6e45649](https://github.com/typographist/core/commit/6e45649))
+
+
+### BREAKING CHANGES
+
+* remove functions
+is, type, head, tail, every,all, any, pipe, map,reduce,filter,
+createMemoize,invariantWithPrefix, getTailBreakpointsValues
+getTailBreakpointsNames, makeBreakpointNamesList, makeBreakpoints,
+getInitialBreakpoint, replace makeBreakpointsMap with getBreakpointsMap
+
 ## [21.0.1](https://github.com/typographist/core/compare/v21.0.0...v21.0.1) (2019-07-26)
 
 
