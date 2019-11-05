@@ -13,20 +13,6 @@ exports.merge = function() {
   return result;
 };
 
-// pick :: ([String], {String :: a}) -> {String :: a}
-exports.pick = function() {
-  var keys = Array.prototype.slice.call(arguments, 0, -1);
-  var obj = arguments[arguments.length - 1];
-
-  var result = {};
-
-  for (var key in keys) {
-    result[key] = obj[key];
-  }
-
-  return result;
-};
-
 // omit :: ([String], {String :: a}) -> {String :: a}
 exports.omit = function() {
   var keys = Array.prototype.slice.call(arguments, 0, -1);
