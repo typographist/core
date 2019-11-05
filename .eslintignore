@@ -3,3 +3,4 @@ lib/
 es/
 flow-typed/
 coverage/
+src/index.d.ts
