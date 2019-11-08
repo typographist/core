@@ -114,9 +114,7 @@ var makeBreakpointsMap = function(x) {
     .concat(makeInitialBreakpoint(x), makeNamedBreakpoints(x))
     .map(renameProp('breakpoint', 'value'))
     .reduce(inheritProps, [])
-    .map(normalizeBase)
-    .map(normalizeRatio)
-    .map(setRootProp)
+    .map((item) => setRootProp(normalizeRatio(normalizeBase(item))))
     .reduce(setBreakpointNameProp, {});
 };
 
