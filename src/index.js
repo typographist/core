@@ -1,5 +1,3 @@
-var utils = require('./utils');
-var mekeBreakpointsMap = require('./make-breakpoints-map').mekeBreakpointsMap;
 var getBreakpointsMap = require('./make-breakpoints-map').getBreakpointsMap;
 var modularScale = require('./modular-scale');
 
@@ -23,12 +21,5 @@ exports.ratios = {
   PHI: 1.618034,
 };
 
-exports.percentage = utils.percentage;
-exports.toEm = utils.toEm;
-exports.toPx = utils.toPx;
-exports.toRem = utils.toRem;
-exports.isNumeric = utils.isNumeric;
-exports.invariant = utils.invariant;
-exports.mekeBreakpointsMap = mekeBreakpointsMap;
 exports.getBreakpointsMap = getBreakpointsMap;
 exports.modularScale = modularScale;

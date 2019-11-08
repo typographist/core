@@ -1,5 +1,3 @@
-var BROWSER_CONTEXT = 16;
-
 // merge :: {String: a} -> {String: a} -> {String: a}
 exports.merge = function() {
   var result = {};
@@ -71,25 +69,6 @@ exports.invariant = function(condition, message) {
 };
 
 // ---------- CONVERTORS -----------------------------------------------------------
-// percentage :: (x: Number | String) -> String
-exports.percentage = function(x) {
-  return (parseFloat(String(x)) / BROWSER_CONTEXT) * 100 + '%';
-};
-
-// toPx :: String -> String
-exports.toPx = function(x) {
-  return parseFloat(x) * BROWSER_CONTEXT + 'px';
-};
-
-// toEm :: String -> String
-exports.toEm = function(x) {
-  return parseFloat(x) / BROWSER_CONTEXT + 'em';
-};
-
-// toRem :: (Number, Number | String) -> String
-exports.toRem = function(root, fontSize) {
-  return parseFloat(String(fontSize)) / root + 'rem';
-};
 
 // ---------- VALIDATORS -----------------------------------------------------------
 // isNumeric :: a -> Boolean
