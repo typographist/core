@@ -91,7 +91,7 @@ describe('toRem', () => {
   });
 
   it('extracts the value in pixels from the array and convers it to rem', () => {
-    expect(toRem(16, ['24px'])).toEqual('1.5rem');
+    expect(toRem(16, [24])).toEqual('1.5rem');
   });
 });
 
