@@ -1,7 +1,3 @@
-export interface IConfig {
-  [key: string]: any;
-}
-
 export interface IBreakpoint {
   base: number[];
   lineHeight: number;
@@ -34,20 +30,6 @@ export interface IRatios {
   PHI: number;
 }
 
-export function percentage(x: number | string): string;
+export function getBreakpointsMap(x: object): IBreakpointMap;
 
-export function toPx(x: string): string;
-
-export function toEm(x: string): string;
-
-export function toRem(x: number, y: number | string): string;
-
-export function isNumeric(x: any): boolean;
-
-export function invariant(x: any, y: string): void;
-
-export function modularScale(x: number, y: number[], z: number);
-
-export function makeBreakpointsMap(x: any): IBreakpointMap;
-
-export function getBreakpointsMap(x: any): IBreakpointMap;
+export function modularScale(x: number, y: number[], z: number): number;
