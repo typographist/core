@@ -68,8 +68,6 @@ exports.invariant = function(condition, message) {
   }
 };
 
-// ---------- CONVERTORS -----------------------------------------------------------
-
 // ---------- VALIDATORS -----------------------------------------------------------
 // isNumeric :: a -> Boolean
 exports.isNumeric = function(x) {

@@ -1,5 +1,7 @@
 var utils = require('./utils');
 
+var ERROR_PREFIX = '[typographist]: Check your config. ';
+
 var BASE_ERROR_MESSAGE =
   "is invalid 'base'. Base must be a string with the value in pixels or an array of strings. " +
   "Example 'base': '16px' or 'base': ['14px', '32px'].";
@@ -15,20 +17,12 @@ var RATIO_ERROR_MESSAGE =
   "is ivalid 'ratio'. Ratio must be a number or string containing the font size (in pixels), " +
   "the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.";
 
-// invariantWithPrefix :: String -> (a, String) -> Void
-var invariantWithPrefix = function(condition, message) {
-  return utils.invariant(
-    condition,
-    '[typographist]: Check your config. ' + message,
-  );
-};
-
 // ---------- BASE ------------------------------------------------------------
 // validateField :: a -> Void
 var validateBase = function(x) {
-  return invariantWithPrefix(
+  return utils.invariant(
     utils.hasPx(x),
-    "'" + x + "' " + BASE_ERROR_MESSAGE,
+    ERROR_PREFIX + "'" + x + "' " + BASE_ERROR_MESSAGE,
   );
 };
 
@@ -43,9 +37,10 @@ var hasBreakpointProp = function(x) {
   var breaks = utils.omit('base', 'lineHeight', 'ratio', x);
 
   Object.keys(breaks).forEach((key) => {
-    invariantWithPrefix(
+    utils.invariant(
       breaks[key].breakpoint,
-      "'" +
+      ERROR_PREFIX +
+        "'" +
         key +
         "': must contain the mandatory breakpoint property. Example '" +
         key +
@@ -56,9 +51,9 @@ var hasBreakpointProp = function(x) {
 
 // validateField :: a -> Void
 var validateBreakpoint = function(x) {
-  invariantWithPrefix(
+  utils.invariant(
     typeof x === 'string' && utils.hasPx(x),
-    "'" + x + "' " + BREAKPOINT_ERROR_MESSAGE,
+    ERROR_PREFIX + "'" + x + "' " + BREAKPOINT_ERROR_MESSAGE,
   );
 };
 
@@ -72,9 +67,9 @@ var validateBreakpoints = function(x) {
 // ---------- LINE-HEIGHT --------------------------------------------------------
 // validateField :: a -> Void
 var validateLineHeight = function(x) {
-  invariantWithPrefix(
+  utils.invariant(
     typeof x === 'number' && utils.isNumeric(x),
-    "'" + x + "' " + LINE_HEIGHT_ERRROR_MESSAGE,
+    ERROR_PREFIX + "'" + x + "' " + LINE_HEIGHT_ERRROR_MESSAGE,
   );
 };
 
@@ -94,7 +89,7 @@ var validateRatio = function(x) {
       utils.ratioHasAtWord(x) &&
       utils.ratioHasStep(x));
 
-  invariantWithPrefix(isValid, "'" + x + "' " + RATIO_ERROR_MESSAGE);
+  utils.invariant(isValid, ERROR_PREFIX + "'" + x + "' " + RATIO_ERROR_MESSAGE);
 };
 
 // validateFields :: config -> Void
