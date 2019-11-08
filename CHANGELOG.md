@@ -1,3 +1,24 @@
+# [23.0.0](https://github.com/typographist/core/compare/v22.0.0...v23.0.0) (2019-11-08)
+
+
+### Code Refactoring
+
+* remove type for utils ([c619e94](https://github.com/typographist/core/commit/c619e94))
+* remove utils ([0ae6af6](https://github.com/typographist/core/commit/0ae6af6))
+
+
+### Features
+
+* add modularScale ([f1710d1](https://github.com/typographist/core/commit/f1710d1))
+* add typescript types ([b01d8ca](https://github.com/typographist/core/commit/b01d8ca))
+
+
+### BREAKING CHANGES
+
+* remove percentage, toEm, toPx, toRem, isNumeric
+invariant, mekeBreakpointsMap
+* percentage, toPx, toEm, toRem,  isNumeric, invariant
+
 # [22.0.0](https://github.com/typographist/core/compare/v21.0.1...v22.0.0) (2019-11-05)
 
 
