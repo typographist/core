@@ -71,9 +71,9 @@ exports.invariant = function(condition, message) {
 };
 
 // ---------- CONVERTORS -----------------------------------------------------------
-// percentage :: (x: Number | String | [Number]) -> String
+// percentage :: (x: Number | String) -> String
 exports.percentage = function(x) {
-  return (parseFloat(x) / BROWSER_CONTEXT) * 100 + '%';
+  return (parseFloat(String(x)) / BROWSER_CONTEXT) * 100 + '%';
 };
 
 // toPx :: String -> String
@@ -86,9 +86,9 @@ exports.toEm = function(x) {
   return parseFloat(x) / BROWSER_CONTEXT + 'em';
 };
 
-// toRem :: (Number, Number | [Number]) -> String
+// toRem :: (Number, Number | String) -> String
 exports.toRem = function(root, fontSize) {
-  return parseFloat(fontSize) / root + 'rem';
+  return parseFloat(String(fontSize)) / root + 'rem';
 };
 
 // ---------- VALIDATORS -----------------------------------------------------------
