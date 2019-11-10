@@ -1,3 +1,16 @@
+# [24.0.0](https://github.com/typographist/core/compare/v23.0.2...v24.0.0) (2019-11-10)
+
+
+### chore
+
+* replace utils with lib ([e45805f](https://github.com/typographist/core/commit/e45805f))
+
+
+### BREAKING CHANGES
+
+* replace getBreakpointsMap with
+makeBreakpointsMap
+
 ## [23.0.2](https://github.com/typographist/core/compare/v23.0.1...v23.0.2) (2019-11-10)
 
 
