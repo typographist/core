@@ -17,11 +17,17 @@ var RATIO_ERROR_MESSAGE =
   "is ivalid 'ratio'. Ratio must be a number or string containing the font size (in pixels), " +
   "the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.";
 
+// hasPx :: a -> Boolean
+var hasPx = function(x) {
+  return /\d+(\.\d+)?px/.test(x);
+};
+
 // ---------- BASE ------------------------------------------------------------
+
 // validateField :: a -> Void
 var validateBase = function(x) {
   return utils.invariant(
-    utils.hasPx(x),
+    hasPx(x),
     ERROR_PREFIX + "'" + x + "' " + BASE_ERROR_MESSAGE,
   );
 };
@@ -52,7 +58,7 @@ var hasBreakpointProp = function(x) {
 // validateField :: a -> Void
 var validateBreakpoint = function(x) {
   utils.invariant(
-    typeof x === 'string' && utils.hasPx(x),
+    typeof x === 'string' && hasPx(x),
     ERROR_PREFIX + "'" + x + "' " + BREAKPOINT_ERROR_MESSAGE,
   );
 };
@@ -81,13 +87,27 @@ var validateLineHeights = function(x) {
 };
 
 // ---------- RATIO --------------------------------------------------------------
+
+// ratioHasFontSize :: String -> Boolean
+var ratioHasFontSize = function(x) {
+  return /^\d+(\.\d+)?px\b/g.test(x);
+};
+
+// ratioHasAtWord :: String -> Boolean
+var ratioHasAtWord = function(x) {
+  return /\sat\s/.test(x);
+};
+
+// ratioHasStep :: String -> Boolean
+var ratioHasStep = function(x) {
+  return /-?\b\d+(\.\d+)?\b\s*$/g.test(x);
+};
+
 // validateField :: a -> Void
 var validateRatio = function(x) {
   var isValid =
     (typeof x === 'number' && utils.isNumeric(x)) ||
-    (utils.ratioHasFontSize(x) &&
-      utils.ratioHasAtWord(x) &&
-      utils.ratioHasStep(x));
+    (ratioHasFontSize(x) && ratioHasAtWord(x) && ratioHasStep(x));
 
   utils.invariant(isValid, ERROR_PREFIX + "'" + x + "' " + RATIO_ERROR_MESSAGE);
 };
@@ -109,6 +129,7 @@ var validateConfig = function(x) {
 };
 
 module.exports = {
+  hasPx,
   validateBase,
   validateBases,
   hasBreakpointProp,
@@ -116,6 +137,9 @@ module.exports = {
   validateBreakpoints,
   validateLineHeight,
   validateLineHeights,
+  ratioHasFontSize,
+  ratioHasAtWord,
+  ratioHasStep,
   validateRatio,
   validateRatios,
   validateConfig,

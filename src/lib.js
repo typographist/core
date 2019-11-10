@@ -68,33 +68,7 @@ exports.invariant = function(condition, message) {
   }
 };
 
-// ---------- VALIDATORS -----------------------------------------------------------
 // isNumeric :: a -> Boolean
 exports.isNumeric = function(x) {
   return !Number.isNaN(parseFloat(x)) && isFinite(x);
-};
-
-// ratioHasFontSize :: String -> Boolean
-exports.ratioHasFontSize = function(x) {
-  return /^\d+(\.\d+)?px\b/g.test(x);
-};
-
-// ratioHasAtWord :: String -> Boolean
-exports.ratioHasAtWord = function(x) {
-  return /\sat\s/.test(x);
-};
-
-// ratioHasStep :: String -> Boolean
-exports.ratioHasStep = function(x) {
-  return /-?\b\d+(\.\d+)?\b\s*$/g.test(x);
-};
-
-// hasPx :: a -> Boolean
-exports.hasPx = function(x) {
-  return /\d+(\.\d+)?px/.test(x);
-};
-
-// isValidStep :: String -> Boolean
-exports.isValidStep = function(x) {
-  return /^-?\d+(\.\d+)?$/.test(x);
 };
