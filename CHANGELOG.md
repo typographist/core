@@ -1,3 +1,10 @@
+## [24.0.1](https://github.com/typographist/core/compare/v24.0.0...v24.0.1) (2019-11-10)
+
+
+### Bug Fixes
+
+* adjust import for "makeBreakpointsMap" ([8065638](https://github.com/typographist/core/commit/8065638))
+
 # [24.0.0](https://github.com/typographist/core/compare/v23.0.2...v24.0.0) (2019-11-10)
 
 
