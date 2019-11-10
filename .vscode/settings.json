@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": ["javascript"],
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tabSize": 2,
+  "eslint.packageManager": "yarn",
+  "files.autoSave": "onFocusChange",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "emmet.syntaxProfiles": {
+    "html": "html"
+  },
+  "breadcrumbs.enabled": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true
+}
