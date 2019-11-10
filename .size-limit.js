@@ -1,6 +1,6 @@
 module.exports = [
   {
     path: 'src/index.js',
-    limit: '1.78kb',
+    limit: '1.77kb',
   },
 ];
