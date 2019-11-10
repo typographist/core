@@ -1,4 +1,4 @@
-var utils = require('./utils');
+var utils = require('./lib');
 
 var ERROR_PREFIX = '[typographist]: Check your config. ';
 

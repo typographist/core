@@ -1,6 +1,7 @@
-const { deepObjectValues, flatten, invariant } = require('../utils');
-
 const {
+  deepObjectValues,
+  flatten,
+  invariant,
   merge,
   omit,
   isNumeric,
@@ -9,7 +10,7 @@ const {
   ratioHasStep,
   hasPx,
   isValidStep,
-} = require('../utils');
+} = require('../lib');
 
 describe('merge', () => {
   it('merge all transfered objects', () => {

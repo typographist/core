@@ -1,5 +1,5 @@
 var validateConfig = require('./validate-config').validateConfig;
-var utils = require('./utils');
+var utils = require('./lib');
 
 var FONT_SIZE = /\b\d+(\.\d+)?(px|em)\b/g;
 var POSITIVE_OR_NEGATIVE_INT_OR_FLOAT_NUM_AT_END_OF_STRING = /-?\b\d+(\.\d+)?\b\s*$/g;
