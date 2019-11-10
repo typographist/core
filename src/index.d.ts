@@ -10,7 +10,7 @@ export interface IBreakpointMap {
   [key: string]: IBreakpoint;
 }
 
-export interface IRatios {
+export type Ratios = {
   AUGMENTED_FOURTH: number;
   DOUBLE_OCTAVE: number;
   GOLDEN_SECTION: number;
@@ -28,7 +28,9 @@ export interface IRatios {
   PERFECT_FIFTH: number;
   PERFECT_FOURTH: number;
   PHI: number;
-}
+};
+
+export const ratios: Ratios;
 
 export function getBreakpointsMap(x: object): IBreakpointMap;
 
