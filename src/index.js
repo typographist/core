@@ -1,4 +1,4 @@
-var getBreakpointsMap = require('./make-breakpoints-map').getBreakpointsMap;
+var makeBreakpointsMap = require('./make-breakpoints-map').makeBreakpointsMap;
 var modularScale = require('./modular-scale');
 
 exports.ratios = {
@@ -21,5 +21,5 @@ exports.ratios = {
   PHI: 1.618034,
 };
 
-exports.getBreakpointsMap = getBreakpointsMap;
+exports.makeBreakpointsMap = makeBreakpointsMap;
 exports.modularScale = modularScale;
