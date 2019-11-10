@@ -1,5 +1,6 @@
 const { invalidconfig } = require('./mocks');
 const {
+  hasPx,
   validateConfig,
   validateBase,
   validateBases,
@@ -8,9 +9,22 @@ const {
   validateBreakpoints,
   validateLineHeight,
   validateLineHeights,
+  ratioHasFontSize,
+  ratioHasAtWord,
+  ratioHasStep,
   validateRatio,
   validateRatios,
 } = require('../validate-config');
+
+describe('hasPx', () => {
+  it('returns `true` if value contains pixels', () => {
+    expect(hasPx('12px')).toEqual(true);
+  });
+
+  it("returns `false` if value doesn't contain px", () => {
+    expect(hasPx(12)).toEqual(false);
+  });
+});
 
 describe('validateBase', () => {
   it("show warn if the base isn't valid", () => {
@@ -102,6 +116,52 @@ describe('validateLineHeights', () => {
         "[typographist]: Check your config. '1.7' is invalid 'lineHeight'. LineHeight must be a number. Example 'lineHeight': 1.5'",
       );
     }
+  });
+});
+
+describe('ratioHasFontSize', () => {
+  it('return `false` if the font size does not contain pixels', () => {
+    expect(ratioHasFontSize('35em at 6')).toEqual(false);
+  });
+
+  it('return `true` if contain positive integer mumber with pixels at the beggining of the string', () => {
+    expect(ratioHasFontSize('35px at 6')).toEqual(true);
+  });
+
+  it('return `false` if there are spaces at the beginning of the line', () => {
+    expect(ratioHasFontSize('   35px at 6')).toEqual(false);
+  });
+});
+
+describe('ratioHasAtWord', () => {
+  it('should ratio string has `at` word', () => {
+    expect(ratioHasAtWord('123px at 7')).toEqual(true);
+  });
+
+  it("should doesn't contain `at` word", () => {
+    expect(ratioHasAtWord('123px  7px')).toEqual(false);
+  });
+});
+
+describe('ratioHasStep', () => {
+  it('return `true` if it contains a negative integer number at end of a string', () => {
+    expect(ratioHasStep('123px at -7')).toEqual(true);
+  });
+
+  it('return `true` if it contains a floating point number at end of a string', () => {
+    expect(ratioHasStep('123px at 7.4')).toEqual(true);
+  });
+
+  it('return `true` if it contains a nagative floating point number at end of a string', () => {
+    expect(ratioHasStep('123px at -7.4')).toEqual(true);
+  });
+
+  it('return `fase` if it contains a integer number with  units at end of a string', () => {
+    expect(ratioHasStep('123px at 6px')).toEqual(false);
+  });
+
+  it('return `fase` if it contains a negative floating point number in px units at end of a string', () => {
+    expect(ratioHasStep('123px at -6.7px')).toEqual(false);
   });
 });
 
