@@ -1,3 +1,10 @@
+## [23.0.1](https://github.com/typographist/core/compare/v23.0.0...v23.0.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* remove 'invariantWithPrefix' ([472b623](https://github.com/typographist/core/commit/472b623))
+
 # [23.0.0](https://github.com/typographist/core/compare/v22.0.0...v23.0.0) (2019-11-08)
 
 
