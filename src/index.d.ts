@@ -32,6 +32,6 @@ export type Ratios = {
 
 export const ratios: Ratios;
 
-export function getBreakpointsMap(x: object): IBreakpointMap;
+export function makeBreakpointsMap(x: object): IBreakpointMap;
 
 export function modularScale(x: number, y: number[], z: number): number;
