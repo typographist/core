@@ -109,7 +109,7 @@ var setBreakpointNameProp = function(acc, x) {
 };
 
 // makeBreakpointsMap :: Object -> Object
-var makeBreakpointsMap = function(x) {
+var makeBreakpointsMapProcess = function(x) {
   return []
     .concat(makeInitialBreakpoint(x), makeNamedBreakpoints(x))
     .map(renameProp('breakpoint', 'value'))
@@ -119,10 +119,10 @@ var makeBreakpointsMap = function(x) {
 };
 
 // getBreakpoints :: Object -> Object | Void
-var getBreakpointsMap = function(x) {
+var makeBreakpointsMap = function(x) {
   validateConfig(x);
 
-  return makeBreakpointsMap(x);
+  return makeBreakpointsMapProcess(x);
 };
 
 module.exports = {
@@ -138,6 +138,6 @@ module.exports = {
   calcLeading,
   setRootProp,
   setBreakpointNameProp,
+  makeBreakpointsMapProcess,
   makeBreakpointsMap,
-  getBreakpointsMap,
 };

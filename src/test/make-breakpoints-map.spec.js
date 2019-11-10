@@ -3,9 +3,9 @@ const {
   makeNamedBreakpoints,
   renameProp,
   inheritProps,
-  makeBreakpointsMap,
+  makeBreakpointsMapProcess,
   setBreakpointNameProp,
-  getBreakpointsMap,
+  makeBreakpointsMap,
   normalizeBase,
   makeFontSize,
   makeStep,
@@ -225,14 +225,14 @@ describe('setBreakpointNameProp', () => {
   });
 });
 
-describe('makeBreakpointsMap', () => {
+describe('makeBreakpointsMapProcess', () => {
   it('return breakpoints model', () => {
-    expect(makeBreakpointsMap(config)).toEqual(breakpointsMap);
+    expect(makeBreakpointsMapProcess(config)).toEqual(breakpointsMap);
   });
 });
 
-describe('getBreakpointsMap', () => {
+describe('makeBreakpointsMap', () => {
   it('create a list of breakpoint values if the user config is valid', () => {
-    expect(getBreakpointsMap(config)).toEqual(breakpointsMap);
+    expect(makeBreakpointsMap(config)).toEqual(breakpointsMap);
   });
 });
