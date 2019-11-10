@@ -1,3 +1,10 @@
+## [24.0.2](https://github.com/typographist/core/compare/v24.0.1...v24.0.2) (2019-11-10)
+
+
+### Bug Fixes
+
+* **typescript:** fix types for makeBreakpointsMap ([f465f2f](https://github.com/typographist/core/commit/f465f2f))
+
 ## [24.0.1](https://github.com/typographist/core/compare/v24.0.0...v24.0.1) (2019-11-10)
 
 

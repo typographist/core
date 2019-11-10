@@ -1,6 +1,6 @@
 {
   "name": "@typographist/core",
-  "version": "24.0.1",
+  "version": "24.0.2",
   "description": "Core API for typographist",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
