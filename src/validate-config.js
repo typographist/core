@@ -17,6 +17,10 @@ var RATIO_ERROR_MESSAGE =
   "is ivalid 'ratio'. Ratio must be a number or string containing the font size (in pixels), " +
   "the word 'at' and step. Example ratio: 1.25 or ratio: '36px at 6'.";
 
+var invariantWithErrorPrefix = function(condition, message) {
+  return utils.invariant(condition, ERROR_PREFIX + message);
+};
+
 // hasPx :: a -> Boolean
 var hasPx = function(x) {
   return /\d+(\.\d+)?px/.test(x);
@@ -26,9 +30,9 @@ var hasPx = function(x) {
 
 // validateField :: a -> Void
 var validateBase = function(x) {
-  return utils.invariant(
+  return invariantWithErrorPrefix(
     hasPx(x),
-    ERROR_PREFIX + "'" + x + "' " + BASE_ERROR_MESSAGE,
+    "'" + x + "' " + BASE_ERROR_MESSAGE,
   );
 };
 
@@ -43,10 +47,9 @@ var hasBreakpointProp = function(x) {
   var breaks = utils.omit('base', 'lineHeight', 'ratio', x);
 
   Object.keys(breaks).forEach((key) => {
-    utils.invariant(
+    invariantWithErrorPrefix(
       breaks[key].breakpoint,
-      ERROR_PREFIX +
-        "'" +
+      "'" +
         key +
         "': must contain the mandatory breakpoint property. Example '" +
         key +
@@ -57,9 +60,9 @@ var hasBreakpointProp = function(x) {
 
 // validateField :: a -> Void
 var validateBreakpoint = function(x) {
-  utils.invariant(
+  invariantWithErrorPrefix(
     typeof x === 'string' && hasPx(x),
-    ERROR_PREFIX + "'" + x + "' " + BREAKPOINT_ERROR_MESSAGE,
+    "'" + x + "' " + BREAKPOINT_ERROR_MESSAGE,
   );
 };
 
@@ -73,9 +76,9 @@ var validateBreakpoints = function(x) {
 // ---------- LINE-HEIGHT --------------------------------------------------------
 // validateField :: a -> Void
 var validateLineHeight = function(x) {
-  utils.invariant(
+  invariantWithErrorPrefix(
     typeof x === 'number' && utils.isNumeric(x),
-    ERROR_PREFIX + "'" + x + "' " + LINE_HEIGHT_ERRROR_MESSAGE,
+    "'" + x + "' " + LINE_HEIGHT_ERRROR_MESSAGE,
   );
 };
 
