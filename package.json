@@ -51,7 +51,7 @@
     "@semantic-release/github": "^5.5.5",
     "@semantic-release/npm": "^5.3.4",
     "@semantic-release/release-notes-generator": "^7.3.2",
-    "@size-limit/preset-big-lib": "^2.1.6",
+    "@size-limit/preset-big-lib": "^4.4.1",
     "commitizen": "^4.0.3",
     "coveralls": "^3.0.7",
     "cross-env": "^6.0.3",
