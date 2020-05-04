@@ -52,7 +52,7 @@
     "@semantic-release/npm": "^5.3.4",
     "@semantic-release/release-notes-generator": "^7.3.2",
     "@size-limit/preset-big-lib": "^2.1.6",
-    "commitizen": "^4.0.3",
+    "commitizen": "^4.1.0",
     "coveralls": "^3.0.7",
     "cross-env": "^6.0.3",
     "cz-conventional-changelog": "^3.0.2",
